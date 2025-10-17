@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portal Dua Dunia — septiana1986</title>
+  <style>
+    :root{
+      --bg1:#160e2a; /* deep violet */
+      --bg2:#0b1740; /* deep blue */
+      --glass:rgba(255,255,255,.06);
+      --stroke:rgba(255,255,255,.12);
+      --text:#eef2ff; /* near-white */
+      --muted:#b6c3ff; /* soft indigo */
+      --accent:#a78bfa; /* violet */
+      --accent2:#60a5fa; /* blue */
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(167,139,250,.25), transparent 60%),
+                  radial-gradient(1000px 600px at 120% 120%, rgba(96,165,250,.25), transparent 60%),
+                  linear-gradient(145deg, var(--bg1), var(--bg2));
+      color:var(--text);
+    }
+    .wrap{max-width:1100px;margin:0 auto;padding:36px 18px;}
+    .hero{display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center;margin-bottom:22px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:40px;height:40px;border-radius:12px;background:
+      radial-gradient(circle at 30% 30%, var(--accent), transparent 55%),
+      radial-gradient(circle at 70% 70%, var(--accent2), transparent 55%),
+      linear-gradient(135deg, rgba(255,255,255,.15), rgba(255,255,255,0));
+      box-shadow:0 8px 30px rgba(0,0,0,.35), inset 0 0 0 1px var(--stroke);
+    }
+    h1{font-size:28px;margin:0}
+    .tagline{color:var(--muted);font-size:14px}
+
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    @media (max-width:800px){.grid{grid-template-columns:1fr}}
+
+    .card{
+      position:relative;overflow:hidden;border-radius:18px;padding:20px;border:1px solid var(--stroke);
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      backdrop-filter:blur(6px);
+      box-shadow:0 10px 40px rgba(0,0,0,.35);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      min-height:210px;
+      display:flex;flex-direction:column;justify-content:space-between;
+    }
+    .card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.22);box-shadow:0 16px 60px rgba(0,0,0,.45)}
+    .card h2{margin:0 0 6px 0;font-size:22px}
+    .card p{margin:0 0 12px 0;color:var(--muted);line-height:1.55}
+
+    .cta{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 14px;border-radius:12px;font-weight:700;text-decoration:none;
+      color:white;background:linear-gradient(90deg, var(--accent), var(--accent2));
+      box-shadow:0 8px 24px rgba(99,102,241,.3);
+      border:1px solid rgba(255,255,255,.2);
+    }
+    .cta.ghost{background:transparent;color:var(--text);border:1px solid var(--stroke);box-shadow:none}
+    .foot{margin-top:22px;text-align:center;color:var(--muted);font-size:12px}
+
+    /* subtle sparkles */
+    .spark{position:absolute;inset:0;pointer-events:none;opacity:.35}
+    .spark::before,.spark::after{content:"";position:absolute;border-radius:50%;filter:blur(8px)}
+    .spark::before{width:120px;height:120px;background:radial-gradient(circle, rgba(167,139,250,.6), transparent 60%);top:-30px;right:-30px}
+    .spark::after{width:160px;height:160px;background:radial-gradient(circle, rgba(96,165,250,.6), transparent 60%);bottom:-40px;left:-20px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <div class="brand">
+        <div class="logo"></div>
+        <h1>septiana1986Universe</h1>
+      </div>
+      <div class="tagline">Karena cinta, musik, dan ilmu — semuanya perlu hati. Sambil ngopi, tentu. ☕️💞</div>
+    </div>
+
+    <div class="grid">
+      <!-- Pintu 1: Musik & Novel -->
+      <section class="card">
+        <div>
+          <h2>🎶 Novel & Musik</h2>
+          <p>Ruang romantik: cerita, lirik, dan melodi. Tempat kata dan nada bertemu.</p>
+        </div>
+        <div>
+          <a class="cta" href="https://sites.google.com/view/septiana1986universe" target="_blank" rel="noopener">Masuk ke dunia romantik</a>
+        </div>
+        <div class="spark"></div>
+      </section>
+
+      <!-- Pintu 2: Farmasi dengan Hati -->
+      <section class="card">
+        <div>
+          <h2>💊 Farmasi dengan Hati</h2>
+          <p>Belajar ilmu dengan rasa manusia: modul interaktif, kuis revisi langsung, dan pembahasan yang hangat.</p>
+        </div>
+        <div>
+          <!-- TODO: ganti URL di bawah ini ke halaman/publikasi web farmasi kamu (Netlify/Pages/Sites). -->
+          <a class="cta" href="#" title="Ganti tautan ini ke halaman Farmasi" target="_blank" rel="noopener">Masuk ke dunia farmasi dengan hati</a>
+          <span style="display:block;height:10px"></span>
+          <a class="cta ghost" href="#" title="Contoh pratinjau lokal">Coba pratinjau (sementara)</a>
+        </div>
+        <div class="spark"></div>
+      </section>
+    </div>
+
+    <div class="foot">Dibuat dengan cinta. Sambil ngopi dan peluk jauh 💋 — pemiliknya. © 2025</div>
+  </div>
+</body>
+</html>
