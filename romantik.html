@@ -5,22 +5,55 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Romantik & Musik — septiana1986 universe</title>
 <style>
-  :root{--bg1:#160e2a;--bg2:#0b1740;--text:#eef2ff;--muted:#b6c3ff;--stroke:rgba(255,255,255,.14);
-        --accent:#a78bfa;--accent2:#60a5fa;}
+  :root{
+    --bg1:#160e2a; --bg2:#0b1740;
+    --text:#eef2ff; --muted:#b6c3ff;
+    --stroke:rgba(255,255,255,.14);
+    --accent:#a78bfa; --accent2:#60a5fa;
+  }
   *{box-sizing:border-box}
-  body{margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Arial;color:var(--text);
-       background:radial-gradient(1200px 600px at 20% -10%, rgba(167,139,250,.25), transparent 60%),
-                  radial-gradient(1000px 600px at 120% 120%, rgba(96,165,250,.25), transparent 60%),
-                  linear-gradient(145deg,var(--bg1),var(--bg2));}
-  .wrap{max-width:980px;margin:0 auto;padding:28px 16px}
-  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:14px;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,.2);color:#fff;background:linear-gradient(90deg,var(--accent),var(--accent2));box-shadow:0 6px 18px rgba(99,102,241,.25)}
+  body{
+    margin:0;
+    font-family:Inter, ui-sans-serif, system-ui, Segoe UI, Arial;
+    color:var(--text);
+    background:
+      radial-gradient(1200px 600px at 20% -10%, rgba(167,139,250,.25), transparent 60%),
+      radial-gradient(1000px 600px at 120% 120%, rgba(96,165,250,.25), transparent 60%),
+      linear-gradient(145deg,var(--bg1),var(--bg2));
+  }
+  .wrap{max-width:960px;margin:0 auto;padding:28px 16px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 18px;border-radius:14px;font-weight:700;text-decoration:none;
+    border:1px solid rgba(255,255,255,.2);color:#fff;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    box-shadow:0 6px 18px rgba(99,102,241,.25);
+    transition:all .2s ease-in-out;
+  }
+  .btn:hover{opacity:0.9;transform:translateY(-1px);}
   .ghost{background:transparent;color:var(--text);border:1px solid var(--stroke);box-shadow:none}
-  .card{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid var(--stroke);border-radius:18px;padding:18px;margin-top:14px}
+  .card{
+    background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));
+    border:1px solid var(--stroke);border-radius:18px;padding:20px;margin-top:18px;
+  }
   h1{margin:0 0 8px 0;font-size:30px}
+  h2,h3{color:var(--accent);margin-top:0}
   .muted{color:var(--muted)}
-  blockquote{margin:10px 0;padding:14px;border-left:3px solid #a78bfa;background:rgba(255,255,255,.05);border-radius:10px}
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-  @media (max-width:800px){.grid{grid-template-columns:1fr}}
+  blockquote{
+    margin:10px 0;padding:14px;
+    border-left:3px solid #a78bfa;
+    background:rgba(255,255,255,.05);
+    border-radius:10px;
+    font-style:italic;
+  }
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  @media(max-width:800px){.grid{grid-template-columns:1fr}}
+  textarea{
+    width:100%;min-height:100px;border-radius:12px;border:1px solid var(--stroke);
+    background:rgba(255,255,255,.06);color:var(--text);
+    padding:12px;font-size:15px;resize:none;
+  }
+  footer{text-align:center;color:#bbb;font-size:14px;margin-top:50px;line-height:1.8;}
 </style>
 </head>
 <body>
@@ -30,39 +63,53 @@
     <p class="muted">ruang kata, nada, dan perasaan. dua dunia — satu hati.</p>
 
     <div class="card">
-      <h2>teaser puisi</h2>
+      <h2>✨ teaser puisi</h2>
       <blockquote>
         malam ini, ungu memeluk biru;<br/>
         secangkir kopi, dan rindu yang tak perlu izin untuk tumbuh.<br/>
         — milik septiana1986
       </blockquote>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
-        <!-- sementara menuju Google Sites; nanti bisa diganti ke halaman di repo -->
-        <a class="btn" href="https://sites.google.com/view/septiana1986universe" target="_blank" rel="noopener">baca selengkapnya di universe</a>
-        <a class="btn ghost" href="farmasi-home.html">💊 ke farmasi dengan hati</a>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+        <a class="btn" href="https://sites.google.com/view/septiana1986universe" target="_blank">baca selengkapnya di universe</a>
+        <a class="btn ghost" href="farmasi-home.html">💊 ke dunia farmasi</a>
       </div>
     </div>
 
     <div class="grid">
       <div class="card">
-        <h3>playlist & lirik</h3>
-        <p class="muted">kumpulan lagu + potongan lirik pilihan. nanti bisa kamu isi pelan-pelan.</p>
-        <a class="btn ghost" href="#">tambahkan nanti</a>
+        <h3>🎵 playlist & lirik</h3>
+        <p class="muted">lagu-lagu ciptaan hati: Good Night Sweetheart, Fire, Queen Without a Crown, dan lainnya.</p>
+        <iframe style="border-radius:12px" src="https://www.youtube.com/embed?listType=playlist&list=PL_your_playlist_id_here" width="100%" height="160" frameborder="0" allowfullscreen></iframe>
       </div>
       <div class="card">
-        <h3>cerita pendek</h3>
-        <p class="muted">cuplikan prosa harian. cukup satu paragraf yang jujur.</p>
-        <a class="btn ghost" href="#">tambahkan nanti</a>
+        <h3>📜 cerita pendek</h3>
+        <p class="muted">cuplikan prosa, kisah cinta, atau potongan kenangan — di sini semua jadi kata.</p>
+        <p><em>"kadang, cinta bukan tentang siapa yang menunggu, tapi siapa yang berani jujur."</em></p>
       </div>
     </div>
 
-    <!-- footer navigasi dua arah -->
-    <footer style="margin-top:60px;text-align:center;color:#bbb;font-size:14px;line-height:1.8;">
+    <div class="card" style="margin-top:24px;">
+      <h3>💬 refleksi hati</h3>
+      <p class="muted">tulis sejenak — apa yang kamu rasakan malam ini?</p>
+      <textarea id="note" placeholder="kadang kata sederhana bisa menyembuhkan..."></textarea><br/><br/>
+      <button class="btn" onclick="saveNote()">simpan</button>
+      <button class="btn ghost" onclick="clearNote()">hapus</button>
+    </div>
+
+    <footer>
       <hr style="border:none;height:1px;background:linear-gradient(90deg,#a78bfa,#60a5fa,#a78bfa);margin:30px auto;width:80%;">
       <p>⬅️ <a href="index.html" style="color:#a78bfa;text-decoration:none;">kembali ke portal utama</a></p>
       <p>💊 <a href="farmasi-home.html" style="color:#c084fc;text-decoration:none;">masuk ke dunia farmasi</a></p>
       <p style="margin-top:25px;font-size:13px;color:#888;">dibuat dengan hati dan cilok 🍡 | © 2025 milik <strong style="color:#a78bfa;">septiana1986</strong></p>
     </footer>
   </div>
+
+<script>
+  const noteField = document.getElementById("note");
+  noteField.value = localStorage.getItem("romantikNote") || "";
+  function saveNote(){localStorage.setItem("romantikNote",noteField.value);alert("💜 Refleksimu disimpan di perangkat ini.");}
+  function clearNote(){localStorage.removeItem("romantikNote");noteField.value="";}
+</script>
+
 </body>
 </html>
