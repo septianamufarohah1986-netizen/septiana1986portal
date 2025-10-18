@@ -71,10 +71,41 @@
   h1 .spark{display:inline-block;margin-left:6px;filter:drop-shadow(0 0 4px #fff4);animation:twinkle 2.2s ease-in-out infinite}
   @keyframes twinkle{ 0%,100%{opacity:.6; transform:scale(1)} 50%{opacity:1; transform:scale(1.08)} }
   footer{text-align:center;color:#bbb;font-size:14px;margin-top:50px;line-height:1.8}
+  /* ===== Aurora lembut ungu–biru ===== */
+.aurora{
+  position:fixed; inset:-10vh; z-index:-1; pointer-events:none;
+  filter: blur(28px) saturate(120%);
+  opacity:.55;
+}
+.aurora span{
+  position:absolute; width:60vw; height:60vh; border-radius:50%;
+  background: radial-gradient(ellipse at 50% 50%,
+              rgba(167,139,250,.35) 0%,
+              rgba(96,165,250,.22) 35%,
+              transparent 60%);
+  animation: auroraMove 22s linear infinite;
+  mix-blend-mode: screen;
+}
+.aurora span:nth-child(1){ top:-10%; left:-10%; animation-duration:28s; }
+.aurora span:nth-child(2){ top:10%; right:-15%; transform:rotate(20deg); animation-duration:24s; }
+.aurora span:nth-child(3){ bottom:-20%; left:5%; transform:rotate(-15deg); animation-duration:30s; }
+.aurora span:nth-child(4){ bottom:10%; right:-10%; animation-duration:26s; }
+
+@keyframes auroraMove{
+  0%   { transform: translate3d(0,0,0)      rotate(0deg)   scale(1); }
+  50%  { transform: translate3d(4vw,-3vh,0) rotate(20deg)  scale(1.08); }
+  100% { transform: translate3d(0,0,0)      rotate(0deg)   scale(1); }
+}
+@media (prefers-reduced-motion: reduce){
+  .aurora span{ animation:none }
+}
 </style>
 </head>
 <body>
   <div class="stars"></div>
+<div class="aurora" aria-hidden="true">
+  <span></span><span></span><span></span><span></span>
+</div>
 
   <div class="wrap">
     <p><a class="btn ghost" href="index.html">← kembali ke portal utama</a></p>
@@ -151,3 +182,4 @@
 </script>
 </body>
 </html>
+
