@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Refleksi & Diskusi — Farmasi dengan Hati</title>
+<style>
+  body{margin:0;font-family:Inter,system-ui,Arial;background:#160e2a;color:#eef2ff}
+  .wrap{max-width:800px;margin:0 auto;padding:28px 16px}
+  a.btn{display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.2);text-decoration:none;color:#fff;background:linear-gradient(90deg,#a78bfa,#60a5fa)}
+  .ghost{background:transparent;border-color:rgba(255,255,255,.3)}
+  textarea{width:100%;min-height:140px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:#eef2ff;padding:12px}
+  .muted{color:#b6c3ff}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <p><a class="btn ghost" href="farmasi-home.html">← Kembali ke Farmasi Home</a></p>
+    <h1>✨ Refleksi & Diskusi</h1>
+    <p class="muted">Tulis refleksi singkat. Disimpan lokal di perangkatmu.</p>
+    <textarea id="ref" placeholder="Apa bagian paling menantang? Bagaimana strategimu berikutnya?"></textarea>
+    <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+      <a class="btn" href="#" onclick="save();return false;">Simpan Refleksi</a>
+      <a class="btn ghost" href="#" onclick="clr();return false;">Hapus</a>
+    </div>
+    <p id="msg" class="muted" style="margin-top:8px;"></p>
+  </div>
+<script>
+  const key='fdh_reflection_page';
+  function save(){ localStorage.setItem(key, document.getElementById('ref').value); document.getElementById('msg').textContent='Tersimpan di perangkat ini.'; }
+  function clr(){ localStorage.removeItem(key); document.getElementById('ref').value=''; document.getElementById('msg').textContent='Dihapus.'; }
+  (function init(){ const v=localStorage.getItem(key); if(v) document.getElementById('ref').value=v; })();
+</script>
+</body>
+</html>
