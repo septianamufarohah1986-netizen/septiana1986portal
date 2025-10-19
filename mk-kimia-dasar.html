@@ -4,19 +4,11 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Kimia Dasar & Praktikum — Farmasi dengan Hati</title>
-
 <style>
-:root{
-  --bg1:#160e2a;--bg2:#0b1740;
-  --text:#eef2ff;--muted:#b6c3ff;
-  --stroke:rgba(255,255,255,.14);
-  --accent:#a78bfa;--accent2:#60a5fa;
-}
+:root{--bg1:#160e2a;--bg2:#0b1740;--text:#eef2ff;--muted:#b6c3ff;--stroke:rgba(255,255,255,.14);--accent:#a78bfa;--accent2:#60a5fa}
 *{box-sizing:border-box}
 body{
-  margin:0;
-  font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Arial;
-  color:var(--text);
+  margin:0; font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Arial; color:var(--text);
   background:
     radial-gradient(1200px 600px at 20% -10%, rgba(167,139,250,.25), transparent 60%),
     radial-gradient(1000px 600px at 120% 120%, rgba(96,165,250,.25), transparent 60%),
@@ -29,65 +21,84 @@ h2,h3{color:var(--accent);margin:0 0 8px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
 .card{
   background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));
-  border:1px solid var(--stroke);
-  border-radius:18px;
-  padding:22px;
+  border:1px solid var(--stroke); border-radius:18px; padding:22px;
   transition:transform .18s ease, box-shadow .18s ease;
 }
 .card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(99,102,241,.25)}
 .btn{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:12px 18px;border-radius:14px;
-  font-weight:700;text-decoration:none;
-  border:1px solid rgba(255,255,255,.2);color:#fff;
-  background:linear-gradient(90deg,var(--accent),var(--accent2));
-  box-shadow:0 8px 22px rgba(99,102,241,.25)
+  display:inline-flex;align-items:center;gap:8px; padding:10px 14px; border-radius:12px;
+  font-weight:700; text-decoration:none; border:1px solid rgba(255,255,255,.2); color:#fff;
+  background:linear-gradient(90deg,var(--accent),var(--accent2)); box-shadow:0 8px 22px rgba(99,102,241,.25)
 }
 .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--stroke);box-shadow:none}
+.btnrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 </style>
 </head>
-
 <body>
   <div class="wrap">
     <p><a class="btn ghost" href="semester1.html">← kembali ke Semester 1</a></p>
     <h1>🧪 Kimia Dasar & Praktikum</h1>
-    <p class="muted">Pilih modul untuk memulai perjalanan kimiamu dengan hati.</p>
+    <p class="muted">Pilih modul. Materi Modul 1 sudah diisi Gemini — GPT yang sambungkan pintunya.</p>
 
     <div class="grid">
       <div class="card">
         <h3>Modul 1 — Struktur Atom & Sistem Periodik</h3>
-        <p>Mengenal batu bata penyusun obat dan rahasia di balik tabel periodik.</p>
-        <a class="btn ghost" href="materi-kimdas-modul1.html">📘 Buka Materi</a>
+        <p>Mengenal “batu bata” penyusun obat & peta sifat kimia.</p>
+        <div class="btnrow">
+          <a class="btn ghost" href="materi-kimdas-modul1.html">📘 Materi</a>
+          <a class="btn ghost" href="kuis-kimdas-modul1.html">🧩 Kuis</a>
+          <a class="btn ghost" href="refleksi-kimdas-modul1.html">🪞 Refleksi</a>
+        </div>
       </div>
 
       <div class="card">
         <h3>Modul 2 — Ikatan Kimia</h3>
-        <p>Seni bagaimana atom bergandengan tangan membentuk molekul obat.</p>
-        <a class="btn ghost" href="#">📘 Buka Materi</a>
+        <p>Seni atom bergandengan tangan.</p>
+        <div class="btnrow">
+          <a class="btn ghost" href="#">📘 Materi (nanti)</a>
+          <a class="btn ghost" href="#">🧩 Kuis (nanti)</a>
+          <a class="btn ghost" href="#">🪞 Refleksi (nanti)</a>
+        </div>
       </div>
 
       <div class="card">
         <h3>Modul 3 — Stoikiometri</h3>
-        <p>Belajar menakar zat, seperti koki menakar resep kimia.</p>
-        <a class="btn ghost" href="#">📘 Buka Materi</a>
+        <p>Resep perhitungan mol & konsentrasi.</p>
+        <div class="btnrow">
+          <a class="btn ghost" href="#">📘 Materi (nanti)</a>
+          <a class="btn ghost" href="#">🧩 Kuis (nanti)</a>
+          <a class="btn ghost" href="#">🪞 Refleksi (nanti)</a>
+        </div>
       </div>
 
       <div class="card">
         <h3>Modul 4 — Larutan & Sifat Koligatif</h3>
-        <p>Memahami bagaimana obat larut dan bekerja di tubuh.</p>
-        <a class="btn ghost" href="#">📘 Buka Materi</a>
+        <p>Bagaimana obat larut & bekerja.</p>
+        <div class="btnrow">
+          <a class="btn ghost" href="#">📘 Materi (nanti)</a>
+          <a class="btn ghost" href="#">🧩 Kuis (nanti)</a>
+          <a class="btn ghost" href="#">🪞 Refleksi (nanti)</a>
+        </div>
       </div>
 
       <div class="card">
         <h3>Modul 5 — Termodinamika & Kinetika</h3>
-        <p>Energi di balik reaksi kimia dan kecepatan terjadinya.</p>
-        <a class="btn ghost" href="#">📘 Buka Materi</a>
+        <p>Energi reaksi & laju perubahan.</p>
+        <div class="btnrow">
+          <a class="btn ghost" href="#">📘 Materi (nanti)</a>
+          <a class="btn ghost" href="#">🧩 Kuis (nanti)</a>
+          <a class="btn ghost" href="#">🪞 Refleksi (nanti)</a>
+        </div>
       </div>
 
       <div class="card">
-        <h3>Modul 6 — Kesetimbangan Kimia, Asam-Basa</h3>
-        <p>Fondasi memahami pH darah, lambung, dan interaksi obat.</p>
-        <a class="btn ghost" href="#">📘 Buka Materi</a>
+        <h3>Modul 6 — Kesetimbangan, Asam-Basa</h3>
+        <p>Fondasi pH & penyerapan obat.</p>
+        <div class="btnrow">
+          <a class="btn ghost" href="#">📘 Materi (nanti)</a>
+          <a class="btn ghost" href="#">🧩 Kuis (nanti)</a>
+          <a class="btn ghost" href="#">🪞 Refleksi (nanti)</a>
+        </div>
       </div>
     </div>
   </div>
