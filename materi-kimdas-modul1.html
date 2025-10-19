@@ -104,15 +104,17 @@ a:hover {
 .nav-back:hover {
   background: rgba(167,139,250,0.2);
 }
+/* Override tambahan biar CSS ungu selalu menang */
+body, .module-container, h1, h2, h3, a, .highlight, details, summary {
+  all: unset;
+  all: revert-layer;
+}
 
-    </style>
+<style>        
 </head>
 <body>
     <div style="max-width:800px;margin:16px auto 0">
-  <a href="mk-kimia-dasar.html"
-     style="display:inline-block;padding:8px 12px;border-radius:8px;
-            text-decoration:none;border:1px solid #d0d7de;color:#111;
-            background-color:#f8f9fa;">
+  <a href="mk-kimia-dasar.html" class="nav-back">
     ← kembali ke daftar modul
   </a>
 </div>
@@ -241,6 +243,7 @@ a:hover {
 </body>
 
 </html>
+
 
 
 
