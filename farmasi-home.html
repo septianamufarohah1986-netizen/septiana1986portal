@@ -31,19 +31,124 @@ footer{text-align:center;color:#bbb;font-size:14px;margin-top:28px}
     <h1>💊 Farmasi dengan Hati</h1>
     <p class="muted">Urut rapi dari fondasi. Boleh loncat kalau kamu sudah siap.</p>
 
-    <div class="grid">
-      <div class="card">
-        <h3>📘 Semester 1 — Fondasi Ilmu Dasar & Pengantar Farmasi</h3>
-        <p>Mulai dari dasar dengan hati yang tenang.</p>
-        <a class="btn ghost" href="semester1.html">Buka Semester 1</a>
-      </div>
+    <!-- ================== SEMESTER GRID ================== -->
+<section class="wrap">
+  <h1 class="title">
+    <span>💊</span> Farmasi dengan Hati
+  </h1>
+  <p class="subtitle">Urut rapi dari fondasi hingga aplikasi. Pilih semester yang kamu mau.</p>
 
-      <div class="card">
-        <h3>📗 Semester 2 — Lanjutan Ilmu Dasar & Kefarmasian</h3>
-        <p>Melangkah ke aplikasi ilmu kefarmasian.</p>
-        <a class="btn ghost" href="semester2.html">Buka Semester 2</a>
-      </div>
-    </div>
+  <div class="semester-grid">
+    <!-- S1 -->
+    <article class="semester-card">
+      <h3>📘 Semester 1 — Fondasi Ilmu Dasar & Pengantar Farmasi</h3>
+      <p>Mulai dari dasar dengan hati yang tenang.</p>
+      <a class="btn" href="semester-1.html">Buka Semester 1</a>
+    </article>
+
+    <!-- S2 -->
+    <article class="semester-card">
+      <h3>📗 Semester 2 — Lanjutan Ilmu Dasar & Kefarmasian</h3>
+      <p>Melangkah ke aplikasi ilmu kefarmasian.</p>
+      <a class="btn" href="semester-2.html">Buka Semester 2</a>
+    </article>
+
+    <!-- S3 -->
+    <article class="semester-card">
+      <h3>📙 Semester 3 — Biokimia & Anatomi Fisiologi</h3>
+      <p>Mengenal tubuh & proses biokimia penting.</p>
+      <a class="btn" href="semester-3.html">Buka Semester 3</a>
+    </article>
+
+    <!-- S4 -->
+    <article class="semester-card">
+      <h3>📕 Semester 4 — Mikrobiologi & Analisis Farmasi</h3>
+      <p>Dari mikroba hingga teknik analisis laboratorium.</p>
+      <a class="btn" href="semester-4.html">Buka Semester 4</a>
+    </article>
+
+    <!-- S5 -->
+    <article class="semester-card">
+      <h3>📚 Semester 5 — Farmakologi & Teknologi Sediaan</h3>
+      <p>Mekanisme obat & pengembangan sediaan.</p>
+      <a class="btn" href="semester-5.html">Buka Semester 5</a>
+    </article>
+
+    <!-- S6 -->
+    <article class="semester-card">
+      <h3>📓 Semester 6 — Farmasi Klinis & Farmakoterapi</h3>
+      <p>Berlatih menata terapi pasien secara komprehensif.</p>
+      <a class="btn" href="semester-6.html">Buka Semester 6</a>
+    </article>
+
+    <!-- S7 -->
+    <article class="semester-card">
+      <h3>📔 Semester 7 — Manajemen Farmasi & Regulasi</h3>
+      <p>Manajemen layanan, mutu, dan aspek hukum.</p>
+      <a class="btn" href="semester-7.html">Buka Semester 7</a>
+    </article>
+
+    <!-- S8 -->
+    <article class="semester-card">
+      <h3>📒 Semester 8 — PKL, Skripsi/Tesis & Portofolio</h3>
+      <p>Finalisasi kompetensi & karya akhir.</p>
+      <a class="btn" href="semester-8.html">Buka Semester 8</a>
+    </article>
+  </div>
+</section>
+
+<!-- ================== STYLES ================== -->
+<style>
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 32px 20px 64px; }
+  .title { display:flex; gap:12px; align-items:center; font-size: clamp(22px, 3vw, 34px); color:#fff; margin:0 0 6px; }
+  .subtitle { color: #c6baf7; margin: 0 0 28px; }
+
+  /* 1 col on mobile, 2 col on tablets, 4 col on desktop */
+  .semester-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  @media (min-width: 640px) {
+    .semester-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1024px) {
+    .semester-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .semester-card {
+    background: linear-gradient(145deg, rgba(72,33,150,.65), rgba(25,18,60,.65));
+    border: 1px solid rgba(155,129,255,.2);
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    color:#e9e6ff;
+    min-height: 180px;
+    display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .semester-card h3 { font-size: 16px; line-height:1.35; margin: 0 0 8px; color:#efe9ff; }
+  .semester-card p { margin: 0 0 14px; color: #cfc7ff; }
+  .semester-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,.35);
+    border-color: rgba(200,170,255,.45);
+  }
+  .btn {
+    align-self: start;
+    display:inline-block;
+    padding: 10px 14px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 12px;
+    color:#ffffff;
+    text-decoration:none;
+    font-weight:600;
+    backdrop-filter: blur(6px);
+  }
+  .btn:hover { background: rgba(255,255,255,.14); }
+</style>
 
    
+
 
