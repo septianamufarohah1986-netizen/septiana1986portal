@@ -1,252 +1,119 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kimia Dasar Modul 1: Struktur Atom & Sistem Periodik</title>
-    <style>
-        /* ==== Tema Ungu Farmasi dengan Hati (Gabungan Gemini + GPT) ==== */
-
-body {
-  font-family: "Inter", sans-serif;
-  line-height: 1.7;
-  background: linear-gradient(160deg, #0e0b1e, #1b1440);
-  color: #eae6ff;
-  margin: 0;
-  padding: 40px 20px;
-}
-
-/* Kontainer modul */
-.module-container {
-  max-width: 860px;
-  margin: 40px auto;
-  background: rgba(44, 44, 68, 0.7);
-  padding: 40px;
-  border-radius: 16px;
-  border: 1px solid rgba(167,139,250,0.25);
-  box-shadow: 0 0 20px rgba(167,139,250,0.25);
-  backdrop-filter: blur(10px);
-}
-
-/* Judul */
-h1, h2, h3 {
-  color: #d6c9ff;
-  border-bottom: 1px solid rgba(167,139,250,0.25);
-  padding-bottom: 8px;
-}
-
-/* Paragraf */
-p {
-  color: #dcd7f8;
-  margin-bottom: 1em;
-}
-
-/* Box highlight “Mengapa ini penting?” */
-.highlight {
-  background: rgba(167,139,250,0.1);
-  border-left: 4px solid #a391f7;
-  padding: 15px 20px;
-  border-radius: 10px;
-  margin: 25px 0;
-}
-
-/* Gambar */
-.hero-img {
-  display: block;
-  margin: 25px auto;
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 0 16px rgba(128, 102, 255, 0.35);
-  transition: transform 0.3s ease;
-}
-.hero-img:hover {
-  transform: scale(1.02);
-}
-
-/* Details / summary interaktif */
-details {
-  background: rgba(53, 53, 82, 0.6);
-  padding: 15px 20px;
-  border-radius: 12px;
-  border: 1px solid rgba(167,139,250,0.2);
-  margin: 16px 0;
-  transition: background 0.3s;
-}
-details:hover {
-  background: rgba(163, 145, 247, 0.15);
-}
-summary {
-  cursor: pointer;
-  font-weight: 600;
-  color: #a391f7;
-}
-
-/* Link */
-a {
-  color: #a391f7;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-/* Tombol kembali */
-.nav-back {
-  display: inline-block;
-  padding: 8px 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(167,139,250,0.25);
-  color: #eae6ff;
-  background: rgba(255,255,255,0.06);
-  margin-bottom: 24px;
-  transition: background 0.3s;
-}
-.nav-back:hover {
-  background: rgba(167,139,250,0.2);
-}
-/* Override tambahan biar CSS ungu selalu menang */
-body, .module-container, h1, h2, h3, a, .highlight, details, summary {
-  all: unset;
-  all: revert-layer;
-}
-
-<style>        
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Kimia Dasar – Modul 1</title>
+  <style>
+    :root{
+      --bg1:#0e0b1e; --bg2:#1b1440;
+      --card:rgba(44,44,68,.72);
+      --text:#eae6ff; --muted:#cfd0ee;
+      --accent:#a78bfa; --accent2:#7aa2ff;
+      --stroke:rgba(167,139,250,.25);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; padding:40px 18px; line-height:1.7;
+      font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Arial;
+      color:var(--text);
+      background:linear-gradient(160deg,var(--bg1),var(--bg2));
+    }
+    .wrap{max-width:920px;margin:0 auto}
+    .nav-back{
+      display:inline-block; padding:10px 14px; border-radius:12px;
+      border:1px solid var(--stroke); color:var(--text); text-decoration:none;
+      background:rgba(255,255,255,.06); transition:background .25s ease;
+      margin-bottom:18px;
+    }
+    .nav-back:hover{background:rgba(167,139,250,.18)}
+    .card{
+      background:var(--card); border:1px solid var(--stroke);
+      border-radius:18px; padding:28px; box-shadow:0 0 22px rgba(167,139,250,.18);
+      backdrop-filter: blur(8px);
+    }
+    h1{margin:.2rem 0 1rem;font-size:clamp(24px,3.2vw,34px);color:#dcd3ff}
+    h2,h3{color:#dcd3ff;margin:1.4rem 0 .6rem}
+    p{color:var(--muted); margin:.6rem 0}
+    .highlight{
+      background:rgba(167,139,250,.12); border-left:4px solid var(--accent);
+      padding:14px 18px; border-radius:10px; margin:18px 0;
+    }
+    details{
+      background:rgba(255,255,255,.06); border:1px solid var(--stroke);
+      border-radius:12px; padding:12px 14px; margin:14px 0;
+    }
+    summary{cursor:pointer; font-weight:700; color:var(--accent)}
+    figure{margin:18px auto; text-align:center}
+    .hero-img{
+      display:block; max-width:min(100%,760px); height:auto;
+      border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,.35);
+      transition:transform .25s ease;
+    }
+    .hero-img:hover{ transform:scale(1.02) }
+    figcaption{font-size:14px; color:#bdbfe4; margin-top:6px}
+    .hr{height:1px; margin:24px 0; background:linear-gradient(90deg,#0000,var(--stroke),#0000)}
+    .mini{background:rgba(255,255,255,.05); border:1px solid var(--stroke);
+      border-radius:14px; padding:16px; margin:14px 0;}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px;
+      border-radius:10px; text-decoration:none; font-weight:700; color:#0b142b;
+      background:linear-gradient(90deg,var(--accent),var(--accent2));
+      border:1px solid rgba(255,255,255,.2); box-shadow:0 10px 22px rgba(99,102,241,.25);}
+    .btn.ghost{background:transparent; color:var(--text); border:1px solid var(--stroke); box-shadow:none}
+    .btnrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    a{color:var(--accent)} a:hover{text-decoration:underline}
+  </style>
 </head>
 <body>
-    <div style="max-width:800px;margin:16px auto 0">
-  <a href="mk-kimia-dasar.html" class="nav-back">
-    ← kembali ke daftar modul
-  </a>
-</div>
+  <div class="wrap">
+    <a href="mk-kimia-dasar.html" class="nav-back">← kembali ke daftar modul</a>
 
-<div class="module-container">
+    <div class="card">
+      <h1>Kimia Dasar – Modul 1</h1>
+      <h2>Struktur Atom & Sistem Periodik: Mengenal “Batu Bata” Penyusun Obat</h2>
 
-    <h1>Kimia Dasar - Modul 1</h1>
-    <h2>Struktur Atom & Sistem Periodik: Mengenal Bata Penyusun Obat</h2>
+      <div class="highlight">
+        <strong>Mengapa ini penting?</strong> Di farmasi, tiap molekul obat adalah “gedung” dan atom adalah “batu batanya”.
+        Memahami struktur atom & tabel periodik membantu kita menebak sifat-sifat obat, kestabilan, dan cara formulasi.
+      </div>
 
-    <p class="highlight">
-        <strong>Mengapa ini penting?</strong> Bayangkan Anda seorang arsitek. Sebelum bisa merancang gedung pencakar langit, Anda harus paham betul sifat dari setiap batu bata, baja, dan semen. Di dunia farmasi, setiap molekul obat adalah "gedung"-nya, dan atom adalah "batu bata"-nya. Modul ini adalah fondasi untuk memahami mengapa parasetamol bisa meredakan nyeri dan mengapa air bisa melarutkan garam.
-    </p>
+      <figure>
+        <img src="tabel-periodik.png" alt="Tabel periodik unsur" class="hero-img">
+        <figcaption>Tabel periodik sebagai “peta” sifat kimia.</figcaption>
+      </figure>
 
-    <hr>
+      <h3>1. Evolusi Model Atom</h3>
+      <p>Dari Dalton → Thomson → Rutherford → Bohr → Model mekanika kuantum. Setiap tahap memperbaiki pemahaman kita
+        tentang posisi elektron dan energi.</p>
 
-    <h3>1. Atom: Dari Bola Biliar Hingga Awan Elektron</h3>
-    <p>Awalnya, para ilmuwan mengira atom itu seperti bola biliar kecil yang padat (teori Dalton). Tapi ternyata, isinya jauh lebih kompleks dan menarik!</p>
-    
-    <details>
-        <summary>🤔 Bagaimana model atom berkembang? (Klik untuk lihat perjalanan singkatnya)</summary>
-        <ul>
-            <li><strong>Thomson:</strong> Menemukan elektron, membayangkan atom seperti "roti kismis" dengan muatan positif dan elektron negatif yang tersebar.</li>
-            <li><strong>Rutherford:</strong> Menemukan bahwa atom punya <strong>inti (nukleus)</strong> yang sangat kecil, padat, dan positif di tengah.</li>
-            <li><strong>Bohr:</strong> Mengusulkan elektron mengorbit inti di lintasan energi tertentu, seperti planet di tata surya.</li>
-            <li><strong>Model Kuantum (Modern):</strong> Model yang kita pakai sekarang. Elektron tidak punya orbit pasti, melainkan berada di dalam <strong>orbital</strong>, sebuah "awan probabilitas" di mana kemungkinan besar ia berada.</li>
-        </ul>
-    </details>
+      <details>
+        <summary>🤔 Bagaimana model atom berkembang? (klik untuk ringkasan)</summary>
+        <p><strong>Dalton:</strong> atom bola pejal · <strong>Thomson:</strong> roti kismis ·
+        <strong>Rutherford:</strong> inti kecil bermuatan + · <strong>Bohr:</strong> lintasan terkuantisasi ·
+        <strong>Modern:</strong> orbital probabilistik.</p>
+      </details>
 
-    <h4>Partikel Penyusun Inti Semesta (dan Obat)</h4>
-    <p>Setiap atom tersusun dari tiga partikel super kecil:</p>
-    <ul>
-        <li><strong>Proton:</strong> Muatan <strong>Positif (+)</strong>. Jumlah proton adalah KTP-nya sebuah unsur, disebut <strong>Nomor Atom (Z)</strong>. Karbon selalu punya 6 proton, tidak bisa ditawar.</li>
-        <li><strong>Neutron:</strong> Muatan <strong>Netral (0)</strong>. Bersama proton, ia menentukan berat atom.</li>
-        <li><strong>Elektron:</strong> Muatan <strong>Negatif (-)</strong>. Si lincah yang bergerak di luar inti dan paling bertanggung jawab atas reaksi kimia.</li>
-    </ul>
+      <div class="hr"></div>
 
-    <p><strong>Nomor Massa (A)</strong> adalah total dari Proton + Neutron. Atom yang punya jumlah proton sama tapi jumlah neutronnya beda disebut <strong>Isotop</strong>.</p>
+      <h3>2. Sistem Periodik sebagai “Peta”</h3>
+      <ul>
+        <li><strong>Periode</strong>: jumlah kulit elektron.</li>
+        <li><strong>Golongan</strong>: kesamaan elektron valensi → sifat kimia mirip.</li>
+      </ul>
 
-    <div class="highlight quiz-question">
-        <h4>Cek Konsep Cepat!</h4>
-        <p>Sebuah atom Uranium-238 memiliki nomor atom 92. Berapa jumlah neutron yang dimilikinya?</p>
-        <details>
-            <summary>Lihat Jawaban</summary>
-            <p><strong>Jawaban:</strong> 146 neutron.<br>
-            <strong>Cara berpikir:</strong> Nomor Massa (A) = 238. Nomor Atom (Z) = Jumlah Proton = 92. Maka, Jumlah Neutron = A - Z = 238 - 92 = 146.</p>
+      <div class="mini">
+        <strong>Mini Cek Konsep:</strong> Unsur di golongan 1 umumnya…
+        <details><summary>lihat jawaban</summary>
+          logam reaktif, membentuk kation <code>+1</code>, dan basa kuat dengan air.
         </details>
+      </div>
+
+      <div class="btnrow">
+        <a class="btn" href="kuis-kimdas-modul1.html">🧩 Kerjakan Kuis Modul 1</a>
+        <a class="btn ghost" href="refleksi-kimdas-modul1.html">🪞 Tulis Refleksi</a>
+        <a class="btn ghost" href="mk-kimia-dasar.html">📚 Modul Lainnya</a>
+      </div>
     </div>
-
-    <hr>
-
-    <h3>2. Sistem Periodik: Peta Harta Karun Kimia</h3>
-    <p>Sistem Periodik Unsur bukanlah sekadar tabel. Ini adalah peta harta karun yang bisa memprediksi sifat-sifat suatu unsur hanya dengan melihat posisinya.</p>
-    
-  <figure class="media-center">
-  <img src="tabel-periodik.jpg"
-       alt="Tabel Periodik Unsur"
-       class="hero-img"
-       width="960" height="540" loading="lazy">
-  <figcaption>Ilustrasi konsep “peta” sifat kimia pada tabel periodik.</figcaption>
-</figure>
-
-    <ul>
-        <li><strong>Periode (Baris):</strong> Menunjukkan jumlah "kulit" elektron yang dimiliki atom.</li>
-        <li><strong>Golongan (Kolom):</strong> Unsur-unsur di sini adalah satu "keluarga". Mereka punya jumlah <strong>elektron valensi</strong> (elektron di kulit terluar) yang sama, sehingga sifat kimianya sangat mirip.</li>
-    </ul>
-
-    <h4>Tren Periodik: "Aturan Main" dalam Tabel</h4>
-    <p>Dengan memahami tren ini, Anda bisa memprediksi bagaimana sebuah atom akan bereaksi.</p>
-    
-    <details>
-        <summary>➡️ <strong>Jari-Jari Atom (Ukuran Atom)</strong></summary>
-        <p>Semakin ke <strong>bawah</strong> dan ke <strong>kiri</strong>, atom semakin Gendut (besar).</p>
-    </details>
-    <details>
-        <summary>⚡️ <strong>Energi Ionisasi (Energi untuk Melepas Elektron)</strong></summary>
-        <p>Semakin ke <strong>atas</strong> dan ke <strong>kanan</strong>, semakin Sombong (susah melepas elektron). Gas mulia paling sombong!</p>
-    </details>
-    <details>
-        <summary>🧲 <strong>Elektronegativitas (Kemampuan Menarik Elektron)</strong></summary>
-        <p>Semakin ke <strong>atas</strong> dan ke <strong>kanan</strong>, semakin Posesif (kuat menarik elektron). <strong>Fluor (F)</strong> adalah juaranya.</p>
-    </details>
-
-    <div class="highlight quiz-question">
-        <h4>Cek Konsep Cepat!</h4>
-        <p>Tanpa melihat angka pastinya, unsur manakah yang lebih elektronegatif: Oksigen (O) atau Natrium (Na)?</p>
-        <details>
-            <summary>Lihat Jawaban</summary>
-            <p><strong>Jawaban:</strong> Oksigen (O).<br>
-            <strong>Cara berpikir:</strong> Oksigen berada di pojok kanan atas tabel periodik, sementara Natrium di pojok kiri. Sesuai tren, unsur di kanan atas lebih elektronegatif.</p>
-        </details>
-    </div>
-
-    <hr>
-
-    <h3>Kuis Akhir Modul 1</h3>
-    <p>Saatnya menguji pemahaman Anda. Pilih jawaban yang paling tepat!</p>
-
-    <div class="quiz-question">
-        <p><strong>1. Inti dari identitas kimia sebuah unsur ditentukan oleh...</strong></p>
-        <p>a. Jumlah neutron</p>
-        <p>b. Jumlah proton</p>
-        <p>c. Jumlah elektron</p>
-        <p>d. Nomor massanya</p>
-        <details>
-            <summary>Lihat Jawaban & Pembahasan</summary>
-            <p><strong>Jawaban Benar: b. Jumlah proton.</strong><br>
-            <strong>Pembahasan:</strong> Jumlah proton (Nomor Atom) adalah satu-satunya hal yang unik untuk setiap unsur. Jika sebuah atom kehilangan atau mendapatkan elektron, ia menjadi ion. Jika jumlah neutronnya berbeda, ia menjadi isotop. Tapi jika jumlah protonnya berubah, unsurnya pun berubah.</p>
-        </details>
-    </div>
-
-    <div class="quiz-question">
-        <p><strong>2. Unsur Kalium (K) berada di Periode 4, Golongan 1. Unsur Bromin (Br) berada di Periode 4, Golongan 17. Manakah yang memiliki jari-jari atom lebih besar?</strong></p>
-        <p>a. Kalium (K)</p>
-        <p>b. Bromin (Br)</p>
-        <p>c. Keduanya sama besar</p>
-        <p>d. Tidak dapat ditentukan</p>
-        <details>
-            <summary>Lihat Jawaban & Pembahasan</summary>
-            <p><strong>Jawaban Benar: a. Kalium (K).</strong><br>
-            <strong>Pembahasan:</strong> Dalam satu periode (baris yang sama), jari-jari atom cenderung mengecil dari kiri ke kanan. Karena Kalium (K) berada di paling kiri (Golongan 1) dan Bromin (Br) di kanan (Golongan 17), maka Kalium memiliki jari-jari atom yang lebih besar.</p>
-        </details>
-    </div>
-
-    </div>
-
+  </div>
 </body>
-
 </html>
-
-
-
-
-
-
-
