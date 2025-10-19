@@ -3,17 +3,107 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Calon Apoteker Siap UKAI — Farmasi dengan Hati</title>
+  <title>Farmasi dengan Hati — Pintu Utama</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <script>mermaid.initialize({ startOnLoad: true, theme: "dark" });</script>
   <style>
     :root{
-      --bg1:#0a0620;--bg2:#0e0b2f;--card:#1b1640;
-      --muted:#cfc7ff;--text:#f2eeff;--accent:#9f83ff;
+      --bg1:#0a0620;--bg2:#0e0b2f;--text:#f3f0ff;--muted:#c8c2f9;
+      --accent1:#9f83ff;--accent2:#5de0e6;--card:#1a1440;
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0;font-family:Inter,system-ui;
-      color:var(--text);
-      background:radial-gradient(1000px 600px at 20% -10%, #2a1a6b 0%, rgba(10,6,32,.2) 55%),linear-gradient(180deg,var
+    body{margin:0;font-family:Inter,system-ui;color:var(--text);
+      background:radial-gradient(1000px 600px at 20% -10%, #2a1a6b 0%, rgba(10,6,32,.2) 55%),linear-gradient(180deg,var(--bg1),var(--bg2));}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1150px;margin:0 auto;padding:28px 16px 64px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;font-weight:700;transition:.25s}
+    .btn.back{border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08)}
+    .btn.primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#0b0720;border:0;box-shadow:0 0 18px rgba(159,131,255,.4)}
+    .btn.primary:hover{transform:translateY(-2px);box-shadow:0 0 28px rgba(93,224,230,.6)}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;background:linear-gradient(145deg,rgba(72,33,150,.4),rgba(25,18,60,.6));border-radius:20px;border:1px solid rgba(159,131,255,.25);padding:26px;box-shadow:0 14px 50px rgba(0,0,0,.35)}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}}
+    h1{font-size:clamp(22px,3vw,38px);margin:0}
+    h2{font-size:clamp(20px,2.6vw,28px)}
+    .muted{color:var(--muted)}
+    .section{margin-top:40px}
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+    @media(max-width:960px){.grid{grid-template-columns:1fr}}
+    .card{background:linear-gradient(170deg,rgba(34,24,90,.55),rgba(20,16,60,.7));border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px}
+    .mermaid{background:#141133;border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:8px}
+    footer{text-align:center;margin-top:48px;color:#aaa}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="btn back" href="farmasi-home.html">← Kembali ke Halaman Farmasi</a>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1>💖 Farmasi dengan Hati</h1>
+        <p class="muted">Membentuk Apoteker yang Kompeten, Profesional, dan Berempati.</p>
+        <p>Aplikasi ini bukan sekadar alat bantu UKAI — tapi pendamping perjalananmu menuju profesi apoteker berhati.</p>
+        <div style="margin-top:14px;">
+          <a class="btn primary" href="#konsep">Lihat Konsep Aplikasi</a>
+        </div>
+      </div>
+      <div>
+        <img src="https://cdn-icons-png.flaticon.com/512/2950/2950751.png" alt="ikon apoteker" width="100%" style="max-width:260px;border-radius:20px;box-shadow:0 0 40px rgba(159,131,255,.25)">
+      </div>
+    </section>
+
+    <!-- 3 PILAR -->
+    <section class="section" id="pilar">
+      <h2>☰ Tiga Pilar Utama</h2>
+      <p class="muted">Tiga kekuatan inti membentuk apoteker seutuhnya.</p>
+      <div class="grid">
+        <div class="card"><h3>1️⃣ Fondasi Ilmiah</h3><p class="muted">Farmakologi, Farmasetika, Kimia, Farmakognosi.</p></div>
+        <div class="card"><h3>2️⃣ Praktik Profesional</h3><p class="muted">Manajemen, Regulasi, Simulasi Kasus Klinik.</p></div>
+        <div class="card"><h3>3️⃣ Etika & Empati</h3><p class="muted">Etika, Hukum, Patient Counseling, Refleksi Dilema Etis.</p></div>
+      </div>
+    </section>
+
+    <!-- FITUR INTI -->
+    <section class="section" id="fitur">
+      <h2>🧭 Ruang Belajar Hati</h2>
+      <p class="muted">Tempat tiga pilar diwujudkan menjadi pengalaman belajar.</p>
+      <div class="grid">
+        <div class="card"><h3>🧩 Latihan per Topik</h3><p class="muted">Soal berdasarkan pilar 1 & 2.</p></div>
+        <div class="card"><h3>🎯 Simulasi UKAI</h3><p class="muted">Uji kemampuan dengan format asli UKAI.</p></div>
+        <div class="card"><h3>📈 Jejak Hati</h3><p class="muted">Analisis progres dan rekomendasi personal.</p></div>
+        <div class="card"><h3>🤝 Tumbuh Bersama</h3><p class="muted">Forum diskusi, poin kebajikan, kisah inspiratif.</p></div>
+      </div>
+    </section>
+
+    <!-- DIAGRAM -->
+    <section class="section" id="konsep">
+      <h2>🧠 Diagram Konsep</h2>
+      <p class="muted">Alur lengkap dari filosofi hingga output akhir.</p>
+      <div class="mermaid">
+graph TD
+  A[START: Calon Apoteker Siap UKAI] --> B(Filosofi \"Farmasi dengan Hati\")
+  B --> C{Pilar 1: Fondasi Kompetensi Ilmiah}
+  B --> D{Pilar 2: Penguasaan Praktik Profesional}
+  B --> E{Pilar 3: Etika & Empati}
+  C --> C1[Modul Ilmu Dasar]
+  D --> D1[Simulasi Kasus & SOP]
+  E --> E1[Etika & Patient Counseling]
+  C1 & D1 & E1 --> F[Ruang Belajar Hati]
+  F --> F1(Mode Latihan)
+  F --> F2(Simulasi UKAI)
+  F --> F3(Jejak Hati)
+  F --> F4(Tumbuh Bersama)
+  F --> G{Umpan Balik & Iterasi}
+  G --> H[Evaluasi Konten & Fitur]
+  H --> J[Output: Lulus UKAI]
+  J --> K[Apoteker Berhati & Kompeten]
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      © 2025 Farmasi dengan Hati — Ilmu yang tajam, praktik yang santun, hati yang hadir.
+    </footer>
+  </div>
+</body>
+</html>
