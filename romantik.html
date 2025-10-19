@@ -114,38 +114,53 @@
     <p class="muted">ruang kata, nada, dan perasaan. dua dunia — satu hati.</p>
 
     <div class="card reveal">
-      <h2>🌟 teaser puisi</h2>
-      <blockquote>
-        malam ini, ungu memeluk biru;<br/>
-        secangkir kopi, dan rindu yang tak perlu izin untuk tumbuh.<br/>
-        — milik septiana1986
-      </blockquote>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
-         <a class="btn ghost add-track" href="musik.html">🎵 musik</a>    
-<a class="btn ghost add-track" href="lirik.html">✍️ lirik</a>
-<a class="btn ghost add-track" href="cerita.html">📖 novel</a>
-<a class="btn ghost add-track" href="video.html">🎬 official video</a>
-<a class="btn ghost add-track" href="short.html">🎧 short</a>
-   </div>
-    </div>
+      <!-- ===== Teaser + Navigasi Kreatif ===== -->
+<div class="card reveal">
+  <h2>✨ teaser puisi</h2>
+  <blockquote>
+    malam ini, ungu memeluk biru;<br/>
+    secangkir kopi, dan rindu yang tak perlu izin untuk tumbuh.<br/>
+    — milik septiana1986
+  </blockquote>
 
-    <div class="grid">
-      <div class="card reveal">
-        <h3>🎵 playlist & lirik</h3>
-        <p class="muted">lagu-lagu ciptaan hati: Good Night Sweetheart, Fire, Queen Without a Crown, dan lainnya.</p>
-        <!-- ganti dengan embed youtube kamu kalau sudah siap -->
-        <div style="aspect-ratio:16/9; background:rgba(255,255,255,.06); border:1px solid var(--stroke); border-radius:12px; display:grid; place-items:center">
-          <span class="muted" style="font-size:14px">(embed playlist di sini nanti)</span>
-        </div>
-      </div>
-      <div class="card reveal">
-        <h3>📜 cerita pendek</h3>
-        <p class="muted">cuplikan prosa, kisah cinta, atau potongan kenangan — di sini semua jadi kata.</p>
-        <p><em>"kadang, cinta bukan tentang siapa yang menunggu, tapi siapa yang berani jujur."</em></p>
-      </div>
-    </div>
+  <div class="nav-wrap">
+    <a class="btn ghost add-track" href="musik.html">🎵 musik</a>
+    <a class="btn ghost add-track" href="lirik.html">✍️ lirik</a>
+    <a class="btn ghost add-track" href="cerita.html">📖 novel</a>
+    <a class="btn ghost add-track" href="video.html">🎬 official video</a>
+    <a class="btn ghost add-track" href="short.html">🎧 short</a>
+  </div>
+</div>
 
-    <div class="card reveal" style="margin-top:24px;">
+<!-- ===== Grid Konten ===== -->
+<div class="grid">
+  <!-- Kartu: Playlist & Lirik -->
+  <div class="card reveal">
+    <h3>🎵 playlist & lirik</h3>
+    <img src="img/playlist-cover.png" alt="Playlist cover" class="thumbnail"
+         onerror="this.style.display='none'"/>
+    <p class="muted">
+      lagu-lagu ciptaan hati: Good Night Sweetheart, Fire, Queen Without a Crown, dan lainnya.
+    </p>
+
+    <!-- tempat embed YouTube / playlist -->
+    <div class="embed-box">
+      <span class="muted" style="font-size:14px">(embed playlist di sini nanti)</span>
+    </div>
+  </div>
+  
+  <!-- Kartu: Cerita Pendek -->
+  <div class="card reveal">
+    <h3>📜 cerita pendek</h3>
+    <img src="img/cerita-cover.png" alt="Cerita pendek cover" class="thumbnail"
+         onerror="this.style.display='none'"/>
+    <p class="muted">cuplikan prosa, kisah cinta, atau potongan kenangan — di sini semua jadi kata.</p>
+    <blockquote class="quote">
+      "kadang, cinta bukan tentang siapa yang menunggu, tapi siapa yang berani jujur."
+    </blockquote>
+  </div>
+</div>
+      <div class="card reveal" style="margin-top:24px;">
       <h3>💬 refleksi hati</h3>
       <p class="muted">tulis sejenak — apa yang kamu rasakan malam ini?</p>
       <textarea id="note" placeholder="kadang kata sederhana bisa menyembuhkan..."></textarea><br/><br/>
@@ -184,6 +199,7 @@
 </script>
 </body>
 </html>
+
 
 
 
