@@ -95,17 +95,22 @@
 
     <!-- INTERAKTIF PILAR -->
     <section class="section" id="pilar-interaktif">
-      <h2>💎 Jelajahi Tiga Pilar dengan Hati</h2>
-      <p class="muted">Klik pilar untuk melihat detailnya.</p>
+  <h2>💎 Jelajahi Tiga Pilar dengan Hati</h2>
+  <p class="muted">Klik pilar untuk melihat detailnya.</p>
 
-      <div class="pillars-cta">
-        <button class="btn tab active" data-tab="p1">🔬 Pilar 1</button>
-        <button class="btn tab" data-tab="p2">🏥 Pilar 2</button>
-        <button class="btn tab" data-tab="p3">🤝 Pilar 3</button>
-      </div>
+  <div class="pillars-cta">
+    <button class="btn tab active" data-tab="p1">🔬 Pilar 1</button>
+    <button class="btn tab" data-tab="p2">🏥 Pilar 2</button>
+    <button class="btn tab" data-tab="p3">🤝 Pilar 3</button>
+  </div>
 
-      <div id="pilar-content" class="card fade"><!-- diisi via JS --></div>
-    </section>
+  <!-- kotak konten (selalu ada) -->
+  <div id="pilar-content" class="card fade">
+    <h3>🔬 Pilar 1 — Fondasi Kompetensi Ilmiah</h3>
+    <p class="muted">Fokus pada penguasaan dasar kefarmasian: Farmakologi, Farmasetika, Kimia, dan Farmakognosi.</p>
+    <div id="p1-graph"></div>
+  </div>
+</section>
 
     <!-- FITUR INTI -->
     <section class="section" id="fitur">
@@ -281,7 +286,88 @@ A --> D(Refleksi Dilema Etis)`
     .forEach(btn=> btn.addEventListener('click', ()=>showPilar(btn.dataset.tab)));
 
   window.addEventListener('load', ()=> showPilar('p1'));
+  <script>
+  // mini-diagram per pilar (teks Mermaid)
+  const MINI = {
+    p1: `graph TD
+A[Ilmu Dasar] --> B(Farmasetika)
+A --> C(Farmakologi)
+A --> D(Kimia Farmasi)
+A --> E(Farmakognosi)`,
+    p2: `graph TD
+A[Pelayanan Kefarmasian] --> B(Manajemen Farmasi)
+A --> C(Regulasi Obat)
+A --> D(Simulasi Kasus Klinik)
+A --> E(Komunikasi Efektif)`,
+    p3: `graph TD
+A[Empati] --> B(Etika Apoteker)
+A --> C(Hukum Kesehatan)
+A --> D(Refleksi Dilema Etis)`
+  };
+
+  // template isi kotak pilar
+  function paneHTML(id){
+    if(id==='p1'){
+      return `
+        <h3>🔬 Pilar 1 — Fondasi Kompetensi Ilmiah</h3>
+        <p class="muted">Fokus pada penguasaan dasar kefarmasian: Farmakologi, Farmasetika, Kimia, dan Farmakognosi.</p>
+        <div id="p1-graph"></div>`;
+    } else if(id==='p2'){
+      return `
+        <h3>🏥 Pilar 2 — Penguasaan Praktik Profesional</h3>
+        <p class="muted">Keterampilan praktik: manajemen, regulasi, pelayanan, simulasi kasus & komunikasi efektif.</p>
+        <div id="p2-graph"></div>`;
+    } else {
+      return `
+        <h3>🤝 Pilar 3 — Etika & Empati</h3>
+        <p class="muted">Membentuk profesional yang bertanggung jawab & berempati.</p>
+        <div id="p3-graph"></div>`;
+    }
+  }
+
+  // render mermaid aman (tanpa bikin teks error)
+  async function renderMini(id){
+    const mountId = `${id}-graph`;
+    const target = document.getElementById(mountId);
+    if(!target) return;
+    try{
+      // mermaid.run kadang ngambek, render manual paling stabil
+      const out = await mermaid.render(`${id}-svg`, MINI[id]);
+      target.innerHTML = out.svg;
+    }catch(e){
+      // fallback diam (biarkan hanya teks deskripsi)
+      console.warn('Mermaid mini failed:', e);
+      target.innerHTML = `<p class="muted">Diagram tidak tersedia saat ini.</p>`;
+    }
+  }
+
+  // switch tab pilar
+  function activateTab(id){
+    document.querySelectorAll('.pillars-cta .tab').forEach(b=>{
+      b.classList.toggle('active', b.dataset.tab===id);
+    });
+  }
+
+  // tampilkan pilar
+  async function showPilar(id){
+    const box = document.getElementById('pilar-content');
+    activateTab(id);
+    box.classList.remove('show');     // fade out
+    setTimeout(async ()=>{
+      box.innerHTML = paneHTML(id);   // isi konten dulu → kotak pasti tampil
+      await renderMini(id);           // lalu coba gambar diagram
+      box.classList.add('show');      // fade in
+    }, 150);
+  }
+
+  // klik tombol
+  document.querySelectorAll('.pillars-cta .tab')
+    .forEach(btn => btn.addEventListener('click', ()=> showPilar(btn.dataset.tab)));
+
+  // render awal (Pilar 1) setelah halaman siap
+  window.addEventListener('load', ()=> showPilar('p1'));
 </script>
 </body>
 </html>
+
 
