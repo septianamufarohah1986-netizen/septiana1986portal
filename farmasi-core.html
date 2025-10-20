@@ -216,24 +216,72 @@ graph TD
       box.classList.add('show'); // fade-in
     });
 
-    // Tabs pilar (highlight + fade)
-    document.querySelectorAll('.pillars-cta .tab').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        document.querySelectorAll('.pillars-cta .tab').forEach(b=>b.classList.remove('active'));
-        btn.classList.add('active');
+  <script>
+  /* ====== MINI DIAGRAM PILAR: render pakai mermaid.render() ====== */
+  const mini = {
+    p1: `graph TD
+A[Ilmu Dasar] --> B(Farmasetika)
+A --> C(Farmakologi)
+A --> D(Kimia Farmasi)
+A --> E(Farmakognosi)`,
+    p2: `graph TD
+A[Pelayanan Kefarmasian] --> B(Manajemen Farmasi)
+A --> C(Regulasi Obat)
+A --> D(Simulasi Kasus Klinik)
+A --> E(Komunikasi Efektif)`,
+    p3: `graph TD
+A[Empati] --> B(Etika Apoteker)
+A --> C(Hukum Kesehatan)
+A --> D(Refleksi Dilema Etis)`
+  };
 
-        const id = btn.dataset.tab;
-        box.classList.remove('show'); // fade out
+  const box = document.getElementById('pilar-content');
 
-        setTimeout(()=>{
-          box.querySelectorAll('[data-pane]').forEach(p=>{
-            p.hidden = (p.getAttribute('data-pane') !== id);
-          });
-          renderAll(box);             // render ulang diagram aktif
-          box.classList.add('show');  // fade in
-        }, 180);
-      });
-    });
-  </script>
+  const pane = (title, desc, mountId) => `
+    <h3>${title}</h3>
+    <p class="muted">${desc}</p>
+    <div id="${mountId}" aria-live="polite"></div>
+  `;
+
+  async function showPilar(id){
+    document.querySelectorAll('.pillars-cta .tab')
+      .forEach(b=>b.classList.toggle('active', b.dataset.tab===id));
+
+    box.classList.remove('show'); // fade out
+    setTimeout(async ()=>{
+      const mountId = `${id}-graph`;
+      if(id==='p1'){
+        box.innerHTML = pane('🔬 Pilar 1 — Fondasi Kompetensi Ilmiah',
+          'Fokus pada penguasaan dasar kefarmasian: Farmakologi, Farmasetika, Kimia, dan Farmakognosi.',
+          mountId);
+      }else if(id==='p2'){
+        box.innerHTML = pane('🏥 Pilar 2 — Penguasaan Praktik Profesional',
+          'Keterampilan praktik: manajemen, regulasi, pelayanan, simulasi kasus & komunikasi efektif.',
+          mountId);
+      }else{
+        box.innerHTML = pane('🤝 Pilar 3 — Etika & Empati',
+          'Membentuk profesional yang bertanggung jawab & berempati.',
+          mountId);
+      }
+
+      try{
+        const { svg } = await mermaid.render(`${id}-mmd`, mini[id]);
+        document.getElementById(mountId).innerHTML = svg;
+      }catch(e){
+        document.getElementById(mountId).innerHTML =
+          '<p class="muted">Ups, diagram gagal dirender. Coba refresh halaman.</p>';
+        console.error(e);
+      }
+
+      box.classList.add('show'); // fade in
+    }, 180);
+  }
+
+  document.querySelectorAll('.pillars-cta .tab')
+    .forEach(btn=> btn.addEventListener('click', ()=>showPilar(btn.dataset.tab)));
+
+  window.addEventListener('load', ()=> showPilar('p1'));
+</script>
 </body>
 </html>
+
