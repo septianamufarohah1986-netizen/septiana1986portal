@@ -41,27 +41,74 @@
   </style>
 
   <!-- Mermaid: module + theme (aman di GitHub Pages) -->
-  <script type="module">
-    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
-    window.__mermaidReady = new Promise(res=>{
-      mermaid.initialize({
-        startOnLoad: false,
-        theme: "base",
-        themeVariables: {
-          primaryColor: "#8e75ff",
-          primaryTextColor: "#ffffff",
-          primaryBorderColor: "#bca9ff",
-          lineColor: "#6de0f7",
-          secondaryColor: "#2a1a6b",
-          tertiaryColor: "#291c5c",
-          clusterBkg: "#201848",
-          clusterBorder: "#9f83ff",
-          fontFamily: "Inter, sans-serif"
-        }
-      });
-      res(mermaid);
+  <script>
+  // Tunggu mermaid siap
+  async function renderMermaid(scope) {
+    const mermaid = await window.__mermaidReady;
+    mermaid.init(undefined, (scope || document).querySelectorAll('.mermaid'));
+  }
+
+  // Konten interaktif untuk 3 Pilar
+  const content = `
+    <div data-pane="p1">
+      <h3>🔬 Pilar 1 — Fondasi Kompetensi Ilmiah</h3>
+      <p class="muted">Fokus pada penguasaan dasar kefarmasian: Farmakologi, Farmasetika, Kimia, dan Farmakognosi.</p>
+      <div class="mermaid">graph TD;
+        A[Ilmu Dasar]-->B(Farmasetika);
+        A-->C(Farmakologi);
+        A-->D(Kimia Farmasi);
+        A-->E(Farmakognosi);
+      </div>
+    </div>
+    <div data-pane="p2" hidden>
+      <h3>🏥 Pilar 2 — Penguasaan Praktik Profesional</h3>
+      <p class="muted">Fokus pada keterampilan praktik: manajemen, regulasi, pelayanan, simulasi kasus & komunikasi efektif.</p>
+      <div class="mermaid">graph TD;
+        A[Pelayanan Kefarmasian]-->B(Manajemen Farmasi);
+        A-->C(Regulasi Obat);
+        A-->D(Simulasi Kasus Klinik);
+        A-->E(Komunikasi Efektif);
+      </div>
+    </div>
+    <div data-pane="p3" hidden>
+      <h3>🤝 Pilar 3 — Etika & Empati</h3>
+      <p class="muted">Menumbuhkan apoteker berhati: etis, empatik, dan bertanggung jawab dalam pelayanan.</p>
+      <div class="mermaid">graph TD;
+        A[Empati]-->B(Etika Apoteker);
+        A-->C(Hukum Kesehatan);
+        A-->D(Refleksi Dilema Etis);
+      </div>
+    </div>
+  `;
+
+  const box = document.getElementById('pilar-content');
+  box.innerHTML = content;
+
+  // render semua diagram setelah load
+  document.addEventListener("DOMContentLoaded", async () => {
+    await renderMermaid();
+    await renderMermaid(box);
+    box.classList.add("show");
+  });
+
+  // tombol pilar interaktif
+  document.querySelectorAll('.pillars-cta .tab').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      document.querySelectorAll('.pillars-cta .tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const id = btn.dataset.tab;
+      box.classList.remove('show');
+
+      setTimeout(async () => {
+        box.querySelectorAll('[data-pane]').forEach(p => p.hidden = p.getAttribute('data-pane') !== id);
+        await renderMermaid(box);
+        box.classList.add('show');
+      }, 200);
     });
-  </script>
+  });
+</script>
+
 </head>
 <body>
   <div class="wrap">
@@ -206,3 +253,4 @@ graph TD
   </script>
 </body>
 </html>
+
