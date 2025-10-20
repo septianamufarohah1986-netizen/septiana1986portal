@@ -4,11 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Farmasi dengan Hati — Pintu Utama</title>
+
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg1:#0a0620;--bg2:#0e0b2f;--text:#f3f0ff;--muted:#c8c2f9;
-      --accent1:#9f83ff;--accent2:#5de0e6;--card:#1a1440;--ring:rgba(159,131,255,.35);
+      --accent1:#9f83ff;--accent2:#5de0e6;--ring:rgba(159,131,255,.35);
     }
     *{box-sizing:border-box}
     body{margin:0;font-family:Inter,system-ui;color:var(--text);
@@ -16,99 +19,59 @@
                  linear-gradient(180deg,var(--bg1),var(--bg2));}
     a{color:inherit;text-decoration:none}
     .wrap{max-width:1150px;margin:0 auto;padding:28px 16px 64px}
+
+    /* Buttons */
     .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;font-weight:700;transition:.25s}
     .btn.back{border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08)}
     .btn.primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#0b0720;border:0;box-shadow:0 0 18px rgba(159,131,255,.4)}
     .btn.primary:hover{transform:translateY(-2px);box-shadow:0 0 28px rgba(93,224,230,.6)}
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;background:linear-gradient(145deg,rgba(72,33,150,.4),rgba(25,18,60,.6));border-radius:20px;border:1px solid rgba(159,131,255,.25);padding:26px;box-shadow:0 14px 50px rgba(0,0,0,.35)}
+
+    /* Layout */
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;
+      background:linear-gradient(145deg,rgba(72,33,150,.4),rgba(25,18,60,.6));
+      border-radius:20px;border:1px solid rgba(159,131,255,.25);padding:26px;box-shadow:0 14px 50px rgba(0,0,0,.35)}
     @media(max-width:900px){.hero{grid-template-columns:1fr}}
     h1{font-size:clamp(22px,3vw,38px);margin:0}
-    h2{font-size:clamp(20px,2.6vw,28px)}
+    h2{font-size:clamp(20px,2.6vw,28px);margin:0 0 8px}
     .muted{color:var(--muted)}
     .section{margin-top:40px}
     .grid{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
     @media(max-width:960px){.grid{grid-template-columns:1fr}}
-    .card{background:linear-gradient(170deg,rgba(34,24,90,.55),rgba(20,16,60,.7));border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px}
+    .card{background:linear-gradient(170deg,rgba(34,24,90,.55),rgba(20,16,60,.7));
+      border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px}
+
+    /* Mermaid block look */
     .mermaid{background:#141133;border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:8px}
-    footer{text-align:center;margin-top:48px;color:#aaa}
 
     /* Interaktif pilar */
-    .pillars-cta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+    .pillars-cta{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 16px}
     .pillars-cta .tab{background:linear-gradient(90deg,#bba7ff,#8be8f6);color:#0b0720;border:0}
     .pillars-cta .tab.active{outline:0;box-shadow:0 0 0 3px var(--ring), 0 0 24px rgba(141,234,246,.6)}
     .fade{opacity:0; transform: translateY(4px); transition: opacity .25s ease, transform .25s ease}
     .fade.show{opacity:1; transform: translateY(0)}
+
+    footer{text-align:center;margin-top:48px;color:#aaa}
   </style>
 
-  <!-- Mermaid: module + theme (aman di GitHub Pages) -->
+  <!-- Mermaid UMD (paling stabil) -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <script>
-  // Tunggu mermaid siap
-  async function renderMermaid(scope) {
-    const mermaid = await window.__mermaidReady;
-    mermaid.init(undefined, (scope || document).querySelectorAll('.mermaid'));
-  }
-
-  // Konten interaktif untuk 3 Pilar
-  const content = `
-    <div data-pane="p1">
-      <h3>🔬 Pilar 1 — Fondasi Kompetensi Ilmiah</h3>
-      <p class="muted">Fokus pada penguasaan dasar kefarmasian: Farmakologi, Farmasetika, Kimia, dan Farmakognosi.</p>
-      <div class="mermaid">graph TD;
-        A[Ilmu Dasar]-->B(Farmasetika);
-        A-->C(Farmakologi);
-        A-->D(Kimia Farmasi);
-        A-->E(Farmakognosi);
-      </div>
-    </div>
-    <div data-pane="p2" hidden>
-      <h3>🏥 Pilar 2 — Penguasaan Praktik Profesional</h3>
-      <p class="muted">Fokus pada keterampilan praktik: manajemen, regulasi, pelayanan, simulasi kasus & komunikasi efektif.</p>
-      <div class="mermaid">graph TD;
-        A[Pelayanan Kefarmasian]-->B(Manajemen Farmasi);
-        A-->C(Regulasi Obat);
-        A-->D(Simulasi Kasus Klinik);
-        A-->E(Komunikasi Efektif);
-      </div>
-    </div>
-    <div data-pane="p3" hidden>
-      <h3>🤝 Pilar 3 — Etika & Empati</h3>
-      <p class="muted">Menumbuhkan apoteker berhati: etis, empatik, dan bertanggung jawab dalam pelayanan.</p>
-      <div class="mermaid">graph TD;
-        A[Empati]-->B(Etika Apoteker);
-        A-->C(Hukum Kesehatan);
-        A-->D(Refleksi Dilema Etis);
-      </div>
-    </div>
-  `;
-
-  const box = document.getElementById('pilar-content');
-  box.innerHTML = content;
-
-  // render semua diagram setelah load
-  document.addEventListener("DOMContentLoaded", async () => {
-    await renderMermaid();
-    await renderMermaid(box);
-    box.classList.add("show");
-  });
-
-  // tombol pilar interaktif
-  document.querySelectorAll('.pillars-cta .tab').forEach(btn => {
-    btn.addEventListener('click', async () => {
-      document.querySelectorAll('.pillars-cta .tab').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const id = btn.dataset.tab;
-      box.classList.remove('show');
-
-      setTimeout(async () => {
-        box.querySelectorAll('[data-pane]').forEach(p => p.hidden = p.getAttribute('data-pane') !== id);
-        await renderMermaid(box);
-        box.classList.add('show');
-      }, 200);
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "base",
+      themeVariables: {
+        primaryColor: "#8e75ff",
+        primaryTextColor: "#ffffff",
+        primaryBorderColor: "#bca9ff",
+        lineColor: "#6de0f7",
+        secondaryColor: "#2a1a6b",
+        tertiaryColor: "#291c5c",
+        clusterBkg: "#201848",
+        clusterBorder: "#9f83ff",
+        fontFamily: "Inter, sans-serif"
+      }
     });
-  });
-</script>
-
+  </script>
 </head>
 <body>
   <div class="wrap">
@@ -125,11 +88,12 @@
         </div>
       </div>
       <div>
-        <img src="https://cdn-icons-png.flaticon.com/512/2950/2950751.png" alt="ikon apoteker" width="100%" style="max-width:260px;border-radius:20px;box-shadow:0 0 40px rgba(159,131,255,.25)">
+        <img src="https://cdn-icons-png.flaticon.com/512/2950/2950751.png" alt="ikon apoteker" width="100%"
+             style="max-width:260px;border-radius:20px;box-shadow:0 0 40px rgba(159,131,255,.25)">
       </div>
     </section>
 
-    <!-- INTERAKTIF PILAR (satu versi saja) -->
+    <!-- INTERAKTIF PILAR -->
     <section class="section" id="pilar-interaktif">
       <h2>💎 Jelajahi Tiga Pilar dengan Hati</h2>
       <p class="muted">Klik pilar untuk melihat detailnya.</p>
@@ -140,9 +104,7 @@
         <button class="btn tab" data-tab="p3">🤝 Pilar 3</button>
       </div>
 
-      <div id="pilar-content" class="card fade">
-        <!-- konten terisi via JS -->
-      </div>
+      <div id="pilar-content" class="card fade"><!-- diisi via JS --></div>
     </section>
 
     <!-- FITUR INTI -->
@@ -156,7 +118,7 @@
       </div>
     </section>
 
-    <!-- DIAGRAM KONSEP (global) -->
+    <!-- DIAGRAM KONSEP GLOBAL -->
     <section class="section" id="konsep">
       <h2>🧠 Diagram Konsep</h2>
       <p class="muted">Alur lengkap dari filosofi hingga output akhir.</p>
@@ -200,57 +162,78 @@ graph TD
     <footer>© 2025 Farmasi dengan Hati — Ilmu yang tajam, praktik yang santun, hati yang hadir.</footer>
   </div>
 
+  <!-- JS: interaktif pilar + render Mermaid yang bandel -->
   <script>
-    // Helper render mermaid safely
-    async function renderMermaid(scope){
-      const mermaid = await window.__mermaidReady;
-      mermaid.init(undefined, (scope||document).querySelectorAll('.mermaid'));
+    // Render semua .mermaid (stabil di GitHub Pages)
+    function renderAll(scope){
+      if(scope){
+        mermaid.run({ querySelector: '.mermaid', nodes: [scope] });
+      }else{
+        mermaid.run({ querySelector: '.mermaid' });
+      }
     }
 
-    // Interaktif pilar
-    const content = `
+    // Konten interaktif pilar
+    const PILAR_HTML = `
       <div data-pane="p1">
         <h3>🔬 Pilar 1 — Fondasi Kompetensi Ilmiah</h3>
         <p class="muted">Fokus pada penguasaan dasar kefarmasian: Farmakologi, Farmasetika, Kimia, dan Farmakognosi.</p>
-        <div class="mermaid">graph TD; A[Ilmu Dasar]-->B(Farmasetika); A-->C(Farmakologi); A-->D(Kimia Farmasi); A-->E(Farmakognosi);</div>
+        <div class="mermaid">graph TD;
+          A[Ilmu Dasar]-->B(Farmasetika);
+          A-->C(Farmakologi);
+          A-->D(Kimia Farmasi);
+          A-->E(Farmakognosi);
+        </div>
       </div>
       <div data-pane="p2" hidden>
         <h3>🏥 Pilar 2 — Penguasaan Praktik Profesional</h3>
-        <p class="muted">Keterampilan nyata: Manajemen, Regulasi, Pelayanan; simulasi kasus & komunikasi efektif.</p>
-        <div class="mermaid">graph TD; A[Pelayanan Kefarmasian]-->B(Manajemen Farmasi); A-->C(Regulasi Obat); A-->D(Simulasi Kasus Klinik & Komunikasi);</div>
+        <p class="muted">Keterampilan praktik: manajemen, regulasi, pelayanan, simulasi kasus & komunikasi efektif.</p>
+        <div class="mermaid">graph TD;
+          A[Pelayanan Kefarmasian]-->B(Manajemen Farmasi);
+          A-->C(Regulasi Obat);
+          A-->D(Simulasi Kasus Klinik);
+          A-->E(Komunikasi Efektif);
+        </div>
       </div>
       <div data-pane="p3" hidden>
         <h3>🤝 Pilar 3 — Etika & Empati</h3>
         <p class="muted">Membentuk profesional yang bertanggung jawab & berempati.</p>
-        <div class="mermaid">graph TD; A[Empati]-->B(Etika Apoteker); A-->C(Hukum Kesehatan); A-->D(Refleksi Dilema Etis);</div>
+        <div class="mermaid">graph TD;
+          A[Empati]-->B(Etika Apoteker);
+          A-->C(Hukum Kesehatan);
+          A-->D(Refleksi Dilema Etis);
+        </div>
       </div>
     `;
 
     const box = document.getElementById('pilar-content');
-    box.innerHTML = content;
-    renderMermaid(box);
-    requestAnimationFrame(()=>box.classList.add('show')); // fade-in awal
+    box.innerHTML = PILAR_HTML;
 
+    // Render pertama
+    window.addEventListener('load', ()=>{
+      renderAll();     // diagram konsep global
+      renderAll(box);  // mini diagram pilar
+      box.classList.add('show'); // fade-in
+    });
+
+    // Tabs pilar (highlight + fade)
     document.querySelectorAll('.pillars-cta .tab').forEach(btn=>{
-      btn.addEventListener('click', async ()=>{
-        // highlight aktif
+      btn.addEventListener('click', ()=>{
         document.querySelectorAll('.pillars-cta .tab').forEach(b=>b.classList.remove('active'));
         btn.classList.add('active');
 
-        // switch pane
         const id = btn.dataset.tab;
         box.classList.remove('show'); // fade out
-        setTimeout(async ()=>{
-          box.querySelectorAll('[data-pane]').forEach(p=>p.hidden = p.getAttribute('data-pane')!==id);
-          await renderMermaid(box);
-          box.classList.add('show'); // fade in
+
+        setTimeout(()=>{
+          box.querySelectorAll('[data-pane]').forEach(p=>{
+            p.hidden = (p.getAttribute('data-pane') !== id);
+          });
+          renderAll(box);             // render ulang diagram aktif
+          box.classList.add('show');  // fade in
         }, 180);
       });
     });
-
-    // render diagram global
-    renderMermaid();
   </script>
 </body>
 </html>
-
