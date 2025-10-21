@@ -3,39 +3,145 @@
     "title": "Semester 1 — Fondasi Ilmu Dasar & Pengantar Farmasi",
     "desc": "Mulai dari dasar dengan hati yang tenang.",
     "items": [
-      /* Contoh (isi sesuai filenya):
-      { "title": "Kimia Dasar & Praktikum", "href": "materi-kimia-dasar-modul1.html", "type": "materi" },
-      { "title": "Kuis Kimia Dasar Modul 1", "href": "kuis-kimia-dasar-modul1.html", "type": "kuis" }
-      */
+      { "title": "Kuis Kimia Dasar (Modul 1)", "href": "kuis-kimdas-modul1.html", "type": "kuis" },
+      { "title": "Kuis Kimia Dasar (Modul 2)", "href": "kuis-kimdas-modul2.html", "type": "kuis" },
+      { "title": "Kuis Kimia Dasar (Modul 3)", "href": "kuis-kimdas-modul3.html", "type": "kuis" },
+      { "title": "Kuis Kimia Dasar (Modul 4)", "href": "kuis-kimdas-modul4.html", "type": "kuis" },
+      { "title": "Kuis Kimia Dasar (Modul 5)", "href": "kuis-kimdas-modul5.html", "type": "kuis" },
+      { "title": "Kuis Kimia Dasar (Modul 6)", "href": "kuis-kimdas-modul6.html", "type": "kuis" },
+
+      { "title": "Kuis Fisika Dasar (Modul 1)", "href": "kuis-fisdas-modul1.html", "type": "kuis" },
+      { "title": "Kuis Fisika Dasar (Modul 2)", "href": "kuis-fisdas-modul2.html", "type": "kuis" },
+
+      { "title": "Kuis Biologi Sel (Modul 1)", "href": "kuis-biologi-sel-modul1.html", "type": "kuis" },
+      { "title": "Kuis Biologi Sel (Modul 2)", "href": "kuis-biologi-sel-modul2.html", "type": "kuis" },
+      { "title": "Kuis Biologi Sel (Modul 3)", "href": "kuis-biologi-sel-modul3.html", "type": "kuis" },
+      { "title": "Kuis Biologi Sel (Modul 4)", "href": "kuis-biologi-sel-modul4.html", "type": "kuis" },
+
+      { "title": "Kuis Anatomi & Fisiologi (Modul 1)", "href": "kuis-anatomi-fisiologi-modul1.html", "type": "kuis" },
+      { "title": "Kuis Anatomi & Fisiologi (Modul 2)", "href": "kuis-anatomi-fisiologi-modul2.html", "type": "kuis" },
+      { "title": "Kuis Anatomi & Fisiologi (Modul 3)", "href": "kuis-anatomi-fisiologi-modul3.html", "type": "kuis" },
+      { "title": "Kuis Anatomi & Fisiologi (Modul 4)", "href": "kuis-anatomi-fisiologi-modul4.html", "type": "kuis" },
+
+      { "title": "Kuis Farmasetika Dasar (Modul 1)", "href": "kuis-farmasetika-dasar-modul1.html", "type": "kuis" },
+      { "title": "Kuis Farmasetika Dasar (Modul 2)", "href": "kuis-farmasetika-dasar-modul2.html", "type": "kuis" },
+      { "title": "Kuis Farmasetika Dasar (Modul 3)", "href": "kuis-farmasetika-dasar-modul3.html", "type": "kuis" }
     ]
   },
+
   "semester2": {
     "title": "Semester 2 — Lanjutan Dasar & Kefarmasian",
     "desc": "Melangkah ke aplikasi ilmu kefarmasian.",
-    "items": []
+    "items": [
+      { "title": "Kuis Kimia Organik (Modul 1)", "href": "kuis-kimia-organik-modul1.html", "type": "kuis" },
+      { "title": "Kuis Kimia Organik (Modul 2)", "href": "kuis-kimia-organik-modul2.html", "type": "kuis" },
+      { "title": "Kuis Kimia Organik (Modul 3)", "href": "kuis-kimia-organik-modul3.html", "type": "kuis" },
+      { "title": "Kuis Kimia Organik (Modul 4)", "href": "kuis-kimia-organik-modul4.html", "type": "kuis" },
+
+      { "title": "Kuis Kimia Analitik (Modul 1)", "href": "kuis-kimia-analitik-modul1.html", "type": "kuis" },
+      { "title": "Kuis Kimia Analitik (Modul 2)", "href": "kuis-kimia-analitik-modul2.html", "type": "kuis" },
+      { "title": "Kuis Kimia Analitik (Modul 3)", "href": "kuis-kimia-analitik-modul3.html", "type": "kuis" },
+
+      { "title": "Kuis Botani Farmasi (Modul 1)", "href": "kuis-botani-farmasi-modul1.html", "type": "kuis" },
+      { "title": "Kuis Botani Farmasi (Modul 2)", "href": "kuis-botani-farmasi-modul2.html", "type": "kuis" },
+      { "title": "Kuis Botani Farmasi (Modul 3)", "href": "kuis-botani-farmasi-modul3.html", "type": "kuis" },
+
+      { "title": "Kuis Farmasi Fisika (Modul 1)", "href": "kuis-farmasi-fisika-modul1.html", "type": "kuis" },
+      { "title": "Kuis Farmasi Fisika (Modul 2)", "href": "kuis-farmasi-fisika-modul2.html", "type": "kuis" },
+      { "title": "Kuis Farmasi Fisika (Modul 3)", "href": "kuis-farmasi-fisika-modul3.html", "type": "kuis" },
+
+      { "title": "Kuis Farmasi Fisika 2 (Modul 1)", "href": "kuis-farmasi-fisika-2-modul1.html", "type": "kuis" },
+      { "title": "Kuis Farmasi Fisika 2 (Modul 2)", "href": "kuis-farmasi-fisika-2-modul2.html", "type": "kuis" },
+      { "title": "Kuis Farmasi Fisika 2 (Modul 3)", "href": "kuis-farmasi-fisika-2-modul3.html", "type": "kuis" }
+    ]
   },
+
   "semester3": {
     "title": "Semester 3 — Biokimia & Anatomi Fisiologi",
     "desc": "Mengenal tubuh & proses biokimia penting.",
-    "items": []
+    "items": [
+      { "title": "Kuis Biokimia (Modul 1)", "href": "kuis-biokimia-modul1.html", "type": "kuis" },
+      { "title": "Kuis Biokimia (Modul 2)", "href": "kuis-biokimia-modul2.html", "type": "kuis" },
+      { "title": "Kuis Biokimia (Modul 3)", "href": "kuis-biokimia-modul3.html", "type": "kuis" }
+    ]
   },
+
   "semester4": {
     "title": "Semester 4 — Mikrobiologi & Analisis Farmasi",
-    "desc": "Dari mikrob hingga teknik analisis laboratorium.",
-    "items": []
+    "desc": "Dari mikroba hingga teknik analisis laboratorium.",
+    "items": [
+      { "title": "Kuis Imunologi & Virologi (Modul 1)", "href": "kuis-imunologi-virologi-modul1.html", "type": "kuis" },
+      { "title": "Kuis Imunologi & Virologi (Modul 2)", "href": "kuis-imunologi-virologi-modul2.html", "type": "kuis" },
+      { "title": "Kuis Imunologi & Virologi (Modul 3)", "href": "kuis-imunologi-virologi-modul3.html", "type": "kuis" },
+
+      { "title": "Kuis Analisis Farmasi Instrumental (Modul 1)", "href": "kuis-analisis-farmasi-instrumental-modul1.html", "type": "kuis" },
+      { "title": "Kuis Analisis Farmasi Instrumental (Modul 2)", "href": "kuis-analisis-farmasi-instrumental-modul2.html", "type": "kuis" },
+      { "title": "Kuis Analisis Farmasi Instrumental (Modul 3)", "href": "kuis-analisis-farmasi-instrumental-modul3.html", "type": "kuis" },
+      { "title": "Kuis Analisis Farmasi Instrumental (Modul 4)", "href": "kuis-analisis-farmasi-instrumental-modul4.html", "type": "kuis" },
+      { "title": "Kuis Analisis Farmasi Instrumental (Modul 5)", "href": "kuis-analisis-farmasi-instrumental-modul5.html", "type": "kuis" },
+
+      { "title": "Kuis Bioteknologi Farmasi (Modul 1)", "href": "kuis-bioteknologi-farmasi-modul1.html", "type": "kuis" },
+      { "title": "Kuis Bioteknologi Farmasi (Modul 2)", "href": "kuis-bioteknologi-farmasi-modul2.html", "type": "kuis" },
+      { "title": "Kuis Bioteknologi Farmasi (Modul 3)", "href": "kuis-bioteknologi-farmasi-modul3.html", "type": "kuis" }
+    ]
   },
+
   "semester5": {
     "title": "Semester 5 — Farmakologi & Farmasetika",
     "desc": "Mendalami mekanisme obat & bentuk sediaan.",
-    "items": []
+    "items": [
+      { "title": "Kuis Farmakologi Dasar (Modul 1)", "href": "kuis-farmakologi-dasar-modul1.html", "type": "kuis" },
+      { "title": "Kuis Farmakologi Dasar (Modul 2)", "href": "kuis-farmakologi-dasar-modul2.html", "type": "kuis" },
+      { "title": "Kuis Farmakologi Dasar (Modul 3)", "href": "kuis-farmakologi-dasar-modul3.html", "type": "kuis" },
+      { "title": "Kuis Farmakologi Dasar (Modul 4)", "href": "kuis-farmakologi-dasar-modul4.html", "type": "kuis" },
+      { "title": "Kuis Farmakologi Dasar (Modul 5)", "href": "kuis-farmakologi-dasar-modul5.html", "type": "kuis" },
+
+      { "title": "Kuis Farmakologi Lanjutan (Modul 1)", "href": "kuis-farmakologi-lanjutan-modul1.html", "type": "kuis" },
+      { "title": "Kuis Farmakologi Lanjutan (Modul 2)", "href": "kuis-farmakologi-lanjutan-modul2.html", "type": "kuis" },
+      { "title": "Kuis Farmakologi Lanjutan (Modul 3)", "href": "kuis-farmakologi-lanjutan-modul3.html", "type": "kuis" },
+      { "title": "Kuis Farmakologi Lanjutan (Modul 4)", "href": "kuis-farmakologi-lanjutan-modul4.html", "type": "kuis" },
+
+      { "title": "Kuis Farmakokinetika (Modul 1)", "href": "kuis-farmakokinetika-modul1.html", "type": "kuis" },
+      { "title": "Kuis Farmakokinetika (Modul 2)", "href": "kuis-farmakokinetika-modul2.html", "type": "kuis" },
+      { "title": "Kuis Farmakokinetika (Modul 3)", "href": "kuis-farmakokinetika-modul3.html", "type": "kuis" },
+      { "title": "Kuis Farmakokinetika (Modul 4)", "href": "kuis-farmakokinetika-modul4.html", "type": "kuis" },
+
+      { "title": "Kuis Biofarmasetika (Modul 1)", "href": "kuis-biofarmasetika-modul1.html", "type": "kuis" },
+      { "title": "Kuis Biofarmasetika (Modul 2)", "href": "kuis-biofarmasetika-modul2.html", "type": "kuis" },
+      { "title": "Kuis Biofarmasetika (Modul 3)", "href": "kuis-biofarmasetika-modul3.html", "type": "kuis" },
+
+      { "title": "Kuis Fitokimia (Modul 1)", "href": "kuis-fitokimia-modul1.html", "type": "kuis" },
+      { "title": "Kuis Farmakognosi & Fitokimia 2 (Modul 1)", "href": "kuis-farmakognosi-fitokimia-2-modul1.html", "type": "kuis" },
+      { "title": "Kuis Farmakognosi & Fitokimia 2 (Modul 2)", "href": "kuis-farmakognosi-fitokimia-2-modul2.html", "type": "kuis" },
+      { "title": "Kuis Farmakognosi & Fitokimia 2 (Modul 3)", "href": "kuis-farmakognosi-fitokimia-2-modul3.html", "type": "kuis" },
+      { "title": "Kuis Farmakognosi & Fitokimia 2 (Modul 4)", "href": "kuis-farmakognosi-fitokimia-2-modul4.html", "type": "kuis" },
+
+      { "title": "Kuis Kimia Medisinal (Modul 1)", "href": "kuis-kimia-medisinal-modul1.html", "type": "kuis" },
+      { "title": "Kuis Kimia Medisinal (Modul 2)", "href": "kuis-kimia-medisinal-modul2.html", "type": "kuis" },
+      { "title": "Kuis Kimia Medisinal (Modul 3)", "href": "kuis-kimia-medisinal-modul3.html", "type": "kuis" },
+      { "title": "Kuis Kimia Medisinal 2 (Modul 1)", "href": "kuis-kimia-medisinal-2-modul1.html", "type": "kuis" },
+      { "title": "Kuis Kimia Medisinal 2 (Modul 2)", "href": "kuis-kimia-medisinal-2-modul2.html", "type": "kuis" }
+    ]
   },
+
   "semester6": {
     "title": "Semester 6 — Farmasi Klinik & Manajemen",
     "desc": "Belajar komunikasi pasien & peran apoteker klinis.",
-    "items": []
-  },
+    "items": [
+      { "title": "Kuis Manajemen Farmasi (Modul 1)", "href": "kuis-manajemen-farmasi-modul1.html", "type": "kuis" },
+      { "title": "Kuis Manajemen Farmasi (Modul 2)", "href": "kuis-manajemen-farmasi-modul2.html", "type": "kuis" },
+      { "title": "Kuis Manajemen Farmasi (Modul 3)", "href": "kuis-manajemen-farmasi-modul3.html", "type": "kuis" },
 
-  /* ==== CONTOH SUDAH TERISI: SEMESTER 7 & 8 ==== */
+      { "title": "Kuis Farmakoterapi I (Modul 1)", "href": "kuis-farmakoterapi-1-modul1.html", "type": "kuis" },
+      { "title": "Kuis Farmakoterapi I (Modul 2)", "href": "kuis-farmakoterapi-1-modul2.html", "type": "kuis" },
+      { "title": "Kuis Farmakoterapi I (Modul 3)", "href": "kuis-farmakoterapi-1-modul3.html", "type": "kuis" },
+      { "title": "Kuis Farmakoterapi I (Modul 4)", "href": "kuis-farmakoterapi-1-modul4.html", "type": "kuis" },
+
+      { "title": "Kuis Farmasi Industri (Modul 1)", "href": "kuis-farmasiindustri-modul1.html", "type": "kuis" },
+      { "title": "Kuis Farmasi Industri (Modul 2)", "href": "kuis-farmasiindustri-modul2.html", "type": "kuis" },
+      { "title": "Kuis Farmasi Industri (Modul 3)", "href": "kuis-farmasiindustri-modul3.html", "type": "kuis" }
+    ]
+  },
 
   "semester7": {
     "title": "Semester 7 — Seminar & Riset Farmasi",
@@ -46,9 +152,17 @@
       { "title": "Materi 3 — Presentasi & Seminar", "href": "materi-seminar-skripsi-modul3.html", "type": "materi" },
       { "title": "Kuis Seminar — Modul 1", "href": "kuis-seminar-skripsi-modul1.html", "type": "kuis" },
       { "title": "Kuis Seminar — Modul 2", "href": "kuis-seminar-skripsi-modul2.html", "type": "kuis" },
-      { "title": "Kuis Seminar — Modul 3", "href": "kuis-seminar-skripsi-modul3.html", "type": "kuis" }
+      { "title": "Kuis Seminar — Modul 3", "href": "kuis-seminar-skripsi-modul3.html", "type": "kuis" },
+
+      { "title": "Kuis Metodologi Penelitian (Modul 1)", "href": "kuis-metodologi-penelitian-modul1.html", "type": "kuis" },
+      { "title": "Kuis Metodologi Penelitian (Modul 2)", "href": "kuis-metodologi-penelitian-modul2.html", "type": "kuis" },
+      { "title": "Kuis Metodologi Penelitian (Modul 3)", "href": "kuis-metodologi-penelitian-modul3.html", "type": "kuis" },
+
+      { "title": "Kuis Metodologi Penelitian 2 (Modul 1)", "href": "kuis-metodologipenelitian2-modul1.html", "type": "kuis" },
+      { "title": "Kuis Metodologi Penelitian 2 (Modul 2)", "href": "kuis-metodologipenelitian2-modul2.html", "type": "kuis" }
     ]
   },
+
   "semester8": {
     "title": "Semester 8 — Skripsi & Sidang",
     "desc": "Pelaksanaan riset, penulisan, dan persiapan sidang.",
