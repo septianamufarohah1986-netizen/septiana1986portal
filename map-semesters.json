@@ -1,0 +1,63 @@
+{
+  "semester1": {
+    "title": "Semester 1 — Fondasi Ilmu Dasar & Pengantar Farmasi",
+    "desc": "Mulai dari dasar dengan hati yang tenang.",
+    "items": [
+      /* Contoh (isi sesuai filenya):
+      { "title": "Kimia Dasar & Praktikum", "href": "materi-kimia-dasar-modul1.html", "type": "materi" },
+      { "title": "Kuis Kimia Dasar Modul 1", "href": "kuis-kimia-dasar-modul1.html", "type": "kuis" }
+      */
+    ]
+  },
+  "semester2": {
+    "title": "Semester 2 — Lanjutan Dasar & Kefarmasian",
+    "desc": "Melangkah ke aplikasi ilmu kefarmasian.",
+    "items": []
+  },
+  "semester3": {
+    "title": "Semester 3 — Biokimia & Anatomi Fisiologi",
+    "desc": "Mengenal tubuh & proses biokimia penting.",
+    "items": []
+  },
+  "semester4": {
+    "title": "Semester 4 — Mikrobiologi & Analisis Farmasi",
+    "desc": "Dari mikrob hingga teknik analisis laboratorium.",
+    "items": []
+  },
+  "semester5": {
+    "title": "Semester 5 — Farmakologi & Farmasetika",
+    "desc": "Mendalami mekanisme obat & bentuk sediaan.",
+    "items": []
+  },
+  "semester6": {
+    "title": "Semester 6 — Farmasi Klinik & Manajemen",
+    "desc": "Belajar komunikasi pasien & peran apoteker klinis.",
+    "items": []
+  },
+
+  /* ==== CONTOH SUDAH TERISI: SEMESTER 7 & 8 ==== */
+
+  "semester7": {
+    "title": "Semester 7 — Seminar & Riset Farmasi",
+    "desc": "Komunikasi ilmiah, proposal, dan etika penelitian.",
+    "items": [
+      { "title": "Materi 1 — Menemukan & Memilih Topik", "href": "materi-seminar-skripsi-modul1.html", "type": "materi" },
+      { "title": "Materi 2 — Menyusun Proposal", "href": "materi-seminar-skripsi-modul2.html", "type": "materi" },
+      { "title": "Materi 3 — Presentasi & Seminar", "href": "materi-seminar-skripsi-modul3.html", "type": "materi" },
+      { "title": "Kuis Seminar — Modul 1", "href": "kuis-seminar-skripsi-modul1.html", "type": "kuis" },
+      { "title": "Kuis Seminar — Modul 2", "href": "kuis-seminar-skripsi-modul2.html", "type": "kuis" },
+      { "title": "Kuis Seminar — Modul 3", "href": "kuis-seminar-skripsi-modul3.html", "type": "kuis" }
+    ]
+  },
+  "semester8": {
+    "title": "Semester 8 — Skripsi & Sidang",
+    "desc": "Pelaksanaan riset, penulisan, dan persiapan sidang.",
+    "items": [
+      { "title": "Ringkasan Materi Skripsi", "href": "materi-semester8.html", "type": "materi" },
+      { "title": "Kuis Skripsi — Modul 1", "href": "kuis-skripsi-modul1.html", "type": "kuis" },
+      { "title": "Kuis Skripsi — Modul 2", "href": "kuis-skripsi-modul2.html", "type": "kuis" },
+      { "title": "Kuis Skripsi — Modul 3", "href": "kuis-skripsi-modul3.html", "type": "kuis" },
+      { "title": "Kuis Skripsi — Modul 4", "href": "kuis-skripsi-modul4.html", "type": "kuis" }
+    ]
+  }
+}
