@@ -1,0 +1,42 @@
+<!doctype html><html lang="id"><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Hub Modul</title>
+<style>
+  body{font-family:system-ui,Segoe UI,Arial,sans-serif;background:#0b1020;color:#e8eaf6;margin:0;padding:32px}
+  .wrap{max-width:900px;margin:auto}
+  h1{margin:0 0 8px}
+  p{opacity:.8}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:18px}
+  .card{background:#151a33;border:1px solid #2a315a;border-radius:14px;padding:16px}
+  .title{font-weight:700;margin:0 0 6px}
+  .btn{display:inline-block;margin-top:10px;padding:8px 12px;border-radius:10px;border:1px solid #4154ff;color:#e8eaf6;text-decoration:none}
+  .btn:hover{background:#232b56}
+</style>
+<div class="wrap">
+  <h1 id="judul">Modul</h1>
+  <p id="sub">Tautan materi & kuis otomatis.</p>
+
+  <div class="grid" id="konten"></div>
+</div>
+<script>
+  const q = new URLSearchParams(location.search);
+  const slug  = q.get('mat') || 'kimdas';
+  const total = Number(q.get('mods') || 3);
+
+  document.getElementById('judul').textContent = `Modul — ${slug}`;
+  document.getElementById('sub').textContent =
+    `Pola file: materi-${slug}-modulN.html & kuis-${slug}-modulN.html`;
+
+  const box = document.getElementById('konten');
+  for(let i=1;i<=total;i++){
+    const c = document.createElement('div');
+    c.className='card';
+    c.innerHTML = `
+      <div class="title">Modul ${i}</div>
+      <a class="btn" href="materi-${slug}-modul${i}.html">Buka Materi</a>
+      <a class="btn" href="kuis-${slug}-modul${i}.html" style="margin-left:8px">Latihan/Kuis</a>
+    `;
+    box.appendChild(c);
+  }
+</script>
+</html>
