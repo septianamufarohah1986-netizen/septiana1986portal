@@ -1,214 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Farmasi dengan Hati — Home</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Farmasi — Portal Semester</title>
   <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      background-color: #0f0b2f;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
+    :root{
+      --bg:#0d0c1f; --card:#171634; --text:#f5f7ff; --muted:#b8c0ff;
+      --stroke:#2b2a52; --accent:#6ea8fe; --pill:#7b68ee;
     }
-
-    .wrap {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    h1, h2, h3 {
-      color: #fff;
-      margin-bottom: 10px;
-    }
-
-    a {
-      color: #89c4ff;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Tombol balik */
-    .btn.ghost {
-      display: inline-block;
-      border: 1px solid #5f5aff;
-      color: #ccc;
-      padding: 8px 14px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      background: transparent;
-      transition: 0.2s;
-    }
-    .btn.ghost:hover {
-      background-color: #5f5aff;
-      color: #fff;
-    }
-
-    /* Kartu */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      position: relative;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 18px;
-      padding: 20px;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
-      transition: 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      background: rgba(255,255,255,0.08);
-    }
-
-    /* Badge semester */
-    .badge {
-      position: absolute;
-      top: 10px;
-      left: 14px;
-      background: #8e75ff;
-      color: #fff;
-      font-size: 0.72rem;
-      padding: 4px 8px;
-      border-radius: 8px;
-      opacity: 0.9;
-    }
-
-    /* Divider pemisah jenjang */
-    .divider {
-      margin: 60px 0;
-      text-align: center;
-    }
-    .divider hr {
-      border: none;
-      height: 1px;
-      background: #3b2d6f;
-      opacity: 0.5;
-      margin: 10px 0;
-    }
-    .divider-text {
-      color: #cfcaf0;
-      font-style: italic;
-      font-size: 0.9rem;
-    }
-
-    /* Bagian Profesi */
-    .section#profesi {
-      margin-bottom: 64px;
-    }
-
-    footer {
-      text-align: center;
-      color: #888;
-      font-size: 14px;
-      margin-top: 40px;
-    }
+    *{box-sizing:border-box}
+    body{margin:0;font:16px/1.5 system-ui,Segoe UI,Roboto,Inter,Arial;background:var(--bg);color:var(--text)}
+    .wrap{max-width:1100px;margin:auto;padding:32px 16px}
+    h1{margin:0 0 8px;font-size:30px}
+    p.muted{color:var(--muted);margin:0 0 24px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+    .card{background:var(--card);border:1px solid var(--stroke);border-radius:16px;padding:18px;position:relative}
+    .badge{position:absolute;top:10px;left:12px;background:var(--pill);color:#fff;font-weight:700;padding:4px 8px;border-radius:8px;font-size:12px;opacity:.9}
+    .title{font-size:18px;margin:8px 0 6px}
+    .ghost{display:inline-flex;align-items:center;gap:10px;margin-top:10px;padding:10px 14px;border:1px solid var(--stroke);border-radius:12px;color:var(--text);text-decoration:none}
+    .ghost:hover{border-color:var(--accent)}
+    .sub{color:var(--muted);margin:0}
+    header .back{display:inline-flex;padding:8px 12px;border:1px solid var(--stroke);border-radius:10px;text-decoration:none;color:var(--text);margin-bottom:18px}
   </style>
 </head>
 <body>
-
   <div class="wrap">
-    <a class="btn ghost" href="index.html">← Kembali ke Portal Utama</a>
+    <a class="back" href="index.html">← kembali ke portal utama</a>
+    <h1>Program Sarjana Farmasi — Semester 1–8</h1>
+    <p class="muted">Belajar teori, laboratorium, riset, hingga skripsi. Pilih semester yang ingin kamu buka.</p>
 
-    <!-- ===== PROFESI APOTEKER ===== -->
-    <section id="profesi" class="section">
-      <h1>💖 Calon Apoteker Siap UKAI — Pintu Utama</h1>
-      <p><strong>Jenjang:</strong> Profesi Apoteker (Apt.)</p>
-      <p>Aplikasi ini bukan sekadar alat bantu UKAI — tapi pendamping perjalananmu menuju profesi apoteker berhati.</p>
-      <a href="farmasi-core.html">Jelajahi Tiga Pilar</a>
-    </section>
-
-    <!-- Divider Pemisah -->
-    <div class="divider">
-      <hr>
-      <p class="divider-text">🌟 Pemisah Jenjang — Di bawah ini adalah Program Sarjana Farmasi (S.Farm) 🌟</p>
-      <hr>
-    </div>
-
-    <!-- ===== SARJANA FARMASI ===== -->
-    <section id="sarjana" class="section">
-      <h1>📘 Program Sarjana Farmasi — Semester 1–8</h1>
-      <p><strong>Jenjang:</strong> Sarjana Farmasi (S.Farm)</p>
-      <p>Belajar teori, laboratorium, riset, hingga skripsi.  
-      Urut rapi dari fondasi hingga penelitian ilmiah. Pilih semester yang kamu mau.</p>
-
-      <div class="grid">
-      <div class="card">
-     <span class="badge">S1</span>
-     <h3>Semester 1 — Fondasi Ilmu Dasar & Pengantar Farmasi</h3>
-     <p class="muted">Mulai dari dasar dengan hati yang tenang.</p>
-     <a class="btn ghost" href="semester.html?sem=1">Buka Semester 1</a>
-    </div>
-
-  <div class="card">
-    <span class="badge">S1</span>
-    <h3>Semester 2 — Lanjutan Dasar & Kefarmasian</h3>
-    <p class="muted">Melangkah ke aplikasi ilmu kefarmasian.</p>
-   <a class="btn ghost" href="semester.html?sem=2">Buka Semester 2</a>
+    <div id="semGrid" class="grid" role="list"></div>
   </div>
 
-  <div class="card">
-    <span class="badge">S1</span>
-    <h3>Semester 3 — Biokimia & Anatomi Fisiologi</h3>
-    <p class="muted">Mengenal tubuh & proses biokimia penting.</p>
-    <a class="btn ghost" href="semester.html?sem=3">Buka Semester 3</a>
-  </div>
-
-  <div class="card">
-    <span class="badge">S1</span>
-    <h3>Semester 4 — Mikrobiologi & Analisis Farmasi</h3>
-    <p class="muted">Dari mikroba hingga teknik analisis laboratorium.</p>
-  <a class="btn ghost" href="semester.html?sem=4">Buka Semester 4</a>
-  </div>
-
-  <div class="card">
-    <span class="badge">S1</span>
-    <h3>Semester 5 — Farmakologi & Farmasetika</h3>
-    <p class="muted">Mendalami mekanisme obat & bentuk sediaan.</p>
-    <a class="btn ghost" href="semester.html?sem=5">Buka Semester 5</a>
-  </div>
-
-  <div class="card">
-    <span class="badge">S1</span>
-    <h3>Semester 6 — Farmasi Klinik & Manajemen</h3>
-    <p class="muted">Belajar komunikasi pasien & peran apoteker klinis.</p>
-    <a class="btn ghost" href="semester.html?sem=6">Buka Semester 6</a>
-  </div>
-
-  <div class="card">
-    <span class="badge">S1</span>
-    <h3>Semester 7 — Seminar & Riset Farmasi</h3>
-    <p class="muted">Komunikasi ilmiah & proposal penelitian.</p>
-    <!-- sementara arahkan ke materi seminar skripsi modul 1 -->
-    <a class="btn ghost" href="semester.html?sem=7">Buka Semester 7</a>
-  </div>
-
-  <div class="card">
-    <span class="badge">S1</span>
-    <h3>Semester 8 — Skripsi</h3>
-    <p class="muted">Pelaksanaan riset & sidang ilmiah.</p>
-    <!-- kamu sudah punya halaman ini -->
-   <a class="btn ghost" href="semester.html?sem=8">Buka Semester 8</a>
-  </div>
- </div>
-</section>
-
-    <footer>
-      © 2025 Farmasi dengan Hati — Ilmu yang tajam, praktik yang santun, hati yang hadir.
-    </footer>
-  </div>
-
+  <script>
+  // Ambil daftar semester dari kurikulum.json dan buat kartu link ke semester.html?id=...
+  async function renderSemesters(){
+    const grid = document.getElementById('semGrid');
+    try{
+      const res = await fetch('kurikulum.json', {cache:'no-store'});
+      const data = await res.json();
+      (data.semesters || []).forEach(sem=>{
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <span class="badge">S1</span>
+          <h2 class="title">${sem.title}</h2>
+          <p class="sub">Jumlah mata kuliah: ${sem.courses?.length || 0}</p>
+          <a class="ghost" href="semester.html?id=${sem.id}" aria-label="Buka ${sem.title}">Buka Semester ${sem.id}</a>
+        `;
+        grid.appendChild(card);
+      });
+    }catch(e){
+      grid.innerHTML = `<div class="card"><strong>Gagal memuat kurikulum.json</strong><p class="sub">Pastikan file <code>kurikulum.json</code> ada di folder yang sama.</p></div>`;
+      console.error(e);
+    }
+  }
+  renderSemesters();
+  </script>
 </body>
 </html>
-
-
-
-
