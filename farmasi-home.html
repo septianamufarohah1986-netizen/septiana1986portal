@@ -33,14 +33,17 @@
     <div id="semGrid" class="grid" role="list"></div>
   </div>
 
-  <script>
-  // Ambil daftar semester dari kurikulum.json dan buat kartu link ke semester.html?id=...
+ <script type="module">
+  // Ambil daftar semester dari kurikulum.js (bukan JSON langsung)
   async function renderSemesters(){
     const grid = document.getElementById('semGrid');
-    try{
-      const res = await fetch('kurikulum.json', {cache:'no-store'});
-      const data = await res.json();
-      (data.semesters || []).forEach(sem=>{
+    try {
+      // Import data dari file kurikulum.js
+      const module = await import('./kurikulum.js');
+      const data = module.default || module.kurikulum || window.kurikulum;
+
+      // Buat kartu untuk setiap semester
+      (data.semesters || []).forEach(sem => {
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
@@ -51,12 +54,17 @@
         `;
         grid.appendChild(card);
       });
-    }catch(e){
-      grid.innerHTML = `<div class="card"><strong>Gagal memuat kurikulum.json</strong><p class="sub">Pastikan file <code>kurikulum.json</code> ada di folder yang sama.</p></div>`;
-      console.error(e);
+    } catch (e) {
+      grid.innerHTML = `
+        <div class="card">
+          <strong>Gagal memuat kurikulum.js</strong>
+          <p class="sub">Pastikan file <code>kurikulum.js</code> ada di folder yang sama dan berisi data yang benar.</p>
+        </div>`;
+      console.error('Error loading kurikulum.js:', e);
     }
   }
   renderSemesters();
-  </script>
+</script>
 </body>
 </html>
+
