@@ -1,5 +1,8 @@
-{
+window.kurikulum = {
   "semesters": [
+    { ... semua isi JSON kamu di sini ... }
+  ]
+};
     {
       "id": 1,
       "title": "Semester 1 — Fondasi Ilmu Dasar & Pengantar Farmasi",
@@ -88,3 +91,4 @@
     }
   ]
 }
+
