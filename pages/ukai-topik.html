@@ -1,24 +1,60 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Latihan per Topik — UKAI</title>
-  <link rel="stylesheet" href="../assets/css/ukai.css"/>
-  <script type="module" src="../assets/js/ukai-core.js"></script>
-  <script type="module">
-    import { loadTopics } from '../assets/js/ukai-core.js';
-    window.addEventListener('DOMContentLoaded',()=>loadTopics('.grid'));
-  </script>
+  <link rel="stylesheet" href="../assets/css/ukai.css" />
 </head>
 <body>
+  <!-- 🔹 Topbar -->
+  <header class="topbar">
+    <a href="../index.html">← Portal</a>
+    <a href="./ukai-home.html">UKAI Home</a>
+  </header>
+
+  <!-- 🔹 Hero -->
   <header class="hero">
     <h1>Latihan per Topik</h1>
     <p class="lead">Pilih domain untuk fokus belajar.</p>
   </header>
+
+  <!-- 🔹 Grid Topik -->
   <main class="container">
-    <section class="grid"><!-- Rendered by JS --></section>
+    <section class="grid">
+
+      <!-- Farmakologi -->
+      <article class="card">
+        <h3>Farmakologi</h3>
+        <p>ADME, mekanisme obat, efek samping, dan monitoring.</p>
+        <div style="display:flex; gap:8px; flex-wrap:wrap">
+          <a class="btn primary" href="./ukai-simulasi.html?bank=farmakologi">Mulai Simulasi</a>
+          <a class="btn" href="../data/banks/farmakologi.json" target="_blank" rel="noopener">Lihat Bank</a>
+        </div>
+      </article>
+
+      <!-- Farmasetika -->
+      <article class="card">
+        <h3>Farmasetika</h3>
+        <p>Formulasi, stabilitas, kompatibilitas, dan dispensing.</p>
+        <div style="display:flex; gap:8px; flex-wrap:wrap">
+          <a class="btn primary" href="./ukai-simulasi.html?bank=farmasetika">Mulai Simulasi</a>
+          <a class="btn" href="../data/banks/farmasetika.json" target="_blank" rel="noopener">Lihat Bank</a>
+        </div>
+      </article>
+
+      <!-- Contoh placeholder topik lain (boleh hapus/tambah) -->
+      <article class="card">
+        <h3>Manajemen Farmasi (Coming soon)</h3>
+        <p>Regulasi, manajemen layanan, mutu & keselamatan.</p>
+        <button class="btn" disabled>Segera hadir</button>
+      </article>
+
+    </section>
   </main>
-  <footer class="site-footer"><small>Belajar sabar, hasil sabar.</small></footer>
+
+  <footer class="site-footer">
+    <small>Belajar sabar, hasil sabar.</small>
+  </footer>
 </body>
 </html>
