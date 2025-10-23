@@ -1,3 +1,7 @@
+// assets/js/simulasi.js
+// Wajib dipanggil sebagai <script type="module" ...> di ukai-simulasi.html
+import { saveResult } from './ukai-core.js';
+
 console.log('simulasi.js loaded');
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,7 +19,16 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('[STATUS]', msg);
   };
 
-  async function loadBank(path = '../data/banks/farmakologi.json') {
+  // --- bantu: baca ?bank=... di URL ---
+  function getQuery(name, def = '') {
+    const u = new URL(location.href);
+    return u.searchParams.get(name) ?? def;
+  }
+  const bank = getQuery('bank', 'farmakologi');      // default
+  sess.mode = bank;                                  // simpan mode utk analitik
+
+  // --- loader bank ---
+  async function loadBank(path = `../data/banks/${bank}.json`) {
     try {
       statusToScreen('LOADING...');
       const res = await fetch(path);
@@ -27,15 +40,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!arr.length) throw new Error('Bank kosong / format tidak cocok');
 
       sess.items = arr.map((q, idx) => ({
-        id: q.id || `q${idx+1}`,
+        id: q.id || `q${idx + 1}`,
         stem: q.stem || q.question || q.text || '-',
         options: q.options || q.choices || [],
-        answerIndex: typeof q.answerIndex === 'number'
-          ? q.answerIndex
-          : typeof q.answer === 'number'
-          ? q.answer
-          : 0,
-        rationale: q.rationale || q.explain || q.explanation || '—'
+        answerIndex:
+          typeof q.answerIndex === 'number'
+            ? q.answerIndex
+            : typeof q.answer === 'number'
+            ? q.answer
+            : 0,
+        rationale: q.rationale || q.explain || q.explanation || '—',
       }));
 
       i = 0;
@@ -43,13 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (e) {
       console.error('Gagal load data bank:', e);
       statusToScreen('❌ Gagal memuat bank: ' + e.message);
-      // tampilkan 1 kartu error agar tidak kosong
       sess.items = [{
         id: 'err',
-        stem: 'Tidak bisa memuat: ../data/banks/farmakologi.json',
+        stem: `Tidak bisa memuat: ${path}`,
         options: ['Periksa path & nama file', 'Cek F12 → Network'],
         answerIndex: 0,
-        rationale: e.message
+        rationale: e.message,
       }];
       i = 0;
       render();
@@ -75,7 +88,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const active = idx === i ? 'style="outline:2px solid #8ab4f8;padding:2px 6px;border-radius:6px;"' : '';
         return `<button data-go="${idx}" ${picked} ${active}>${idx+1}</button>`;
       }).join(' ');
-      gridEl.querySelectorAll('button').forEach(b => b.onclick = () => { saveCurrent(); i = +b.dataset.go; render(); });
+      gridEl.querySelectorAll('button').forEach(b => {
+        b.onclick = () => { saveCurrent(); i = +b.dataset.go; render(); };
+      });
     }
   }
 
@@ -84,29 +99,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!Number.isNaN(val)) answers[sess.items[i].id] = val;
   }
 
-   const $ = (s) => document.querySelector(s);
-   const btnNext    = $('#btn-next');
-   const btnPrev    = $('#btn-prev');
-   const btnExplain = $('#btn-explain');
-   const btnSubmit  = $('#btn-submit');
+  // tombol-tombol
+  const $ = (s) => document.querySelector(s);
+  const btnNext    = $('#btn-next');
+  const btnPrev    = $('#btn-prev');
+  const btnExplain = $('#btn-explain');
+  const btnSubmit  = $('#btn-submit');
 
-   btnNext   && (btnNext.onclick   = () => { saveCurrent(); if (i < sess.items.length - 1) i++; render(); });
-   btnPrev   && (btnPrev.onclick   = () => { saveCurrent(); if (i > 0) i--; render(); });
-   btnExplain&& (btnExplain.onclick= () => { const q = sess.items[i]; expEl.textContent = q.rationale || '—'; expEl.classList.remove('hidden'); });
-   btnSubmit && (btnSubmit.onclick = () => {
-  saveCurrent();
-  const correct = sess.items.reduce((a, q) => a + (answers[q.id] === q.answerIndex ? 1 : 0), 0);
-  alert(`Skor: ${Math.round(100 * correct / sess.items.length)}% (${correct}/${sess.items.length})`);
+  btnNext    && (btnNext.onclick    = () => { saveCurrent(); if (i < sess.items.length - 1) i++; render(); });
+  btnPrev    && (btnPrev.onclick    = () => { saveCurrent(); if (i > 0) i--; render(); });
+  btnExplain && (btnExplain.onclick = () => { const q = sess.items[i]; expEl.textContent = q.rationale || '—'; expEl.classList.remove('hidden'); });
+  btnSubmit  && (btnSubmit.onclick  = () => {
+    saveCurrent();
+    const correct = sess.items.reduce((a, q) => a + (answers[q.id] === q.answerIndex ? 1 : 0), 0);
+    const score = Math.round(100 * correct / sess.items.length);
+
+    // simpan ke localStorage → dibaca analitik.js
+    saveResult(score, sess.mode);
+
+    alert(`Skor: ${score}% (${correct}/${sess.items.length})`);
+  });
+
+  // mulai
+  loadBank(); // otomatis pakai path sesuai 'bank' di URL
 });
-
- // BACA PARAMETER BANK DARI URL
-function getQuery(name, def='') {
-  const u = new URL(location.href);
-  return u.searchParams.get(name) ?? def;
-}
-const bank = getQuery('bank', 'farmakologi'); // default farmakologi
-
-// MULAI
-loadBank(`../data/banks/${bank}.json`);
-});
-
