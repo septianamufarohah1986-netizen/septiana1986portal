@@ -1,33 +1,49 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Calon Apoteker Siap UKAI — Dashboard</title>
-  <link rel="stylesheet" href="../assets/css/ukai.css"/>
+  <link rel="stylesheet" href="../assets/css/ukai.css" />
 </head>
 <body>
+  <!-- 🔹 Topbar -->
+  <header class="topbar">
+    <a href="../index.html">← Portal</a>
+    <strong>UKAI Home</strong>
+  </header>
+
+  <!-- 🔹 Hero Section -->
   <header class="hero">
     <h1>Calon Apoteker Siap UKAI</h1>
     <p class="lead">Latihan topik, simulasi ujian, analitik hasil, dan refleksi profesional — semua dengan hati.</p>
   </header>
+
+  <!-- 🔹 Main Content -->
   <main class="container">
     <section class="grid">
+      <!-- Mulai Simulasi -->
       <article class="card">
         <h3>Mulai Simulasi</h3>
         <p>Ujian penuh dengan penilaian instan.</p>
-        <a class="btn primary" href="./ukai-simulasi.html">Mulai →</a>
+        <a class="btn primary" href="./ukai-simulasi.html?bank=farmakologi">Mulai →</a>
       </article>
+
+      <!-- Latihan per Topik -->
       <article class="card">
         <h3>Latihan per Topik</h3>
         <p>Fokus pada domain tertentu sesuai kebutuhanmu.</p>
         <a class="btn" href="./ukai-topik.html">Buka →</a>
       </article>
+
+      <!-- Analitik -->
       <article class="card">
         <h3>Analitik Hasil</h3>
         <p>Lihat progres dan rekomendasi belajar.</p>
-        <a class="btn" href="./ukai-analitik.html">Lihat →</a>
+        <a class="btn secondary" href="./ukai-analitik.html">Lihat →</a>
       </article>
+
+      <!-- Refleksi -->
       <article class="card">
         <h3>Refleksi Profesional</h3>
         <p>Catatan singkat nilai & etika praktik.</p>
@@ -35,6 +51,10 @@
       </article>
     </section>
   </main>
-  <footer class="site-footer"><small>© 2025 Septiana — Ilmu yang tajam, praktik yang santun, hati yang hadir.</small></footer>
+
+  <!-- 🔹 Footer -->
+  <footer class="site-footer">
+    <small>Hati yang hadir, praktik yang santun.</small>
+  </footer>
 </body>
 </html>
