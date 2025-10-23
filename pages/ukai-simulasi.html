@@ -1,38 +1,57 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Simulasi UKAI</title>
-  <link rel="stylesheet" href="../assets/css/ukai.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simulasi UKAI — Test</title>
+  <link rel="stylesheet" href="../assets/css/ukai.css" />
+  <!-- JS utama simulasi -->
+  <script src="../assets/js/simulasi.js" defer></script>
 </head>
+<body>
+  <!-- 🔹 Topbar -->
+  <header class="topbar">
+    <a href="../index.html">← Portal</a>
+    <a href="./ukai-home.html">UKAI Home</a>
+    <a href="./ukai-analitik.html">Analitik</a>
+  </header>
 
-  <body>
- <main style="padding:24px;color:#fff;background:#0b1220;min-height:100vh;">
-  <h1>Simulasi UKAI — Test</h1>
+  <!-- 🔹 Judul halaman -->
+  <header class="hero">
+    <h1>Simulasi UKAI — Test</h1>
+  </header>
 
-  <div id="q-card" class="card">
-    <div id="q-stem">LOADING...</div>
+  <!-- 🔹 Kartu soal -->
+  <main class="container">
+    <div class="card">
+      <!-- stem / pertanyaan -->
+      <div id="q-stem"></div>
 
-    <ol id="q-options" class="choices"></ol>
+      <!-- pilihan jawaban (radio) -->
+      <ol id="q-options" class="choices"></ol>
 
-    <div class="actions" style="display:flex;gap:8px;margin-top:10px">
-      <button id="btn-prev" class="btn">← Sebelumnya</button>
-      <button id="btn-explain" class="btn">💡 Pembahasan</button>
-      <button id="btn-next" class="btn">Berikutnya →</button>
-      <button id="btn-submit" class="btn primary" style="margin-left:auto;">Kumpulkan Jawaban</button>
+      <!-- tombol aksi -->
+      <div class="actions" style="display:flex;gap:8px;margin-top:10px">
+        <button id="btn-prev" class="btn">← Sebelumnya</button>
+        <button id="btn-explain" class="btn">💡 Pembahasan</button>
+        <button id="btn-next" class="btn">Berikutnya →</button>
+
+        <!-- submit di kanan -->
+        <button id="btn-submit" class="btn primary" style="margin-left:auto">
+          Kumpulkan Jawaban
+        </button>
+      </div>
+
+      <!-- pembahasan / rationale -->
+      <div id="q-explain" class="explain hidden" style="margin-top:12px"></div>
     </div>
 
-    <div id="q-explain" class="explain hidden" style="margin-top:12px;"></div>
-  </div>
+    <!-- navigasi nomor soal -->
+    <nav id="number-grid" class="grid-nums" aria-label="Navigasi Nomor Soal" style="margin-top:12px"></nav>
+  </main>
 
-  <nav id="number-grid" class="grid-nums" aria-label="Navigasi Nomor Soal"></nav>
-</main>
-
-  <!-- untuk cek HTML benar-benar dieksekusi -->
-  <script>console.log('HTML OK');</script>
-
-  <!-- PANGGIL FILE JS DI AKHIR BODY -->
-  <script src="../assets/js/simulasi.js"></script>
+  <footer class="site-footer">
+    <small>Hati yang hadir, praktik yang santun.</small>
+  </footer>
 </body>
 </html>
