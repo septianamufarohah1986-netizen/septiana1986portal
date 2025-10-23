@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Simulasi UKAI</title>
+  <link rel="stylesheet" href="../assets/css/ukai.css"/>
+</head>
+
+  <body>
+ <main style="padding:24px;color:#fff;background:#0b1220;min-height:100vh;">
+  <h1>Simulasi UKAI — Test</h1>
+
+  <div id="q-card" class="card">
+    <div id="q-stem">LOADING...</div>
+
+    <ol id="q-options" class="choices"></ol>
+
+    <div class="actions" style="display:flex;gap:8px;margin-top:10px">
+      <button id="btn-prev" class="btn">← Sebelumnya</button>
+      <button id="btn-explain" class="btn">💡 Pembahasan</button>
+      <button id="btn-next" class="btn">Berikutnya →</button>
+      <button id="btn-submit" class="btn primary" style="margin-left:auto;">Kumpulkan Jawaban</button>
+    </div>
+
+    <div id="q-explain" class="explain hidden" style="margin-top:12px;"></div>
+  </div>
+
+  <nav id="number-grid" class="grid-nums" aria-label="Navigasi Nomor Soal"></nav>
+</main>
+
+  <!-- untuk cek HTML benar-benar dieksekusi -->
+  <script>console.log('HTML OK');</script>
+
+  <!-- PANGGIL FILE JS DI AKHIR BODY -->
+  <script src="../assets/js/simulasi.js"></script>
+</body>
+</html>

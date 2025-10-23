@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Latihan per Topik — UKAI</title>
+  <link rel="stylesheet" href="../assets/css/ukai.css"/>
+  <script type="module" src="../assets/js/ukai-core.js"></script>
+  <script type="module">
+    import { loadTopics } from '../assets/js/ukai-core.js';
+    window.addEventListener('DOMContentLoaded',()=>loadTopics('.grid'));
+  </script>
+</head>
+<body>
+  <header class="hero">
+    <h1>Latihan per Topik</h1>
+    <p class="lead">Pilih domain untuk fokus belajar.</p>
+  </header>
+  <main class="container">
+    <section class="grid"><!-- Rendered by JS --></section>
+  </main>
+  <footer class="site-footer"><small>Belajar sabar, hasil sabar.</small></footer>
+</body>
+</html>
