@@ -1,136 +1,221 @@
-// assets/js/simulasi.js
-// Wajib dipanggil sebagai <script type="module" ...> di ukai-simulasi.html
-import { saveResult } from './ukai-core.js';
+// ====== Konfigurasi ======
+const DURATION_MIN = 60;                 // lama simulasi (menit)
+const STORAGE_PREFIX = 'ukai';
 
-console.log('simulasi.js loaded');
+// ====== Util ======
+const $ = (sel) => document.querySelector(sel);
+const qq = (...sels) => sels.map(s => document.querySelector(s)).find(Boolean);
+const getParam = (k) => new URLSearchParams(location.search).get(k);
+const fmtTime = s => `${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;
 
-document.addEventListener('DOMContentLoaded', () => {
-  const stemEl = document.querySelector('#q-stem');
-  const optsEl = document.querySelector('#q-options');
-  const expEl  = document.querySelector('#q-explain');
-  const gridEl = document.querySelector('#number-grid');
-
-  const sess = { mode: 'topik', items: [] };
-  let i = 0;
-  const answers = {};
-
-  const statusToScreen = (msg) => {
-    if (stemEl) stemEl.textContent = msg;
-    console.log('[STATUS]', msg);
+// ====== Save result (tanpa module import) ======
+function saveResult({ score, mode, correct, total, bank }) {
+  const payload = {
+    score, max: 100, mode,
+    correct, total, bank,
+    ts: Date.now()
   };
+  localStorage.setItem(`${STORAGE_PREFIX}:lastRaw`, JSON.stringify(payload));
 
-  // --- bantu: baca ?bank=... di URL ---
-  function getQuery(name, def = '') {
-    const u = new URL(location.href);
-    return u.searchParams.get(name) ?? def;
+  // simpan riwayat singkat
+  const kHist = `${STORAGE_PREFIX}:history`;
+  const hist = JSON.parse(localStorage.getItem(kHist) || '[]');
+  hist.unshift(payload);
+  localStorage.setItem(kHist, JSON.stringify(hist.slice(0, 50)));
+}
+
+// ====== State ======
+let bankId = getParam('bank') || 'farmakologi';
+let questions = [];
+let idx = 0;
+let answers = {};                // { qid: number }
+let remainSec = DURATION_MIN * 60;
+let submitted = false;
+
+// key penyimpanan sesi per bank
+const K_ANS  = `${STORAGE_PREFIX}:ans:${bankId}`;
+const K_META = `${STORAGE_PREFIX}:meta:${bankId}`;
+
+// elemen UI (dukung id versi kebab & camel)
+const stemEl     = $('#q-stem');
+const optsEl     = $('#q-options');
+const progressEl = qq('#progress', '#q-progress');
+const timerEl    = $('#timer');
+const explainBox = qq('#explain', '#q-explain');
+const explainBody= qq('#explain-body', '#q-explain');
+
+const btnPrev    = qq('#btnPrev', '#btn-prev');
+const btnNext    = qq('#btnNext', '#btn-next');
+const btnExplain = qq('#btnExplain', '#btn-explain');
+const btnSubmit  = qq('#btnSubmit', '#btn-submit');
+const btnReset   = qq('#btnReset', '#btn-reset');
+const bankNameEl = $('#bank-name');
+
+// ====== Boot ======
+document.addEventListener('DOMContentLoaded', async () => {
+  if (bankNameEl) bankNameEl.textContent = bankId;
+
+  await loadBank();
+
+  restoreSession();
+  render();
+  startTimer();
+});
+
+// ====== Load bank ======
+async function loadBank() {
+  const url = `../data/banks/${bankId}.json`;
+  try {
+    stemEl && (stemEl.textContent = 'Memuat soal…');
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Gagal memuat bank (${res.status})`);
+    const data = await res.json();
+
+    if (Array.isArray(data)) questions = data;
+    else if (Array.isArray(data.items)) questions = data.items;
+    else if (Array.isArray(data.questions)) questions = data.questions;
+    else throw new Error('Format bank tidak dikenali. Pakai array atau {items:[...]} / {questions:[...]}');
+
+    // normalisasi
+    questions = questions.map((q, i) => ({
+      id: q.id || `q${i+1}`,
+      stem: q.stem || q.question || q.text || '-',
+      options: q.options || q.choices || [],
+      answerIndex: (typeof q.answerIndex === 'number') ? q.answerIndex :
+                   (typeof q.answer === 'number') ? q.answer : 0,
+      rationale: q.rationale || q.explain || q.explanation || 'Belum ada pembahasan.'
+    }));
+  } catch (e) {
+    console.error(e);
+    questions = [];
+    stemEl && (stemEl.textContent = '❌ Gagal memuat bank: ' + e.message);
   }
-  const bank = getQuery('bank', 'farmakologi');      // default
-  sess.mode = bank;                                  // simpan mode utk analitik
+}
 
-  // --- loader bank ---
-  async function loadBank(path = `../data/banks/${bank}.json`) {
-    try {
-      statusToScreen('LOADING...');
-      const res = await fetch(path);
-      console.log('[FETCH]', path, res.status, res.statusText);
-      if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+// ====== Session ======
+function restoreSession() {
+  const meta = JSON.parse(localStorage.getItem(K_META) || 'null');
+  const saved = JSON.parse(localStorage.getItem(K_ANS) || 'null');
 
-      const raw = await res.json();
-      const arr = Array.isArray(raw) ? raw : (raw.items || raw.questions || []);
-      if (!arr.length) throw new Error('Bank kosong / format tidak cocok');
+  if (meta && saved && Array.isArray(questions) && questions.length) {
+    answers   = saved;
+    remainSec = typeof meta.remainSec === 'number' ? meta.remainSec : remainSec;
+    submitted = !!meta.submitted;
+  } else {
+    answers = {};
+    remainSec = DURATION_MIN * 60;
+    submitted = false;
+    persist();
+  }
+}
 
-      sess.items = arr.map((q, idx) => ({
-        id: q.id || `q${idx + 1}`,
-        stem: q.stem || q.question || q.text || '-',
-        options: q.options || q.choices || [],
-        answerIndex:
-          typeof q.answerIndex === 'number'
-            ? q.answerIndex
-            : typeof q.answer === 'number'
-            ? q.answer
-            : 0,
-        rationale: q.rationale || q.explain || q.explanation || '—',
-      }));
+function persist() {
+  localStorage.setItem(K_ANS, JSON.stringify(answers));
+  localStorage.setItem(K_META, JSON.stringify({ remainSec, submitted }));
+}
 
-      i = 0;
-      render();
-    } catch (e) {
-      console.error('Gagal load data bank:', e);
-      statusToScreen('❌ Gagal memuat bank: ' + e.message);
-      sess.items = [{
-        id: 'err',
-        stem: `Tidak bisa memuat: ${path}`,
-        options: ['Periksa path & nama file', 'Cek F12 → Network'],
-        answerIndex: 0,
-        rationale: e.message,
-      }];
-      i = 0;
-      render();
-    }
+// ====== Render ======
+function render() {
+  if (!questions.length) {
+    progressEl && (progressEl.textContent = '0/0');
+    optsEl && (optsEl.innerHTML = '');
+    return;
   }
 
-  function render() {
-    const q = sess.items[i];
-    if (!q) { statusToScreen('Tidak ada soal.'); optsEl.innerHTML = ''; return; }
+  const q = questions[idx];
+  progressEl && (progressEl.textContent = `${idx+1}/${questions.length}`);
+  stemEl && (stemEl.textContent = q.stem);
 
-    stemEl.textContent = q.stem;
-    optsEl.innerHTML = q.options.map((opt, idx) => {
-      const checked = answers[q.id] === idx ? 'checked' : '';
-      return `<li><label><input type="radio" name="ans" value="${idx}" ${checked}/> ${opt}</label></li>`;
+  if (optsEl) {
+    optsEl.innerHTML = (q.options || []).map((opt, i) => {
+      const checked = (answers[q.id] === i) ? 'checked' : '';
+      return `<label class="option" style="display:block;margin:.25rem 0">
+                <input type="radio" name="opt" value="${i}" ${checked}/> ${opt}
+              </label>`;
     }).join('');
+    optsEl.addEventListener('change', onPick, { once: true });
+  }
 
-    expEl.classList.add('hidden');
-    expEl.textContent = '';
+  // pembahasan disembunyikan dulu
+  if (explainBox) {
+    explainBox.classList.add('hidden');
+    if (explainBody) explainBody.innerHTML = q.rationale || 'Belum ada pembahasan.';
+  }
 
-    if (gridEl) {
-      gridEl.innerHTML = sess.items.map((item, idx) => {
-        const picked = answers[item.id] != null ? 'style="opacity:.9;"' : '';
-        const active = idx === i ? 'style="outline:2px solid #8ab4f8;padding:2px 6px;border-radius:6px;"' : '';
-        return `<button data-go="${idx}" ${picked} ${active}>${idx+1}</button>`;
-      }).join(' ');
-      gridEl.querySelectorAll('button').forEach(b => {
-        b.onclick = () => { saveCurrent(); i = +b.dataset.go; render(); };
-      });
+  // tombol navigasi
+  if (btnPrev) btnPrev.disabled = (idx === 0);
+  if (btnNext) btnNext.disabled = (idx === questions.length - 1);
+}
+
+function onPick(e) {
+  const inp = e.target.closest('input[name="opt"]');
+  if (!inp) return;
+  const choice = Number(inp.value);
+  if (!Number.isNaN(choice)) {
+    const q = questions[idx];
+    answers[q.id] = choice;
+    persist();
+  }
+}
+
+// ====== Timer ======
+function startTimer() {
+  if (!timerEl) return;
+  timerEl.textContent = fmtTime(remainSec);
+  const t = setInterval(() => {
+    if (submitted) { clearInterval(t); timerEl.textContent = 'Selesai'; return; }
+    remainSec = Math.max(0, remainSec - 1);
+    timerEl.textContent = fmtTime(remainSec);
+    persist();
+    if (remainSec === 0) {
+      clearInterval(t);
+      submit(true);
     }
-  }
+  }, 1000);
+}
 
-  function saveCurrent() {
-    const val = +document.querySelector('input[name="ans"]:checked')?.value;
-    if (!Number.isNaN(val)) answers[sess.items[i].id] = val;
-  }
+// ====== Events ======
+btnPrev && btnPrev.addEventListener('click', () => {
+  if (idx > 0) { idx--; render(); }
+});
+btnNext && btnNext.addEventListener('click', () => {
+  if (idx < questions.length - 1) { idx++; render(); }
+});
+btnExplain && btnExplain.addEventListener('click', () => {
+  if (!explainBox) return;
+  explainBox.classList.toggle('hidden');
+});
+btnSubmit && btnSubmit.addEventListener('click', () => submit(false));
+btnReset && btnReset.addEventListener('click', () => {
+  const ok = confirm('Mulai ulang simulasi? Jawaban & timer akan direset.');
+  if (!ok) return;
+  localStorage.removeItem(K_ANS);
+  localStorage.removeItem(K_META);
+  answers = {};
+  idx = 0;
+  remainSec = DURATION_MIN * 60;
+  submitted = false;
+  persist();
+  render();
+});
 
-  // tombol-tombol
-  const $ = (s) => document.querySelector(s);
-  const btnNext    = $('#btn-next');
-  const btnPrev    = $('#btn-prev');
-  const btnExplain = $('#btn-explain');
-  const btnSubmit  = $('#btn-submit');
+// ====== Submit ======
+function submit(auto) {
+  if (submitted) return;
+  submitted = true;
 
-  btnNext    && (btnNext.onclick    = () => { saveCurrent(); if (i < sess.items.length - 1) i++; render(); });
-  btnPrev    && (btnPrev.onclick    = () => { saveCurrent(); if (i > 0) i--; render(); });
-  btnExplain && (btnExplain.onclick = () => { const q = sess.items[i]; expEl.textContent = q.rationale || '—'; expEl.classList.remove('hidden'); });
-  btnSubmit  && (btnSubmit.onclick  = () => {
-    saveCurrent();
-    btnSubmit && (btnSubmit.onclick = () => {
-  saveCurrent();
+  const correct = questions.reduce((a, q) => a + (answers[q.id] === q.answerIndex ? 1 : 0), 0);
+  const score = Math.round((correct / (questions.length || 1)) * 100);
 
-  const correct = sess.items.reduce((a, q) => a + (answers[q.id] === q.answerIndex ? 1 : 0), 0);
-  const score = Math.round(100 * correct / sess.items.length);
-
-  const bank = new URL(location.href).searchParams.get('bank') ?? 'farmakologi';
-
-  // ✅ versi baru — kirim satu objek payload ke ukai-core.js
   saveResult({
     score,
-    mode: sess.mode,
+    mode: 'simulasi',
     correct,
-    total: sess.items.length,
-    bank
+    total: questions.length,
+    bank: bankId
   });
 
-  alert(`Skor: ${score}% (${correct}/${sess.items.length})`);
-});
-
-  // mulai
-  loadBank(); // otomatis pakai path sesuai 'bank' di URL
-});
+  alert((auto ? 'Waktu habis.\n' : '') + `Skor: ${score}/100 (${correct}/${questions.length})`);
+  // arahkan ke Analitik
+  location.href = './ukai-analitik.html';
+}
