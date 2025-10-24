@@ -5,27 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Simulasi UKAI — Test</title>
   <link rel="stylesheet" href="../assets/css/ukai.css" />
-  <!-- Penting: tanpa type="module" -->
   <script src="../assets/js/simulasi.js" defer></script>
+
+  <!-- mini style untuk progress bar & grid -->
+  <style>
+    .timebar{height:8px;background:#1b2331;border-radius:999px;overflow:hidden}
+    .timebar-fill{height:100%;width:0%;background:#6aa9ff;transition:width .4s ease}
+    .grid-nums{display:flex;flex-wrap:wrap;gap:.5rem}
+    .grid-nums button{
+      min-width:36px;height:36px;border-radius:10px;border:1px solid #2a3750;
+      background:#121826;color:#cbd5e1;cursor:pointer
+    }
+    .grid-nums button.current{outline:2px solid #8ab4f8}
+    .grid-nums button.answered{background:#19303f;border-color:#275b77}
+    .grid-nums button.flagged{background:#3b2630;border-color:#8a3148}
+  </style>
 </head>
 <body>
-  <!-- Topbar -->
   <header class="topbar">
     <a href="../index.html">← Portal</a>
     <a href="./ukai-home.html">UKAI Home</a>
     <a href="./ukai-analitik.html">Analitik</a>
   </header>
 
-  <!-- Judul -->
   <header class="hero">
     <h1>Simulasi UKAI — <span id="bank-name">Test</span></h1>
   </header>
 
   <main class="container">
-    <!-- Status + Timer -->
-    <div class="card" style="display:flex;justify-content:space-between;align-items:center">
-      <div>Soal <span id="progress">0/0</span></div>
-      <div>⏳ <span id="timer">--:--</span></div>
+    <!-- Status + timer + progress bar -->
+    <div class="card" style="display:flex;flex-direction:column;gap:.75rem">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>Soal <span id="progress">0/0</span></div>
+        <div>⏳ <span id="timer">--:--</span></div>
+      </div>
+      <div class="timebar"><div id="timebar-fill" class="timebar-fill"></div></div>
     </div>
 
     <!-- Kartu Soal -->
@@ -36,14 +50,15 @@
 
     <!-- Kontrol -->
     <div class="card" style="display:flex;gap:8px;align-items:center;justify-content:space-between">
-      <div class="left" style="display:flex;gap:8px">
-        <button id="btnPrev" class="btn">← Sebelumnya</button>
-        <button id="btnExplain" class="btn">💡 Pembahasan</button>
-        <button id="btnNext" class="btn">Berikutnya →</button>
+      <div class="left" style="display:flex;gap:8px;flex-wrap:wrap">
+        <button id="btn-prev"    class="btn">← Sebelumnya</button>
+        <button id="btn-explain" class="btn">💡 Pembahasan</button>
+        <button id="btn-flag"    class="btn">🚩 Tandai</button>
+        <button id="btn-next"    class="btn">Berikutnya →</button>
       </div>
-      <div class="right" style="display:flex;gap:8px">
-        <button id="btnReset" class="btn secondary">Mulai Ulang</button>
-        <button id="btnSubmit" class="btn primary">Kumpulkan Jawaban</button>
+      <div class="right" style="display:flex;gap:8px;flex-wrap:wrap">
+        <button id="btn-reset"   class="btn secondary">Mulai Ulang</button>
+        <button id="btn-submit"  class="btn primary">Kumpulkan Jawaban</button>
       </div>
     </div>
 
@@ -53,7 +68,7 @@
       <div id="explain-body">—</div>
     </section>
 
-    <!-- (opsional) Grid nomor soal -->
+    <!-- Grid nomor soal -->
     <nav id="number-grid" class="grid-nums" aria-label="Navigasi Nomor Soal" style="margin-top:12px"></nav>
   </main>
 
