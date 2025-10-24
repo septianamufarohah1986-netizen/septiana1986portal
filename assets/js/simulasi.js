@@ -111,14 +111,25 @@ document.addEventListener('DOMContentLoaded', () => {
   btnExplain && (btnExplain.onclick = () => { const q = sess.items[i]; expEl.textContent = q.rationale || '—'; expEl.classList.remove('hidden'); });
   btnSubmit  && (btnSubmit.onclick  = () => {
     saveCurrent();
-    const correct = sess.items.reduce((a, q) => a + (answers[q.id] === q.answerIndex ? 1 : 0), 0);
-    const score = Math.round(100 * correct / sess.items.length);
+    btnSubmit && (btnSubmit.onclick = () => {
+  saveCurrent();
 
-    // simpan ke localStorage → dibaca analitik.js
-    saveResult(score, sess.mode);
+  const correct = sess.items.reduce((a, q) => a + (answers[q.id] === q.answerIndex ? 1 : 0), 0);
+  const score = Math.round(100 * correct / sess.items.length);
 
-    alert(`Skor: ${score}% (${correct}/${sess.items.length})`);
+  const bank = new URL(location.href).searchParams.get('bank') ?? 'farmakologi';
+
+  // ✅ versi baru — kirim satu objek payload ke ukai-core.js
+  saveResult({
+    score,
+    mode: sess.mode,
+    correct,
+    total: sess.items.length,
+    bank
   });
+
+  alert(`Skor: ${score}% (${correct}/${sess.items.length})`);
+});
 
   // mulai
   loadBank(); // otomatis pakai path sesuai 'bank' di URL
