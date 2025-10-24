@@ -63,21 +63,54 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // ====== Load bank ======
+async function fetchManifest() {
+  const url = `../data/banks/index.json`;
+  const res = await fetch(url, { cache: 'no-store' });
+  if (!res.ok) throw new Error('Manifest bank tidak ditemukan.');
+  return res.json();
+}
+
+async function resolveBankUrl(base) {
+  // jika user sudah menulis explicit .json, langsung pakai
+  if (base.endsWith('.json')) return `../data/banks/${base}`;
+
+  const manifest = await fetchManifest();
+
+  // normalisasi key (pakai huruf kecil & underscore biar konsisten)
+  const key = base.toLowerCase();
+  const list = manifest[key];
+  if (!Array.isArray(list) || list.length === 0) {
+    throw new Error(`Bank "${base}" tidak terdaftar di manifest.`);
+  }
+
+  // pilih file pertama yang memang ada
+  for (const filename of list) {
+    const url = `../data/banks/${filename}`;
+    try {
+      const head = await fetch(url, { method: 'GET', cache: 'no-store' });
+      if (head.ok) return url;
+    } catch (_) { /* lanjut kandidat berikutnya */ }
+  }
+  throw new Error(`Tidak ada file yang tersedia untuk "${base}" (cek nama di manifest & repository).`);
+}
+
 async function loadBank() {
-  const url = `../data/banks/${bankId}.json`;
   try {
+    const base = (getParam('bank') || 'farmakologi').toLowerCase();
+    const url = await resolveBankUrl(base);
+
     stemEl && (stemEl.textContent = 'Memuat soal…');
-    const res = await fetch(url);
+    const res = await fetch(url, { cache: 'no-store' });
     if (!res.ok) throw new Error(`Gagal memuat bank (${res.status})`);
+
     const data = await res.json();
+    let raw = [];
+    if (Array.isArray(data)) raw = data;
+    else if (Array.isArray(data.items)) raw = data.items;
+    else if (Array.isArray(data.questions)) raw = data.questions;
+    else throw new Error('Format bank tidak dikenali (harus array atau {items:[...]}/{questions:[...]}).');
 
-    if (Array.isArray(data)) questions = data;
-    else if (Array.isArray(data.items)) questions = data.items;
-    else if (Array.isArray(data.questions)) questions = data.questions;
-    else throw new Error('Format bank tidak dikenali. Pakai array atau {items:[...]} / {questions:[...]}');
-
-    // normalisasi
-    questions = questions.map((q, i) => ({
+    questions = raw.map((q, i) => ({
       id: q.id || `q${i+1}`,
       stem: q.stem || q.question || q.text || '-',
       options: q.options || q.choices || [],
@@ -85,10 +118,12 @@ async function loadBank() {
                    (typeof q.answer === 'number') ? q.answer : 0,
       rationale: q.rationale || q.explain || q.explanation || 'Belum ada pembahasan.'
     }));
+
+    if (!questions.length) throw new Error('Bank kosong.');
   } catch (e) {
     console.error(e);
     questions = [];
-    stemEl && (stemEl.textContent = '❌ Gagal memuat bank: ' + e.message);
+    stemEl && (stemEl.textContent = '❌ ' + (e.message || 'Gagal memuat bank.'));
   }
 }
 
