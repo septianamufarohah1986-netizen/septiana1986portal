@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "topic": "campuran",
+    "count": 5,
+    "source": "soal_ukai_tes.txt"
+  },
+  "items": [
+    {
+      "id": "mix-001",
+      "stem": "Suatu industri farmasi akan memproduksi sediaan gel antioksidan dari ekstrak umbi wortel dengan formula: aquapec, TEA, gliserin, metil paraben, ekstrak wortel, vitamin E, dan aquadest. Apakah bahan yang berfungsi sebagai gelling agent?",
+      "options": ["Aquapec", "TEA", "Gliserin", "Metil paraben", "Vitamin E"],
+      "answerIndex": 0,
+      "rationale": "Aquapec (karbomer/senyawa akrilat sejenis) dipakai sebagai gelling agent.",
+      "tags": ["teknologi_farmasi", "eksipien"]
+    },
+    {
+      "id": "mix-002",
+      "stem": "R&D mengembangkan mikroemulsi natrium diklofenak (VCO, Tween 80, etanol, propilen glikol, air). Apa fungsi etanol?",
+      "options": ["Solven", "Kosolven", "Surfaktan", "Kosurfaktan", "Preservatif"],
+      "answerIndex": 3,
+      "rationale": "Dalam sistem mikroemulsi, etanol lazim dipakai sebagai kosurfaktan untuk menurunkan tegangan antarmuka dan menstabilkan misel.",
+      "tags": ["mikroemulsi", "farmasetika"]
+    },
+    {
+      "id": "mix-003",
+      "stem": "Larutan penyalut: air, HPMC, propilen glikol, titanium dioksida, FDC Yellow No.2, Tween 60. Mana plasticizer-nya?",
+      "options": ["HPMC", "Propilen glikol", "Titanium dioksida", "FDC Yellow No.2", "Tween 60"],
+      "answerIndex": 1,
+      "rationale": "Propilen glikol bertindak sebagai plasticizer untuk film HPMC.",
+      "tags": ["coating", "eksipien"]
+    },
+    {
+      "id": "mix-004",
+      "stem": "Formula tetes mata gentamisin: benzalkonium klorida, HPMC, NaCl, asam sitrat, natrium metabisulfit. Mana pengawetnya?",
+      "options": ["Benzalkonium klorida", "HPMC", "NaCl", "Asam sitrat", "Natrium metabisulfit"],
+      "answerIndex": 0,
+      "rationale": "BAK (benzalkonium klorida) adalah pengawet kationik yang umum pada tetes mata.",
+      "tags": ["oftalmik", "preservatif"]
+    },
+    {
+      "id": "mix-005",
+      "stem": "Tablet kunyah antasida: zat aktif, laktosa, gelatin, explotab, sukralosa, magnesium stearat. Mana yang berfungsi sebagai penghancur?",
+      "options": ["Laktosa", "Gelatin", "Explotab", "Sukralosa", "Magnesium stearat"],
+      "answerIndex": 2,
+      "rationale": "Explotab (sodium starch glycolate) adalah superdisintegrant.",
+      "tags": ["tablet", "disintegran"]
+    }
+  ]
+}
