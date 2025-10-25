@@ -62,26 +62,46 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 /* ================== Manifest loader ================== */
 async function fetchManifest() {
-  const url = `../data/banks/index.json`;
-  const res = await fetch(url, { cache: 'no-store' });
-  if (!res.ok) throw new Error('Manifest bank tidak ditemukan.');
-  return res.json();
+  // Pakai manifest.json yang ada di repo
+  const url = `../data/banks/manifest.json`;
+  try {
+    const res = await fetch(url, { cache: 'no-store' });
+    if (!res.ok) throw new Error('manifest not ok');
+    return await res.json();
+  } catch (e) {
+    console.warn('Manifest tidak bisa dibaca (akan lanjut fallback):', e);
+    return null; // biarkan null → kita akan fallback ke fetch langsung
+  }
 }
+
 async function resolveBankUrl(base) {
-  if (base.endsWith('.json')) return `../data/banks/${base}`;
-  const manifest = await fetchManifest();
-  const key = base.toLowerCase();
-  const list = manifest[key];
-  if (!Array.isArray(list) || !list.length) throw new Error(`Bank "${base}" tidak ada di manifest.`);
-  for (const filename of list) {
-    const url = `../data/banks/${filename}`;
+  // 1) kalau sudah file.json, pakai langsung
+  if (base.endsWith('.json')) {
+    return `../data/banks/${base}`;
+  }
+
+  // 2) coba direct file konvensional: <bank>.json
+  const direct = `../data/banks/${base}.json`;
+  try {
+    const r = await fetch(direct, { cache: 'no-store' });
+    if (r.ok) return direct;
+  } catch (_) {}
+
+  // 3) baca manifest.json (jika ada) — format { banks: ["nama1","nama2", ...] }
+  const mf = await fetchManifest();
+  const list = (mf && (mf.banks || mf.list || mf.names)) || [];
+  if (Array.isArray(list) && list.includes(base)) {
+    // coba lagi nama konvensional
     try {
-      const r = await fetch(url, { method:'GET', cache:'no-store' });
-      if (r.ok) return url;
+      const r2 = await fetch(direct, { cache: 'no-store' });
+      if (r2.ok) return direct;
     } catch (_) {}
   }
-  throw new Error(`Tidak ada file tersedia untuk "${base}".`);
+
+  // 4) tidak ketemu
+  throw new Error(`Tidak bisa menemukan file bank untuk "${base}".`);
 }
+
 
 /* ================== Load bank ================== */
 async function loadBank() {
