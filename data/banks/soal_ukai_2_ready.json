@@ -1,0 +1,1302 @@
+[
+  {
+    "id": 1,
+    "stem": "Suatu industri farmasi akan memproduksi sediaan gel antioksidan dari extrak umbi wortel dengan formula: aquapec, TEA, gliserin, metil paraben, extrak wortel, Vit. E, dan aqua destillata. Apakah bahan yang berfungsi sebagai gelling agent dalam formula tersebut?",
+    "options": {
+      "A": "Aquapec",
+      "B": "TEA",
+      "C": "Gliserin",
+      "D": "Metil Paraben",
+      "E": "Vitamin E"
+    },
+    "correct_key": "A",
+    "explanation": "Aquapec adalah nama dagang untuk carbomer atau karbopol, yaitu polimer asam akrilat dengan berat molekul tinggi. Carbomer adalah salah satu gelling agent sintetis yang paling umum digunakan dalam industri farmasi dan kosmetik."
+  },
+  {
+    "id": 2,
+    "stem": "Seorang Apoteker yang bekerja pada bagian R & D suatu industri farmasi sedang mengembangkan natrium diklofenak dalam sediaan mikroemulsi. Formula sediaan tersebut adalah natrium diklofenak, VCO, Tween 80, etanol, propilenglikol, air. Apakah fungsi etanol dalam formula tersebut?",
+    "options": {
+      "A": "Solven",
+      "B": "Kosolven",
+      "C": "Surfaktan",
+      "D": "Kosurfaktan",
+      "E": "Preservatif"
+    },
+    "correct_key": "D",
+    "explanation": "Kosurfaktan (dalam formula ini etanol) adalah molekul amfifilik rantai pendek yang bekerja bersama surfaktan. Fungsinya adalah untuk meningkatkan fleksibilitas lapisan antarmuka dan mengurangi tegangan antarmuka lebih jauh lagi, sehingga area antarmuka dapat diperluas dan terbentuklah tetesan-tetesan mikro yang stabil."
+  },
+  {
+    "id": 3,
+    "stem": "Sebuah industri farmasi sedang merancang formula larutan penyalut, yang terdiri dari air, HPMC, Propilen Glikol, Titanium Dioxide, FDC yellow no 2 dan tween 60, untuk menyalut kaplet asam mefenamat. Apakah bahan yang berfungsi sebagai plasticizer dalam formula tersebut?",
+    "options": {
+      "A": "HPMC",
+      "B": "Propilen glikol",
+      "C": "Titanium dioxide",
+      "D": "FDC Yellow No. 2",
+      "E": "Tween 60"
+    },
+    "correct_key": "B",
+    "explanation": "Propilen glikol adalah salah satu plasticizer yang umum digunakan. Molekulnya akan masuk di antara rantai polimer (HPMC) dan mengurangi gaya tarik-menarik antar rantai, sehingga lapisan film yang terbentuk tidak kaku dan rapuh."
+  },
+  {
+    "id": 4,
+    "stem": "Sebuah industri farmasi sedang merancang formula gentamicin tetes mata, dengan komposisi benzalkonium klorida, HPMC, NaCl, asam sitrat dan sodium metabisulfit. Apakah bahan yang berfungsi sebagai pengawet dalam formula tersebut?",
+    "options": {
+      "A": "Benzalkonium klorida",
+      "B": "HPMC",
+      "C": "NaCl",
+      "D": "Asam sitrat",
+      "E": "Sodium metabisulfit"
+    },
+    "correct_key": "A",
+    "explanation": "Benzalkonium klorida adalah pengawet antimikroba golongan amonium kuartener yang sangat efektif dan umum digunakan dalam sediaan tetes mata."
+  },
+  {
+    "id": 5,
+    "stem": "Sebuah industri farmasi sedang merancang formula tablet kunyah antasida, yang terdiri dari zat aktif, laktosum, gelatin, explotab, sucralose dan magnesium stearat. Apakah bahan yang berfungsi sebagai penghancur dalam formula tersebut?",
+    "options": {
+      "A": "Lactosum",
+      "B": "Gelatin",
+      "C": "Explotab",
+      "D": "Sucralose",
+      "E": "Magnesium stearat"
+    },
+    "correct_key": "C",
+    "explanation": "Explotab adalah nama dagang untuk Natrium Pati Glikolat (Sodium Starch Glycolate), yang merupakan salah satu superdisintegrant. Disebut \"super\" karena mampu menyerap air dalam jumlah besar dengan sangat cepat, mengembang, dan menyebabkan tablet hancur dalam waktu singkat."
+  },
+  {
+    "id": 6,
+    "stem": "Seorang apoteker di industri farmasi melakukan optimasi formula sediaan tablet Naproxen 450 mg. Formula tablet yang dioptimasi untuk 1.000 tablet adalah Naproxen: 457,5 g; Kolidon CL:10 g; Kolidon 30: 25 g; Purified Water: 90 mL dan Magnesium Stearat 2,5 g. Berdasarkan formula tersebut, apakah bahan tambahan yang berfungsi sebagai bahan pengikat?",
+    "options": {
+      "A": "Naproxen",
+      "B": "Avicel PH 101",
+      "C": "Kollidon CL",
+      "D": "Kollidon 30",
+      "E": "Magnesium stearat"
+    },
+    "correct_key": "D",
+    "explanation": "Bahan pengikat (binder) berfungsi untuk memberikan daya kohesi (pelekatan) pada serbuk, sehingga massa tablet menjadi kompak dan tidak mudah rapuh setelah dicetak. Kollidon 30 adalah nama dagang untuk Povidone (Polyvinylpyrrolidone), yang merupakan bahan pengikat yang sangat umum digunakan dalam metode granulasi basah, di mana ia dilarutkan dalam air (Purified Water) untuk membentuk larutan pengikat."
+  },
+  {
+    "id": 7,
+    "stem": "Sebuah industri farmasi sedang merancang formula gentamicin tetes mata, dengan komposisi benzalkonium klorida, HPMC, NaCl, asam sitrat dan natrium metabisulfit. Apakah bahan yang berfungsi sebagai antioksidan dalam formula tersebut?",
+    "options": {
+      "A": "Benzalkonium klorida",
+      "B": "HPMC",
+      "C": "NaCl",
+      "D": "Asam sitrat",
+      "E": "Natrium metabisulfit"
+    },
+    "correct_key": "E",
+    "explanation": "Antioksidan ditambahkan ke dalam sediaan farmasi untuk melindungi zat aktif atau komponen lain yang rentan terhadap degradasi akibat oksidasi. Natrium metabisulfit adalah agen pereduksi yang efektif dan sering digunakan sebagai antioksidan dalam sediaan larutan, terutama sediaan injeksi dan tetes mata."
+  },
+  {
+    "id": 8,
+    "stem": "Seorang apoteker di industri farmasi sedang merancang formula larutan penyalut, yang terdiri dari air, HPMC, Propilen Glikol, Titanium Dioxide, FDC Yellow no 2 dan Tween 60, untuk menyalut tablet asam mefenamat. Apakah bahan yang berfungsi sebagai film former dalam formula tersebut?",
+    "options": {
+      "A": "HPMC",
+      "B": "Propilen glikol",
+      "C": "Titanium dioxide",
+      "D": "FDC Yellow No. 2",
+      "E": "Tween 60"
+    },
+    "correct_key": "A",
+    "explanation": "Film former adalah komponen polimer utama yang membentuk lapisan film tipis dan kontinu di sekeliling inti tablet. HPMC (Hydroxypropyl Methylcellulose) adalah salah satu polimer yang paling umum digunakan sebagai film former karena menghasilkan lapisan salut yang kuat, fleksibel, dan larut dalam air."
+  },
+  {
+    "id": 9,
+    "stem": "Seorang apoteker di bagian R&D industri farmasi melakukan optimasi formula sediaan tablet dengan formula yang berisi Parasetamol, Kafein, Avicel PH 101, Kolidon CL, kolidon 30 dan PEG 6.000. Apakah bahan tambahan dalam formula tersebut yang berfungsi sebagai bahan pengisi?",
+    "options": {
+      "A": "Caffeine",
+      "B": "Avicel PH 101",
+      "C": "Kollidon 30",
+      "D": "Kollidon CL",
+      "E": "PEG 6.000"
+    },
+    "correct_key": "B",
+    "explanation": "Bahan pengisi (filler atau diluent) ditambahkan untuk menambah massa atau volume tablet agar ukurannya memadai untuk dicetak, terutama jika dosis zat aktifnya kecil. Avicel PH 101 (Microcrystalline Cellulose) adalah bahan pengisi yang sangat baik dan juga memiliki sifat sebagai pengikat kering."
+  },
+  {
+    "id": 10,
+    "stem": "Seorang apoteker di bagian R&D industri farmasi melakukan optimasi formula sediaan cair ibuprofen dengan bahan-bahan sebagai berikut: Ibuprofen, Cremophor RH 40, Preservatives dan Purified Water. Apakah fungsi Cremophor RH 40 dalam formula tersebut?",
+    "options": {
+      "A": "Sebagai pengental",
+      "B": "Sebagai stabilisator",
+      "C": "Sebagai pelarut",
+      "D": "Sebagai antioksidan",
+      "E": "Sebagai pengawet"
+    },
+    "correct_key": "C",
+    "explanation": "Ibuprofen adalah zat aktif yang praktis tidak larut dalam air. Cremophor RH 40 (PEG-40 Hydrogenated Castor Oil) adalah surfaktan non-ionik yang berfungsi sebagai solubilizer (agen peningkat kelarutan), yang merupakan fungsi spesifik dari pelarut dalam konteks ini. Ia membentuk misel dalam air yang dapat \"melarutkan\" molekul ibuprofen di dalamnya, sehingga menghasilkan sediaan cair yang jernih."
+  },
+  {
+    "id": 11,
+    "stem": "Seorang apoteker di bagian R&D industri farmasi melakukan optimasi formula tablet parasetamol 500 mg dengan bahan-bahan sebagai berikut: Parasetamol, Avicel 102, Kolidon VA 64, Kolidon CL, Magnesium Stearat dan Aerosil 200. Berdasarkan formula tersebut, apakah bahan tambahan yang berfungsi sebagai bahan pengikat?",
+    "options": {
+      "A": "Avicel 102",
+      "B": "Kolidon VA 64",
+      "C": "Kolidon CL",
+      "D": "Magnesium Stearat",
+      "E": "Aerosil 200"
+    },
+    "correct_key": "",
+    "explanation": "Kolidon VA 64 (Copovidone) adalah kopolimer dari vinil pirolidon dan vinil asetat. Bahan ini berfungsi sebagai bahan pengikat (binder) yang sangat baik untuk metode granulasi basah maupun kempa langsung, memberikan kekerasan tablet yang baik."
+  },
+  {
+    "id": 12,
+    "stem": "Seorang apoteker di bagian R&D industri farmasi melakukan optimasi formula suspensi Sulfamethoxazole dan Trimethoprim dengan bahan-bahan sebagai berikut: Sulfamethoxazole, Trimethoprim, Sucrose, Lutrol F 127, Water Purified, Vanillin dan Flavor Chocolate. Apakah fungsi Sucrose dalam formula tersebut?",
+    "options": {
+      "A": "Pemanis dan pelarut",
+      "B": "Pemanis dan pengental",
+      "C": "Pemanis dan pengawet",
+      "D": "Pemanis dan pensuspensi",
+      "E": "Pemanis dan penstabil"
+    },
+    "correct_key": "B",
+    "explanation": "Dalam sediaan suspensi, Sukrosa (gula) dalam konsentrasi tinggi memiliki dua fungsi utama. Pertama, sebagai pemanis (sweetener) untuk menutupi rasa zat aktif yang tidak enak. Kedua, karena konsentrasinya tinggi, ia akan membentuk larutan sirup yang kental (viskositas tinggi). Peningkatan viskositas ini membantu memperlambat laju pengendapan partikel, sehingga ia juga berfungsi sebagai pengental (thickening agent) atau suspending agent."
+  },
+  {
+    "id": 13,
+    "stem": "Sebuah industri farmasi sedang mengembangkan formula sediaan infus Ammonium Klorida 1,5%. Dalam formula tersebut terdapat bahan tambahan natrium metabisulfit. Apakah fungsi penambahan bahan tersebut?",
+    "options": {
+      "A": "Pengisotonis",
+      "B": "Pendapar",
+      "C": "Pemanis",
+      "D": "Pengawet",
+      "E": "Pewarna"
+    },
+    "correct_key": "D",
+    "explanation": "Dalam kasus ini, natrium metabisulfit kemungkinan besar berfungsi sebagai antioksidan, bukan pengawet antimikroba. Namun, karena pilihan \"Antioksidan\" tidak tersedia, maka fungsi terdekat atau fungsi sekundernya bisa dianggap sebagai pengawet dalam arti luas (mencegah degradasi produk). Natrium metabisulfit melindungi bahan-bahan dalam infus dari kerusakan akibat oksidasi selama proses sterilisasi panas atau penyimpanan."
+  },
+  {
+    "id": 14,
+    "stem": "Apoteker bagian R&D industri farmasi sedang melakukam optimasi formula tablet vitamin B1 100 mg menggunakan metode kempa langsung. Eksipien yang digunakan laktosa, Avicel Ph 102, Aerosil, dan Mg Stearat. Sebelum dilakukan pencetakan, apoteker melakukan optimasi waktu pencampuran zat aktif dan eksipien untuk memenuhi persyaratan sifat fisik yang sesuai. Apakah sifat fisik tablet yang dimaksud?",
+    "options": {
+      "A": "Kekerasan",
+      "B": "Keragaman bobot",
+      "C": "Kerapuhan",
+      "D": "Keseragaman zat aktif",
+      "E": "Waktu hancur"
+    },
+    "correct_key": "D",
+    "explanation": "Tujuan utama dari proses pencampuran (mixing) zat aktif dan eksipien adalah untuk memastikan bahwa zat aktif terdistribusi secara homogen (merata) di seluruh massa serbuk. Waktu pencampuran yang optimal akan menghasilkan keseragaman kandungan atau keseragaman zat aktif dalam setiap tablet yang dicetak. Jika waktu terlalu singkat, campuran belum homogen. Jika terlalu lama, bisa terjadi segregasi (pemisahan)."
+  },
+  {
+    "id": 15,
+    "stem": "Sebuah industri farmasi sedang merancang formula tablet kunyah antasida, yang terdiri dari zat aktif, laktosum, gelatin, explotab, sucralose dan magnesium stearat. Apakah bahan yang berfungsi sebagai pemanis dalam formula tersebut?",
+    "options": {
+      "A": "Lactosum",
+      "B": "Gelatin",
+      "C": "Explotab",
+      "D": "Sucralose",
+      "E": "Magnesium stearat"
+    },
+    "correct_key": "D",
+    "explanation": "Tablet kunyah memerlukan pemanis untuk memberikan rasa yang enak. Sucralose adalah pemanis buatan (artificial sweetener) berintensitas tinggi (jauh lebih manis dari gula) yang tidak menyebabkan karies gigi, sehingga sangat cocok untuk formula tablet kunyah."
+  },
+  {
+    "id": 16,
+    "stem": "Seorang apoteker di industri farmasi akan memproduksi sediaan suspensi ibuprofen. Dalam formula suspensi tersebut, terdapat bahan berupa hidroksi propil metil selulosa atau HPMC. Apakah fungsi bahan tersebut?",
+    "options": {
+      "A": "Floculating agent",
+      "B": "Flavouring agent",
+      "C": "Preservative agent",
+      "D": "Suspending agent",
+      "E": "Thickening agent"
+    },
+    "correct_key": "D",
+    "explanation": "Dalam sediaan suspensi, HPMC berfungsi sebagai suspending agent. Ia meningkatkan viskositas medium (pembawa), sehingga memperlambat laju pengendapan partikel zat aktif (ibuprofen) sesuai dengan Hukum Stokes. Ini membantu menjaga partikel tetap terdispersi merata dan memudahkan redispersi (pengocokan kembali)."
+  },
+  {
+    "id": 17,
+    "stem": "Seorang apoteker pada bagian R&D suatu industri kosmetik sedang mengembangkan formulasi sediaan pelembab kulit dari ekstrak lidah buaya dengan menggunakan basis Hydrophilie petrolatum USP yang terdiri dari vaselin putih, kolesterol, stearil alkohol dan lilin putih. Basis tersebut diketahui stabil terhadap panas. Apakah komponen yang dimaksud dalam basis Hydrophilie petrolatum USP tersebut?",
+    "options": {
+      "A": "Kolesterol dan lilin putih",
+      "B": "Kolesterol dan stearil alkohol",
+      "C": "Lilin putih dan vaselin putih",
+      "D": "Stearil alkohol dan lilin putih",
+      "E": "Vaselin putih dan kolesterol"
+    },
+    "correct_key": "D",
+    "explanation": "Dalam basis salep, komponen dengan titik leleh yang lebih tinggi akan meningkatkan konsistensi dan stabilitas basis terhadap suhu. Stearil alkohol dan lilin putih (cera alba) adalah alkohol berantai panjang dan lilin padat yang memiliki titik leleh tinggi. Penambahan kedua komponen ini akan membuat basis petrolatum (vaselin) yang lebih lunak menjadi lebih kaku dan tidak mudah meleleh pada suhu yang sedikit hangat."
+  },
+  {
+    "id": 18,
+    "stem": "Seorang apoteker di Industri farmasi sedang melakukan pengembangan formula sediaan suspensi albendazol-simetikon, dengan formula sebagai berikut:\nAlbendazol 40,0 g\nSimetikon 0,24 g\nTween 80 1,0 g\nXanthan gum 3,0 g\nSukrosa 390,0 g\nSorbitol 130,0 g\nNatrium benzoat 4,0 g\nKalium sorbat 4,0 g\nAsam sitrat 0,6 g\nFlavor q.s\nAir ad. 1 L\n \nApakah fungsi natrium benzoat dan kalium sorbat dalam formula tersebut?",
+    "options": {
+      "A": "Buffer agent",
+      "B": "Sweetener",
+      "C": "Suspending agent",
+      "D": "Preservatif",
+      "E": "Antioxidant"
+    },
+    "correct_key": "D",
+    "explanation": "Natrium benzoat dan Kalium sorbat adalah dua jenis pengawet (preservative) antimikroba yang sangat umum digunakan dalam sediaan cair oral. Penggunaan kombinasi pengawet seringkali lebih efektif karena dapat memberikan spektrum aktivitas yang lebih luas terhadap berbagai jenis mikroorganisme (bakteri, ragi, jamur)."
+  },
+  {
+    "id": 19,
+    "stem": "Seorang apoteker di bagian R&D suatu industri farmasi sedang mengembangkan formula salep hidrokortison dengan menggunakan basis Hydrophilic ointment USP yang terdiri dari stearil alkohol, vaselin album, metil paraben, propil paraben, natrium lauril sulfat, propilen glikol dan aquadest. Apakah bahan yang berfungsi sebagai humektan?",
+    "options": {
+      "A": "Metil paraben",
+      "B": "Natrium lauril sulfat",
+      "C": "Propilen glikol",
+      "D": "Stearil alkohol",
+      "E": "Vaselin album"
+    },
+    "correct_key": "C",
+    "explanation": "Humektan adalah bahan yang berfungsi untuk menarik dan menahan kelembapan. Dalam sediaan topikal, humektan mencegah produk mengering dan juga membantu melembapkan kulit. Propilen glikol adalah humektan yang sangat umum digunakan dalam formulasi farmasi dan kosmetik."
+  },
+  {
+    "id": 20,
+    "stem": "Seorang apoteker di industri farmasi akan memproduksi sediaan injeksi lidokain. Formula sediaan tersebut terdiri dari lidokain hidroklorida, Natrium klorida, Asam klorida, Natrium hidroksida dan aqua pro injeksi. Apakah bahan dalam formula tersebut yang berfungsi sebagai pengatur tonisitas sediaan tersebut?",
+    "options": {
+      "A": "Lidokain hidroklorida",
+      "B": "Natrium klorida",
+      "C": "Asam klorida",
+      "D": "Natrium hidroksida",
+      "E": "Aqua proinjeksi"
+    },
+    "correct_key": "B",
+    "explanation": "Sediaan injeksi harus isotonis (memiliki tekanan osmotik yang sama) dengan cairan tubuh untuk menghindari rasa sakit atau kerusakan jaringan di lokasi suntikan. Natrium klorida (NaCl) adalah bahan yang paling umum digunakan sebagai pengatur tonisitas (tonicity-adjusting agent) untuk membuat larutan injeksi menjadi isotonis."
+  },
+  {
+    "id": 21,
+    "stem": "Seorang apoteker di suatu industri farmasi sedang mengembangkan formula sediaan salep epidermis dengan menggunakan bahan tambahan sebagai berikut cera alba, cetil alba, gliseril, CMC-Na, propilenglikol. Apakah bahan tambahan dalam formula tersebut yang berfungsi sebagai humektan?",
+    "options": {
+      "A": "Gliserin",
+      "B": "CMC-Na",
+      "C": "Cera alba",
+      "D": "Cetil alba",
+      "E": "Propilengilkol"
+    },
+    "correct_key": "A",
+    "explanation": "Sama seperti propilen glikol, Gliserin (atau Gliserol) adalah salah satu humektan klasik yang paling sering digunakan. Ia sangat efektif dalam menarik air dari udara untuk menjaga kelembapan produk dan kulit. Propilenglikol juga humektan, namun gliserin adalah pilihan yang lebih jelas dan utama untuk fungsi ini."
+  },
+  {
+    "id": 22,
+    "stem": "Seorang apoteker di Industri farmasi sedang melakukan pengembangan formula sediaan suspensi albendazol-simetikon, dengan formula sebagai berikut:\nAlbendazol 40,0 g\nSimetikon 0,24 g\nTween 80 1,0 g\nXanthan gum 3,0 g\nSukrosa 390,0 g\nSorbitol 130,0 g\nNatrium benzoat 4,0 g\nKalium sorbat 4,0 g\nAsam sitrat 0,6 g\nFlavor q.s\nAir ad. 1 L\nApakah fungsi Asam sitrat dalam formula tersebut?",
+    "options": {
+      "A": "Flavor",
+      "B": "Penguat rasa",
+      "C": "Pemanis",
+      "D": "Penstabil",
+      "E": "Pensuspensi"
+    },
+    "correct_key": "D",
+    "explanation": "Asam sitrat dalam formula ini kemungkinan besar berfungsi sebagai bagian dari sistem dapar (buffer) bersama dengan garamnya (jika ada) atau untuk mengatur pH sediaan ke tingkat optimal. Menjaga pH yang stabil sangat penting untuk kelarutan, stabilitas kimia zat aktif, dan efektivitas pengawet. Oleh karena itu, fungsi utamanya adalah sebagai penstabil pH."
+  },
+  {
+    "id": 23,
+    "stem": "Seorang apoteker di suatu industri farmasi sedang mengembangkan formula salep hidrokortison. Adapun bahan tambahan yang digunakan sebagai basis dalam (%b/b) adalah Kolesterol 3,0; Steril alkohol 3,0; Cera alba 8,0 dan Vaselin album 86,0. Apakah jenis basis salep yang terdapat dalam formula tersebut ?",
+    "options": {
+      "A": "Larut air",
+      "B": "Emulsi",
+      "C": "Larut minyak",
+      "D": "Serap",
+      "E": "Hidrokarbon"
+    },
+    "correct_key": "D",
+    "explanation": "Basis salep ini terdiri dari mayoritas Vaselin album (86%), yang merupakan basis hidrokarbon. Namun, dengan adanya Kolesterol dan Stearil alkohol, basis ini diklasifikasikan sebagai basis serap (absorption base). Basis serap adalah basis anhidrat (tidak mengandung air) tetapi mampu menyerap sejumlah air untuk membentuk emulsi air-dalam-minyak (A/M). Kolesterol bertindak sebagai emulgator yang memungkinkan penyerapan air tersebut."
+  },
+  {
+    "id": 24,
+    "stem": "Seorang apoteker di suatu industri farmasi sedang melakukan optimasi formula suspensi rekonstitusi Ampisilin Trihidrat dengan formula sebagai berikut::\n R/ Ampisilin trihidrat 5,77 %\n Sukrosa 60 %\n Na alginat 1,5 %\n Na benzoat 0,2 %\n Na sitrat 0,125 %\n Asam sitrat 0,051 %\n Tween 80 0,08 %\nApa fungsi penambahan Na-sitrat dalam formula sediaan suspensi tersebut?",
+    "options": {
+      "A": "Suspending agent",
+      "B": "Buffer system",
+      "C": "Wetting agent",
+      "D": "Surfactant",
+      "E": "Corigent saporis"
+    },
+    "correct_key": "B",
+    "explanation": "Formula ini mengandung Asam sitrat (asam lemah) dan Na-sitrat (Natrium sitrat, yang merupakan basa konjugasinya). Kombinasi asam lemah dan basa konjugasinya membentuk suatu sistem dapar (buffer system). Sistem ini bertujuan untuk menjaga pH suspensi setelah direkonstitusi dengan air agar tetap stabil pada rentang pH di mana Ampisilin memiliki kestabilan optimal."
+  },
+  {
+    "id": 25,
+    "stem": "Seorang apoteker yang bekerja pada bagian R&D suatu industri farmasi akan merancang formula sediaan tablet lepas lambat verapamil HCl yang kelarutannya tinggi menggunakan matriks tidak larut dalam air. Bahan matriks yang tersedia adalah CMC, Etil selulosa, Galaktomannosa, Hidroksi etilselulosa dan Na Alginat. Apakah matriks yang tepat digunakan untuk pembuatan formula sediaan tersebut?",
+    "options": {
+      "A": "CMC",
+      "B": "Etil selulosa",
+      "C": "Galaktomannosa",
+      "D": "Hidroksi etilselulosa",
+      "E": "Na. Alginat"
+    },
+    "correct_key": "B",
+    "explanation": "Untuk membuat tablet lepas lambat dengan matriks yang tidak larut, dibutuhkan polimer yang hidrofobik (tidak larut dalam air). Di antara pilihan yang diberikan, Etil selulosa adalah satu-satunya polimer yang tidak larut dalam air. Ia akan membentuk matriks inert seperti spons, di mana obat akan berdifusi keluar secara perlahan. Bahan lain seperti CMC, Galaktomanosa, HEC, dan Na Alginat adalah polimer hidrofilik yang akan mengembang atau larut dalam air."
+  },
+  {
+    "id": 26,
+    "stem": "Seorang apoteker yang bekerja pada bagian R&D suatu industry farmasi akan merancang formula orally distegrating tablet ketoprofen dengan komposisi bahan tambahan crospovidon, betasiklodekstrin, manitol, aspartam, mg straeart dan talk. Apakah bahan tambahan yang berperan sebagai solubilizer dalam formula tersebut?",
+    "options": {
+      "A": "Aspartam",
+      "B": "Betasiklodekstrin",
+      "C": "Crospovidon",
+      "D": "Manitol",
+      "E": "Mg.Stearat"
+    },
+    "correct_key": "B",
+    "explanation": "Solubilizer adalah bahan yang digunakan untuk meningkatkan kelarutan zat aktif yang sukar larut. Betasiklodekstrin memiliki struktur molekul seperti keranjang donat yang unik, dengan bagian luar yang hidrofilik (suka air) dan rongga bagian dalam yang lipofilik (suka minyak). Molekul obat yang sukar larut (seperti ketoprofen) dapat masuk ke dalam rongga ini, membentuk kompleks inklusi yang lebih mudah larut dalam air."
+  },
+  {
+    "id": 27,
+    "stem": "Seorang Apoteker yang bekerja pada bagian R & D suatu industri farmasi sedang mengembangkan sediaan mikroemulsi natrium diklofenak dalam dengan komponen formula terdiri dari air, minyak, surfaktan dan kosurfaktan. Mikroemulsi yang dihasilkan terlihat transparan berbeda dengan emulsi yang tampak keruh. Apakah yang menyebabkan hasil yang transparan pada sediaan tersebut?",
+    "options": {
+      "A": "Viskositas sediaan kecil",
+      "B": "Ukuran globul sangat kecil",
+      "C": "Zat aktif terlarut dalam fase kontinyu",
+      "D": "Pengaruh dari jenis kosurfaktan",
+      "E": "Berat jenis sediaan kecil"
+    },
+    "correct_key": "B",
+    "explanation": "Emulsi konvensional terlihat keruh atau putih susu karena tetesan (globul) fase terdispersinya cukup besar (biasanya > 500 nm) sehingga dapat menyebarkan atau membiaskan cahaya tampak. Sebaliknya, mikroemulsi bersifat transparan karena ukuran globulnya sangat kecil (biasanya < 100 nm), lebih kecil dari panjang gelombang cahaya tampak. Akibatnya, cahaya dapat melewatinya tanpa disebarkan secara signifikan."
+  },
+  {
+    "id": 28,
+    "stem": "Seorang apoteker di bagian R&D industri farmasi melakukan optimasi formula tablet parasetamol 500 mg dengan bahan-bahan sebagai berikut: Parasetamol, Avicel 102, Kolidon VA 64, Kolidon CL, Magnesium Stearat dan Aerosil 200. Hasil pengujian menunjukkan bahwa tablet terlalu keras dengan rata-rata kekerasan tablet (n=10) sebesar (16,7 ± 2,4) Kg. Apakah langkah yang tepat dilakukan apoteker untuk memperbaiki sifat fisik tablet tersebut?",
+    "options": {
+      "A": "Menurunkan kadar Avicel PH 102",
+      "B": "Menurunkan kadar Kollidon VA 64",
+      "C": "Menurunkan kadar Kolllidon CL",
+      "D": "Menurunkan kadar Magnesium stearat",
+      "E": "Menurunkan kadar Aerosil 200"
+    },
+    "correct_key": "B",
+    "explanation": "Kekerasan tablet yang berlebihan (16,7 kg, sementara target umum adalah 4-8 kg) biasanya disebabkan oleh kekuatan pengikat yang terlalu besar atau konsentrasinya yang terlalu tinggi. Dalam formula ini, Kollidon VA 64 adalah bahan pengikat (binder). Langkah yang paling logis dan efektif untuk mengurangi kekerasan tablet adalah dengan menurunkan konsentrasi bahan pengikat tersebut."
+  },
+  {
+    "id": 29,
+    "stem": "Seorang apoteker di bagian R&D industri farmasi melakukan optimasi formula sediaan tablet dengan formula yang berisi Parasetamol, Kafein, Avicel PH 101, Kolidon CL, kolidon 30 dan PEG 6.000. Hasil uji daya alir (n=3) menunjukkan bahwa waktu alir campuran serbuk adalah 15,8±3,1 g/detik dengan sudut diam sebesar 36°. Apakah langkah yang tepat untuk memperbaiki sifat alir campuran serbuk formula tersebut?",
+    "options": {
+      "A": "Menambah aerosil dalam formula",
+      "B": "Mengganti Kollidon CL dengan aerosol",
+      "C": "Mengganti Kollidon 30 dengan aerosil",
+      "D": "Mengganti Avicel PH 101 dengan aerosol",
+      "E": "Mengganti PEG-6000 dengan aerosol"
+    },
+    "correct_key": "A",
+    "explanation": "Sudut diam sebesar 36° menunjukkan sifat alir yang kurang baik (cukup/passable, tapi tidak baik). Untuk memperbaiki sifat alir massa serbuk, bahan yang perlu ditambahkan adalah glidant. Aerosil (Colloidal Silicon Dioxide) adalah glidant yang paling umum dan efektif. Partikelnya yang sangat kecil akan melapisi permukaan granul yang lebih besar, mengurangi gesekan antarpartikel, dan membuat serbuk mengalir lebih lancar."
+  },
+  {
+    "id": 30,
+    "stem": "Seorang apoteker di bagian R&D industri farmasi melakukan optimasi formula sediaan tablet dengan formula yang berisi Parasetamol, Kafein, Avicel PH 101, Kolidon CL, kolidon 30 dan PEG 6.000. Hasil uji daya hancur (n=3), menunjukkan bahwa waktu hancur tablet 17,5 ± 1,7 menit. Apakah langkah yang tepat dilakukan apoteker agar waktu hancur memenuhi ketentuan farmakope?",
+    "options": {
+      "A": "Meningkatkan kadar Caffeine",
+      "B": "Meningkatkan kadar Avicel PH 101",
+      "C": "Meningkatkan kadar Kollidon 30",
+      "D": "Meningkatkan kadar Kollidon CL",
+      "E": "Meningkatkan kadar PEG 6000"
+    },
+    "correct_key": "D",
+    "explanation": "Waktu hancur 17,5 menit melebihi persyaratan Farmakope untuk tablet tidak bersalut (umumnya tidak lebih dari 15 menit). Waktu hancur yang lama disebabkan oleh kurangnya atau kurang efektifnya bahan penghancur. Dalam formula ini, Kollidon CL (Crospovidone) adalah bahan penghancur (disintegrant). Oleh karena itu, untuk mempercepat waktu hancur, langkah yang paling tepat adalah meningkatkan konsentrasi Kollidon CL."
+  },
+  {
+    "id": 31,
+    "stem": "Seorang apoteker di suatu industri farmasi menemukan beberapa tablet parasetamol yang rusak pada saat proses produksi. Sebagian bahan yang dicetak sebagian melekat pada dinding matriks. Akibatnya, tablet parasetamol tersebut sukar didorong keluar dari matriks dan permukaan tablet menjadi kasar. Apakah nama kerusakkan pada tablet tersebut?",
+    "options": {
+      "A": "Capping",
+      "B": "Laminating",
+      "C": "Chipping",
+      "D": "Cracking",
+      "E": "Binding"
+    },
+    "correct_key": "E",
+    "explanation": "Kerusakan yang dideskripsikan, di mana sebagian bahan tablet melekat pada dinding cetakan (die wall), disebut binding. Hal ini terjadi akibat kurangnya lubrikan (pelicin) atau adanya kelembapan berlebih pada granul, yang menyebabkan gesekan kuat antara tablet dan dinding matriks saat proses ejeksi (pendorongan keluar). Akibatnya, permukaan sisi tablet menjadi kasar atau tergores."
+  },
+  {
+    "id": 32,
+    "stem": "Seorang apoteker di apotek menerima resep dari seorang perempuan, usia 17 tahun untuk pengobatan jerawat. Resep tersebut berisi sediaan gel yang berisi Klindamisin HCl yang harus dicampur dengan vitamin E yang terlebih dahulu dilarutkan dalam pelarut minyak. Ketika diracik oleh apoteker, sediaan tersebut menunjukkan adanya iinkompatibilitas fisik. Apakah tindakan yang tepat dilakukan untuk mengatasi hal tersebut?",
+    "options": {
+      "A": "Menambahkan alkohol",
+      "B": "Menambahkan surfaktan",
+      "C": "Menambahkan preservative",
+      "D": "Menambahkan basis gel",
+      "E": "Menambahkan air"
+    },
+    "correct_key": "B",
+    "explanation": "Masalah yang terjadi adalah inkompatibilitas fisik antara basis gel (yang umumnya berbasis air/hidrofilik) dengan larutan vitamin E (yang dilarutkan dalam minyak/lipofilik). Sistem yang terdiri dari air dan minyak tidak akan bisa bercampur. Untuk menyatukannya, diperlukan surfaktan (zat pengemulsi). Surfaktan akan menurunkan tegangan antarmuka antara fase air dan fase minyak, sehingga memungkinkan terbentuknya emulsi yang stabil (emulgel)."
+  },
+  {
+    "id": 33,
+    "stem": "Seorang apoteker di bagian R&D suatu industri farmasi sedang mengembangkan formula tablet asam mefenamat 500 mg. Saat dilakukan pengempaan, ditemukan tablet yang lengket pada dinding cetakan. Berdasarkan hal tersebut, apoteker perlu melakukan evaluasi terhadap bahan tambahan yang digunakan dalam formulasi. Apakah bahan tambahan yang perlu dievaluasi untuk mengatasi permasalahan tersebut?",
+    "options": {
+      "A": "Anti adherent",
+      "B": "Binders",
+      "C": "Diluent",
+      "D": "Disintegrant",
+      "E": "Filler"
+    },
+    "correct_key": "A",
+    "explanation": "Masalah tablet yang lengket pada dinding cetakan (sticking dan picking) disebabkan oleh adhesi antara massa cetak dengan permukaan punch dan die. Bahan tambahan yang berfungsi untuk mencegah pelekatan ini adalah anti-adherent. Seringkali, fungsi ini dijalankan oleh lubrikan seperti Magnesium Stearat, atau bisa juga ditambahkan glidant seperti Talkum yang juga memiliki sifat anti-adherent."
+  },
+  {
+    "id": 34,
+    "stem": "Suatu industri farmasi membuat beberapa produk obat generik berlogo (OGB) untuk penyakit hipertensi. Penandaan dan desain kemasan produk-produk OGB tersebut telah diatur dengan desain yang sederhana, sehingga memungkinkan terjadi kemiripan antara produk satu dengan yang lainnya, dan dapat beresiko menimbulkan permasalahan. Apakah faktor resiko mutu yang dapat terjadi karena kondisi tersebut?",
+    "options": {
+      "A": "Ketercampurbauran",
+      "B": "Kontaminasi silang",
+      "C": "Pengolahan ulang",
+      "D": "Kegagalan proses produksi",
+      "E": "Kesalahan pengujian"
+    },
+    "correct_key": "A",
+    "explanation": "Ketika desain kemasan antara produk yang berbeda sangat mirip, risiko terbesar yang dapat terjadi adalah ketercampurbauran (mix-ups). Hal ini bisa terjadi di berbagai lini, mulai dari penyimpanan, proses pengemasan, hingga distribusi, di mana satu produk bisa keliru diambil atau diberi label sebagai produk lain. Ini adalah pelanggaran mutu yang sangat serius."
+  },
+  {
+    "id": 35,
+    "stem": "Seorang apoteker di industri farmasi akan memproduksi tablet natrium diklofenak dengan eksepien laktosa, magnesium stearat, talcum, polyvinyl pirrolidone dan sodium starch glycolate. Salah satu spesifikasi produk yang diinginkan adalah waktu hancur tablet kurang dari 15 menit. Apakah bahan tambahan yang harus dioptimasi untuk memenuhi spesifikasi produk tersebut?",
+    "options": {
+      "A": "Laktosa",
+      "B": "Magnesium stearat",
+      "C": "Talcum",
+      "D": "Polivinyl pirrolidone",
+      "E": "Sodium starch glycolate"
+    },
+    "correct_key": "E",
+    "explanation": "Waktu hancur tablet diatur oleh bahan penghancur (disintegrant). Fungsi bahan ini adalah untuk menyerap air dengan cepat, mengembang, dan memecah tablet menjadi granul-granul kecil saat kontak dengan cairan lambung. Sodium Starch Glycolate (misalnya Explotab) adalah superdisintegrant yang sangat efektif. Untuk mempercepat waktu hancur, konsentrasi atau jenis bahan penghancur inilah yang perlu dioptimasi."
+  },
+  {
+    "id": 36,
+    "stem": "Sorang apoteker di industri obat tradisional sengan mengembangkan formula produk VCO dalam sediaan emulsi. Pada saat dilakukan pengujian stabilitas, terjadi pemisahan emulsi selama pengujian yang disebabkan terjadinya penggabungan fase. Apakah jenis pemisahan yang menggambarkan ketidakstabilan formula produk tersebut? kerusakan",
+    "options": {
+      "A": "Creaming",
+      "B": "Inversi",
+      "C": "Koalesen",
+      "D": "Koagulasi",
+      "E": "Sedimentasi"
+    },
+    "correct_key": "C",
+    "explanation": "Ketidakstabilan emulsi yang digambarkan sebagai \"penggabungan fase\" adalah Koalesen (coalescence). Ini adalah proses ireversibel (tidak bisa diperbaiki dengan pengocokan) di mana globul-globul kecil fase terdispersi bergabung menjadi globul yang lebih besar, dan pada akhirnya akan memisah menjadi dua lapisan cairan yang berbeda (minyak dan air)."
+  },
+  {
+    "id": 37,
+    "stem": "Seorang apoteker pada bagian R&D suatu industri farmasi sedang mengembangkan formula sediaan supositoria untuk pengobatan hemoroid. Sediaan tersebut mengandung bahan aktif bismuth subnitras dan lidokain HCl. Bahan aktif tersebut harus dapat dilepaskan pada saat basis supositoria melelh pada suhu tubuh. Apakah basis supositoria yang tepat untuk sediaan tersebut?",
+    "options": {
+      "A": "Asam stearat",
+      "B": "Glisero-gelatin",
+      "C": "Hidrogel",
+      "D": "Oleum cacao",
+      "E": "Polietilenglikol"
+    },
+    "correct_key": "D",
+    "explanation": "Supositoria dapat melepaskan zat aktif dengan dua mekanisme: meleleh atau melarut. Basis yang melepaskan obat dengan cara meleleh pada suhu tubuh adalah basis berlemak. Oleum Cacao (lemak coklat) adalah basis berlemak klasik yang bersifat padat pada suhu ruang namun akan meleleh pada rentang suhu 30-36 °C (suhu tubuh)."
+  },
+  {
+    "id": 38,
+    "stem": "Seorang Apoteker di bagian produksi Industri Obat Tradisional sedang menganalisis mutu simplisia rimpang meniran yang akan diproduksi menjadi agen imunomodulator .Salah satu parameter mutu yang diuji adalah kadar air simplisia. Berapa persenkah kadar maksimal untuk parameter tersebut?",
+    "options": {
+      "A": "12 %",
+      "B": "10 %",
+      "C": "8 %",
+      "D": "6 %",
+      "E": "4 %"
+    },
+    "correct_key": "B",
+    "explanation": "Menurut standar Farmakope Herbal Indonesia (FHI), kadar air untuk simplisia rimpang meniran (Phyllanthi niruri Herba) adalah tidak lebih dari 10%. Kadar air adalah parameter penting untuk mencegah pertumbuhan jamur dan bakteri serta kerusakan simplisia selama penyimpanan."
+  },
+  {
+    "id": 39,
+    "stem": "Seorang apoteker di suatu industri obat tradisional telah mengembangkan ekstrak suatu tanaman sebagai Imunomodulator. Ekstrak tersebut telah distandarisasi serta telah terbukti berkhasiat dan aman pada pengujian menggunakan mencit. Apoteker selanjutnya mendaftarkan produk tersebut kepada Badan POM. Apakah nama penggolongan yang tepat dicantumkan waktu mendaftarkan produk tersebut ?",
+    "options": {
+      "A": "Jamu racikan",
+      "B": "Obat herbal terstandar",
+      "C": "Fitofarmaka",
+      "D": "Jamu",
+      "E": "Ekstrak terstandar"
+    },
+    "correct_key": "B",
+    "explanation": "Penggolongan obat tradisional di Indonesia didasarkan pada tingkat pembuktian khasiat dan keamanannya. Produk yang telah distandarisasi bahan bakunya dan telah melalui uji praklinik (pada hewan coba seperti mencit) untuk membuktikan khasiat dan keamanannya, dikategorikan sebagai Obat Herbal Terstandar (OHT)."
+  },
+  {
+    "id": 40,
+    "stem": "Seorang pasien datang ke apotek membeli suplemen untuk meningkatkan nafsu makan anaknya. Apoteker memilihkan produk supplement yang dalam kemasannya terdapat logo: \n \nApakah produk yang dipilihkan oleh apoteker tersebut?",
+    "options": {
+      "A": "Jamu",
+      "B": "OHT",
+      "C": "Fitofarmaka",
+      "D": "Obat herbal lokal",
+      "E": "Obat herbal asing"
+    },
+    "correct_key": "B",
+    "explanation": "Logo yang digambarkan adalah logo untuk Obat Herbal Terstandar (OHT). Logo ini berupa lingkaran dengan tiga buah jalinan daun (yang membentuk bintang) di dalamnya. Logo ini menjamin bahwa produk tersebut telah melalui proses standardisasi dan pengujian praklinik."
+  },
+  {
+    "id": 41,
+    "stem": "Sebuah Industri Obat Tradisional sedang melakukan pembuatan simplisia rimpang kunyit yang akan digunakan sebagai bahan baku beberapa produk jamu yang dimiliki. Hasil evaluasi pada proses penyimpanan menemukan kadar air simplisia sebesar 20% sehingga tidak memenuhi persyaratan CPOTB. Untuk mengatasi permasalahan tersebut, apakah bahan yang harus disertakan dalam kantong pengemas simplisia selama proses penyimpanan?",
+    "options": {
+      "A": "Kalsium klorida",
+      "B": "Tanah liat",
+      "C": "Silica gel",
+      "D": "Magnesium sulfat",
+      "E": "Molecular sieve"
+    },
+    "correct_key": "C",
+    "explanation": "Kadar air 20% sangat tinggi dan berisiko merusak simplisia. Untuk menyerap kelembapan berlebih dalam wadah penyimpanan, digunakan bahan pengering (desiccant). Silica gel adalah desikan yang paling umum digunakan dalam kemasan produk farmasi dan makanan karena efektif, tidak beracun, dan inert (tidak bereaksi dengan produk)."
+  },
+  {
+    "id": 42,
+    "stem": "Seorang apoteker di suatu industri obat tradisional mendapatkan penurunan kadar kurkumninoid dalam bahan baku kunyit untuk bahan baku kapsul antikolesterol. Pemasok bahan baku tersebut mengatakan bahwa sebelum dikirim, kunyit dididihkan dengan air kapur terlebih dahulu untuk menghentikan reaksi enzimatis. Apakah yang menyebabkan penurunan kadar kurkuminoid dalam bahan baku kunyit tersebut?",
+    "options": {
+      "A": "Kurkuminoid tidak stabil oleh panas",
+      "B": "Kurkuminoid menguap bersama uap air",
+      "C": "Kurkuminoid terurai menjadi asam ferulat",
+      "D": "Kurkuminoid membentuk polimer",
+      "E": "Reaksi enzimatis tetap berlangsung"
+    },
+    "correct_key": "C",
+    "explanation": "Senyawa kurkuminoid, pigmen utama dalam kunyit, bersifat tidak stabil dalam suasana basa (alkalis) dan panas. Proses perebusan dengan air kapur (yang bersifat basa) akan menyebabkan degradasi kurkumin. Salah satu jalur degradasi utama kurkumin dalam kondisi basa adalah hidrolisis menjadi asam ferulat dan vanilin."
+  },
+  {
+    "id": 43,
+    "stem": "Seorang apoteker yang bertugas pada bagian produksi suatu industri farmasi menemukan tablet digoksin yang tertinggal pada mesin striping ketika akan memulai proses pengemasan (striping) tablet captopril 25 mg. Apakah tindakan yang tepat untuk dilakukan oleh bagian produksi sebelum memulai proses pengemasan tablet captopril tersebut?",
+    "options": {
+      "A": "Mengecek Standar Operating Prosedur",
+      "B": "Melakukan Validasi Cleaning",
+      "C": "Melakukan General cek up",
+      "D": "Membuat laporan temuan",
+      "E": "Melakukan Validasi Prospektif"
+    },
+    "correct_key": "D",
+    "explanation": "Sesuai prinsip CPOB, ketika ditemukan ketidaksesuaian seperti adanya produk sisa dari bets sebelumnya, langkah pertama yang harus dilakukan adalah mendokumentasikannya. Membuat laporan temuan adalah prosedur formal untuk mencatat penyimpangan tersebut. Laporan ini akan menjadi dasar untuk investigasi lebih lanjut oleh bagian Pemastian Mutu (QA) untuk menentukan akar masalah dan tindakan perbaikan yang diperlukan sebelum lini produksi dinyatakan bersih (line clearance) dan siap digunakan untuk produk berikutnya."
+  },
+  {
+    "id": 44,
+    "stem": "Seorang apoteker yang bertugas di bagian R&D suatu sedang mengembangkan Tablet Amoksisilin 500 mg. Berdasarkan data amoksisilin tidak stabil terhadap panas dan lembab, tidak kompresibel, tidak free flowing. Apakah metode pembuatan tablet yang tepat untuk pembuatan tablet amoksisilin tersebut?",
+    "options": {
+      "A": "Wet Granulation",
+      "B": "Dry Granulation",
+      "C": "Direct Compresion",
+      "D": "Fast melt granulation",
+      "E": "Foam granulation"
+    },
+    "correct_key": "B",
+    "explanation": "Amoksisilin memiliki sifat yang tidak cocok untuk dua metode ekstrem."
+  },
+  {
+    "id": 45,
+    "stem": "Seorang apoteker di bagian PPIC suatu industri farmasi sedang membuat perencanaan proses produksi tablet herbal daun sirsak 500 mg. Kapasitas mesin dalam produksi sediaan herbal tersebut tersebut adalah 175.000 tablet/jam. Proses produksi akan dilakukan selama 12 jam/hari menggunakan 2 buah set mesin produksi. Berapakah perkiraan jumlah tablet herbal daun sirsak tersebut yang akan dihasilkan dalam 1 hari?",
+    "options": {
+      "A": "1.500.000 tablet",
+      "B": "2.100.000 tablet",
+      "C": "4.200.000 tablet",
+      "D": "3.600.000 tablet",
+      "E": "4.800.000 tablet"
+    },
+    "correct_key": "C",
+    "explanation": "Produksi per mesin per hari: 175.000 tablet/jam × 12 jam = 2.100.000 tablet. Total produksi dari 2 mesin per hari: 2.100.000 tablet/mesin × 2 mesin = 4.200.000 tablet."
+  },
+  {
+    "id": 46,
+    "stem": "Seorang perempuan datang ke apotek membawa resep berisi klobetasol propionate cream 0,025% sebanyak 20 g dengan penggunaan S u e. Di apotek, tersedia krim klobetasol propionat 0,05% dalam kemasan tube 5 g. Berapakah basis krim yang diperlukan untuk membuat sediaan sesuai resep tersebut?",
+    "options": {
+      "A": "2,5 g",
+      "B": "5,0 g",
+      "C": "7,5 g",
+      "D": "10,0 g",
+      "E": "15,0 g"
+    },
+    "correct_key": "D",
+    "explanation": "Ini adalah perhitungan pengenceran menggunakan rumus V₁N₁ = V₂N₂ atau m₁K₁ = m₂K₂.m₁ = massa krim 0,05% yang dibutuhkan.K₁ = konsentrasi krim yang tersedia (0,05%).m₂ = massa krim yang akan dibuat (20 g).K₂ = konsentrasi krim yang diinginkan (0,025%).m₁ × 0,05% = 20 g × 0,025%. m₁ = (20 g × 0,025%) / 0,05%. m₁ = 10 g Jadi, krim Klobetasol 0,05% yang dibutuhkan adalah 10 g. Basis krim yang diperlukan: Total massa - massa krim 0,05% = 20 g - 10 g = 10,0 g."
+  },
+  {
+    "id": 47,
+    "stem": "Industri farmasi memproduksi tablet simvastatin 20 mg yang diindikasikan untuk obat anti hiperlipidemia. Tablet tersebut di desain berbentuk bulat pipih. Apoteker mengecek bagian cetakan yang berfungsi untuk mengatur bentuk dan ukuran tablet agar sesuai dengan yang dikehendaki. Apakah bagian mesin tablet yang dicek oleh apoteker tersebut?",
+    "options": {
+      "A": "Upper punch",
+      "B": "Lower punch",
+      "C": "Matris (Dies)",
+      "D": "Hopper",
+      "E": "Feed shoes"
+    },
+    "correct_key": "C",
+    "explanation": "Bagian dari mesin cetak tablet yang menentukan bentuk dan ukuran diameter tablet adalah Matris atau Dies. Granul/serbuk dimasukkan ke dalam lubang die ini, kemudian dikempa oleh punch atas dan bawah untuk membentuk tablet."
+  },
+  {
+    "id": 48,
+    "stem": "Seorang apoteker di bagian produksi suatu industri farmasi akan melakukan proses produksi tablet effervescent suplemen kalsium. Salah satu persyaratan ruang produksi yang harus dijaga ketat adalah RH (Relative Humidity). Pada suhu 27 °C, data yang didapatkan adalah tekanan uap relatif adalah sebesar 16,02 mmHg dan tekanan uap air murni adalah sebesar 26,7 mm Hg. Berapakah nilai RH ruang produksi tersebut?",
+    "options": {
+      "A": "60%",
+      "B": "65%",
+      "C": "70%",
+      "D": "75%",
+      "E": "80%"
+    },
+    "correct_key": "A",
+    "explanation": "Relative Humidity (RH) atau Kelembaban Nisbi dihitung dengan rumus:RH = (Tekanan uap relatif / Tekanan uap air murni) × 100%.RH = (16,02 mmHg / 26,7 mmHg) × 100%.RH = 0,6 × 100% = 60%"
+  },
+  {
+    "id": 49,
+    "stem": "Seorang apoteker di industri farmasi sedang mengevaluasi produksi sediaan tablet ibuprofen 400 mg dalam fasilitas produksi multi-produk. Bahan aktif yang digunakan memiliki sifat alir yang baik sehingga digunakan metode kempa langsung. Proses pembuatan tersebut beresiko menimbulkan pencemaran silang terhadap produk lain. Apakah langkah yang tepat untuk mencegah terjadinya risiko tersebut?",
+    "options": {
+      "A": "Mengendalikan suhu ruang produksi",
+      "B": "Mengendalikan kelembaban nisbi ruang produksi",
+      "C": "Mengendalikan tekanan udara ruang produksi",
+      "D": "Mengendalikan penerangan ruang produksi",
+      "E": "Mengendalikan pertukaran udara ruang produksi"
+    },
+    "correct_key": "C",
+    "explanation": "Pada fasilitas multi-produk, terutama yang menggunakan metode kempa langsung yang menghasilkan banyak debu, pencegahan kontaminasi silang (pencemaran dari satu produk ke produk lain) adalah prioritas. Cara paling efektif adalah dengan mengendalikan tekanan udara antar ruangan (kaskade tekanan). Ruang pengolahan dijaga pada tekanan yang lebih positif atau lebih negatif dibandingkan koridor di sekitarnya, sehingga aliran udara terkontrol dan mencegah debu keluar atau masuk ke area yang tidak semestinya."
+  },
+  {
+    "id": 50,
+    "stem": "Seorang apoteker di suatu industri farmasi sedang memastikan kelengkapan sarana ruang produksi untuk pembuatan tablet amoksisilin 500 mg. Salah satu alat yang harus ada dalam ruang produksi adalah manometer yang dipasang di atas pintu ruangan. Apakah fungsi alat tersebut?",
+    "options": {
+      "A": "Mengukur kelembaban udara",
+      "B": "Mengukur perbedaan tekanan udara",
+      "C": "Mengukur volume aliran udara",
+      "D": "Mengukur jumlah pertukaran udara",
+      "E": "Mengukur perbedaan suhu udara"
+    },
+    "correct_key": "B",
+    "explanation": "Manometer yang dipasang di antara dua ruangan dalam fasilitas farmasi berfungsi untuk memantau dan mengukur perbedaan tekanan udara antara kedua ruangan tersebut. Ini penting untuk memastikan bahwa kaskade tekanan berjalan sesuai desain dan efektif dalam mencegah kontaminasi."
+  },
+  {
+    "id": 51,
+    "stem": "Seorang apoteker di Industri farmasi akan memimpin produksi sediaan tablet untuk obat flu yang berisi paracetamol, fenilpropanolamin dan CTM. Sarana produksi haruslah didesain secara khusus untuk memenuhi aturan CPOB. Salah satunya adalah kaskade tekanan udara di area pengemasan untuk mencegah kontaminasi, baik di ruang pengemasan primer-ruang antara-ruang pengemasan sekunder dan luar. Bagaimakah kaskade tekanan udara antar ruang untuk pengemasan produk tersebut?",
+    "options": {
+      "A": "+++/++/+/0",
+      "B": "++/+/0/++",
+      "C": "0/+/0/+",
+      "D": "+/0/+/0",
+      "E": "++/+/0/+"
+    },
+    "correct_key": "A",
+    "explanation": "Prinsip kaskade tekanan adalah tekanan udara tertinggi berada di area paling bersih/kritis dan menurun secara bertahap ke area yang kurang bersih. Dalam pengemasan:Ruang pengemasan primer: Area paling kritis, kontak langsung dengan produk. Harus memiliki tekanan tertinggi (misal, +++).. Ruang antara (Airlock): Sebagai penyangga, tekanannya lebih rendah dari ruang primer tetapi lebih tinggi dari ruang sekunder (++). Ruang pengemasan sekunder: Tekanan lebih rendah lagi (+). Luar/Koridor: Tekanan paling rendah atau netral (0). Sehingga urutan yang benar adalah +++/++/+/0."
+  },
+  {
+    "id": 52,
+    "stem": "Seorang apoteker di suatu industri farmasi yang memproduksi infus NaCl sedang menyiapkan water for injection (WFI) untuk produk tersebut. Salah satu tahapan pengolahan air tersebut adalah melalui tabung resin. Apakah fungsi tahapan tersebut?",
+    "options": {
+      "A": "Menghilangkan bakteri",
+      "B": "Menghilangkan bau",
+      "C": "Menghilangkan ion terlarut",
+      "D": "Menghilangkan partikel",
+      "E": "Menghilangkan warna"
+    },
+    "correct_key": "C",
+    "explanation": "Tabung resin yang digunakan dalam sistem pemurnian air untuk injeksi berisi resin penukar ion. Fungsinya adalah untuk menghilangkan ion-ion terlarut (mineral, garam) dari air melalui proses deionisasi. Ini adalah tahap krusial untuk menghasilkan air dengan kemurnian sangat tinggi (highly purified water) sebelum tahap distilasi akhir untuk WFI."
+  },
+  {
+    "id": 53,
+    "stem": "Seorang apoteker di suatu industri farmasi sedang melakukan proses granulasi untuk pembuatan Tablet Parasetamol 500 mg. Selain itu, apoteker juga melakukan proses pengeringan terhadap granul Asam Mefenamat di ruang produksi yang sama. Hal tersebut menjadi temuan saat ada audit di perusahaan. Apakah daftar periksa yang harus diperbaiki untuk mencegah temuan tersebut terulang kembali?",
+    "options": {
+      "A": "Inspeksi diri",
+      "B": "Kesiapan ruang timbang",
+      "C": "Kesiapan area pencampuran serbuk",
+      "D": "Kesiapan ruangan pencetakan tablet",
+      "E": "Kesiapan kesiapan jalur pengemasan sekunder"
+    },
+    "correct_key": "A",
+    "explanation": "Memproses dua produk berbeda (Parasetamol dan Asam Mefenamat) di ruang produksi yang sama secara bersamaan adalah pelanggaran CPOB yang serius karena risiko kontaminasi silang sangat tinggi. Ini menunjukkan adanya kelemahan dalam sistem manajemen mutu. Inspeksi diri adalah mekanisme audit internal yang seharusnya dapat mendeteksi dan mencegah praktik semacam ini. Memperbaiki program inspeksi diri akan membantu memastikan bahwa prosedur dan kesiapan ruangan selalu dipatuhi sebelum produksi dimulai."
+  },
+  {
+    "id": 54,
+    "stem": "Suatu Industri farmasi ingin memproduksi sediaan injeksi parenteral yang mengandung antibiotik golongan streptomisin. Karakteristik antibiotik golongan tersebut, dapat mengalami degradasi pada suhu di atas 70 derajat celcius, mudah teroksidasi, dan sangat sensitif terhadap sinar dengan energi tinggi. Metode sterilisasi apa yang sesuai untuk sediaan injeksi tersebut?",
+    "options": {
+      "A": "Filtrasi dengan membran",
+      "B": "Sterilisasi dengan autoklaf",
+      "C": "Sterilisasi dengan gas peroksida",
+      "D": "Sterilisasi dengan radiasi gamma",
+      "E": "Sterilisasi dengan sinar UV"
+    },
+    "correct_key": "A",
+    "explanation": "Sediaan yang mengandung zat aktif yang tidak tahan panas (termolabil seperti Streptomisin), mudah teroksidasi, dan sensitif terhadap radiasi tidak dapat disterilkan dengan autoklaf (panas basah), oven (panas kering), atau radiasi. Metode sterilisasi yang paling tepat adalah sterilisasi dingin menggunakan filtrasi dengan membran berukuran pori 0,22 mikrometer, yang dapat menyaring bakteri. Proses ini dilakukan secara aseptis."
+  },
+  {
+    "id": 55,
+    "stem": "Seorang apoteker di insudtri farmasi akan mensterilkan larutan obat untuk sediaan injeksi. Senyawa obat dalam larutan injeksi tersebut diketahui tidak stabil pada suhu yang tinggi. Apakah metode sterilisasi yang tepat digunakan oleh apoteker tersebut?",
+    "options": {
+      "A": "Filtrasi membran 0,2",
+      "B": "Gas etilen oksida",
+      "C": "Autoclave",
+      "D": "Oven suhu 40 °C",
+      "E": "Oven suhu 50 °C"
+    },
+    "correct_key": "A",
+    "explanation": "Pertanyaan ini pada dasarnya sama dengan nomor 24. Untuk larutan obat yang senyawanya tidak stabil pada suhu tinggi (termolabil), metode sterilisasi akhir panas (seperti autoclave atau oven) tidak dapat digunakan. Metode pilihan adalah filtrasi menggunakan filter membran dengan ukuran pori 0,2 mikrometer (atau 0,22 µm) untuk menghilangkan mikroorganisme."
+  },
+  {
+    "id": 56,
+    "stem": "Seorang pasien, perempuan, usia 65 tahun, datang ke apotek dengan membawa resep sebagai berikut:\n\n \nBerapakah jumlah Unguentum simplex yang harus ditimbang ?",
+    "options": {
+      "A": "27,0 gram",
+      "B": "27,5 gram",
+      "C": "28,1 gram",
+      "D": "29,1 gram",
+      "E": "29,7 gram"
+    },
+    "correct_key": "",
+    "explanation": "Total salep yang dibuat adalah 30 gram. Jumlah Asam Salisilat: 3% dari 30 g = 0,03 × 30 g = 0,9 g. Jumlah Sulfur: 10% dari 30 g = 0,10 × 30 g = 3,0 g (Perhatikan: dalam resep, ini bukan 10% tapi tertulis 1, kemungkinan 1 gram. Namun, jika ini adalah resep standar, biasanya Sulfur 10%. Asumsikan 1 gram sesuai tulisan)."
+  },
+  {
+    "id": 57,
+    "stem": "Seorang perempuan, usia 28 tahun, datang ke apotek membawa resep berisi\nR/ Calamine 4%\n Zinc oxide 3%\n Emulsifying wax 6%\n Arachidis oil 30%\n Aqua ad 100%\n m.f. cream 50 g\n S.u.e\n Berapakah arachidis oil yang tepat diambil untuk membuat sediaan tersebut?",
+    "options": {
+      "A": "5 mL",
+      "B": "5 g",
+      "C": "15 mL",
+      "D": "15 g",
+      "E": "25 mL"
+    },
+    "correct_key": "D",
+    "explanation": "Resep meminta untuk membuat krim sebanyak 50 g. Konsentrasi Arachidis oil adalah 30%.  Jumlah Arachidis oil yang dibutuhkan = 30% × 50 g = 0,30 × 50 g = 15 g. Karena minyak diukur dengan cara ditimbang, jawaban yang tepat adalah dalam satuan gram."
+  },
+  {
+    "id": 58,
+    "stem": "Seorang perempuan datang ke apotek membawa resep berisi klobetasol propionate cream 0,025% sebanyak 20 g dengan penggunaan S u e. Di apotek tersedia krim klobetasol propionat 0,05% dalam kemasan tube 5 g. Berapa jumlah krim klobetasol propionate 0,05% yang diperlukan untuk membuat resep tersebut?",
+    "options": {
+      "A": "0,5 tube",
+      "B": "1 tube",
+      "C": "1,5 tube",
+      "D": "2 tube",
+      "E": "2,5 tube"
+    },
+    "correct_key": "D",
+    "explanation": "Ini adalah perhitungan yang sama dengan soal nomor 16. Jumlah krim Klobetasol 0,05% yang dibutuhkan adalah 10 g. Jumlah krim Klobetasol 0,05% yang dibutuhkan adalah 10 g. Jumlah tube yang diperlukan = 10 g / 5 g/tube = 2 tube."
+  },
+  {
+    "id": 59,
+    "stem": "Seorang pasien, anak-anak,usia 2 tahun, BB 13 kg, menderita demam, batuk, dan pilek. Dokter menghendaki pemberian suspensi amoksisilin dengan kekuatan 100 mg/5 mL. Sediaan sirup kering amoksisilin yang tersedia diapotek adalah dengan kekuatan 125 mg/5 mL setelah ditambahkan air sebanyak 50 mL. Berapa banyakah jumlah air yang harus ditambahkan pada sirup kering amoksisilin untuk memperoleh kekuatan 100 mg/5 mL?",
+    "options": {
+      "A": "37,5 mL",
+      "B": "50,0 mL",
+      "C": "62,5 mL",
+      "D": "70,0 mL",
+      "E": "75,0 mL"
+    },
+    "correct_key": "C",
+    "explanation": "Kita gunakan prinsip pengenceran M₁V₁ = M₂V₂.\n\nM₁ = Kekuatan sediaan awal (125 mg/5 mL)\n\nV₁ = Volume awal (kita cari dulu kandungan total obatnya. 125mg/5mL artinya dalam 50mL ada (125mg/5mL) * 50mL = 1250 mg amoksisilin)\n\nM₂ = Kekuatan yang diinginkan (100 mg/5 mL)\n\nV₂ = Volume akhir yang dibutuhkan\n\nPertama, hitung total amoksisilin dalam botol: (125 mg / 5 mL) × 50 mL = 1250 mg.\n\nSekarang, cari berapa volume akhir (V₂) agar konsentrasinya menjadi 100 mg/5 mL:\n\n(100 mg / 5 mL) = 1250 mg / V₂\n\n20 mg/mL = 1250 mg / V₂\n\nV₂ = 1250 mg / 20 mg/mL = 62,5 mL. Jadi, jumlah air total yang harus ditambahkan adalah 62,5 mL."
+  },
+  {
+    "id": 60,
+    "stem": "Seorang pasien, perempuan, usia 29 tahun, merasakan pendengarannya sedikit terganggu karena terdapat kotoran yang mulai mengeras di telinganya. Dokter THT meresepkan obat pelunak kotoran telinga untuk membersihkan telinga pasien dengan H2O2 1% sebanyak 30 mL. larutan yang tersedia di apoteker adalah H2O2 50% sehingga harus dilakukan pengenceran menjadi H2O2 1% sebanyak 30 mL. berapakah jumlah H2O2 50% yang harus diambil untuk membuat resep tersebut?",
+    "options": {
+      "A": "0,6 mL",
+      "B": "0,7 mL",
+      "C": "0,8 mL",
+      "D": "0,9 mL",
+      "E": "1,0 mL"
+    },
+    "correct_key": "A",
+    "explanation": "Menggunakan rumus pengenceran V₁K₁ = V₂K₂.\n\nV₁ = Volume H₂O₂ 50% yang dicari\n\nK₁ = Konsentrasi H₂O₂ awal (50%)\n\nV₂ = Volume akhir yang diinginkan (30 mL)\n\nK₂ = Konsentrasi akhir yang diinginkan (1%)\n\nV₁ × 50% = 30 mL × 1%\n\nV₁ = (30 mL × 1%) / 50%\n\nV₁ = 0,6 mL. Jadi, jumlah H₂O₂ 50% yang harus diambil adalah 0,6 mL."
+  },
+  {
+    "id": 61,
+    "stem": "Seorang Apoteker di sebuah industri farmasi melakukan uji stabilitas sediaan larutan terbutalin sebagai obat gangguan pernafasan. Hasil uji stabilitas sediaan obat tersebut diketahui mengikuti kinetika orde satu dengan konstanta kecepatan degradasi (k) sebesar 0,046 hari-1. Kapankan obat tersebut akan berkurang separuhnya?",
+    "options": {
+      "A": "15 hari",
+      "B": "16 hari",
+      "C": "17 hari",
+      "D": "18 hari",
+      "E": "19 hari"
+    },
+    "correct_key": "A",
+    "explanation": "Waktu paruh (t{1/2}) adalah waktu yang dibutuhkan agar konsentrasi obat berkurang menjadi setengahnya. Untuk reaksi kinetika orde satu"
+  },
+  {
+    "id": 62,
+    "stem": "Seorang apoteker bagian QC suatu industry farmasi sedang mengukur konsentrasi bakteri di udara pada ruang produksi sebelum melakukan proses produksi tablet ranitidin. Konsentrasi bakteri di udara diukur dengan cara meletakkan petri berisi media selama periode waktu tertentu. Jumlah koloni bakteri selanjutnya dihitung setelah diinkubasi selama satu malam. Apakah metode yang digunakan oleh apoteker dalam menghitung konsentrasi bakteri tersebut?",
+    "options": {
+      "A": "Air sampler",
+      "B": "Contact plate",
+      "C": "Pour plate",
+      "D": "Settle plate",
+      "E": "Swabs"
+    },
+    "correct_key": "D",
+    "explanation": "Metode yang dideskripsikan adalah metode Settle plate (cawan papar). Ini adalah metode monitoring mikrobiologi udara secara pasif, di mana cawan petri berisi media agar dibiarkan terbuka untuk periode waktu tertentu agar mikroorganisme di udara dapat mengendap di atasnya karena gravitasi."
+  },
+  {
+    "id": 63,
+    "stem": "Seorang apoteker di bagian QC industri farmasi sedang melakukan penetapan waktu kadaluarsa tablet aspirin melalui uji degradasi yang dipercepat. Hasil analisis data uji menyimpulkan bahwa aspirin paling stabil tinggi pada pH 2,5. Reaksi degradasi aspirin tersebut mengikuti kinetika pseudo-first order dengan harga tetapan kecepatan degradasi (k) sebesar 5 x 10-7 detik-1 pada suhu 25oC. Berdasarkan hasil pengujian, kapankah tablet aspirin tersebut akan kadaluarsa (t90)?",
+    "options": {
+      "A": "210 hari setelah pengujian",
+      "B": "21 hari setelah pengujian",
+      "C": "16 hari setelah pengujian",
+      "D": "2,4 hari setelah pengujian",
+      "E": "1,6 hari setelah pengujian"
+    },
+    "correct_key": "D",
+    "explanation": "Waktu kedaluwarsa atau shelf-life (t₉₀) adalah waktu yang dibutuhkan hingga obat terdegradasi sebanyak 10% (tersisa 90%). Untuk kinetika orde satu."
+  },
+  {
+    "id": 64,
+    "stem": "Seorang apoteker di suatu industri farmasi melakukan beberapa pengujian untuk memastikan produk steril injeksi Thiamine HCl tidak mengandung endotoksin sebelum diriliskan dipasaran. Apakah metode uji yang tepat digunakan digunakan?",
+    "options": {
+      "A": "Uji pirogen, gel clot, turbidimetri",
+      "B": "Uji kromogenik, uji pirogen, uji turbidimetri",
+      "C": "Uji gel clot, uji tubidimetri, uji kromogenik",
+      "D": "Uji media fill, uji gel clot, uji kromogenik",
+      "E": "Uji pirogen, uji turbidimetri, uji bioburden"
+    },
+    "correct_key": "C",
+    "explanation": "Uji untuk memastikan produk steril bebas dari endotoksin disebut Uji Endotoksin Bakteri atau Bacterial Endotoxins Test (BET). Menurut farmakope, ada tiga metode utama untuk uji ini, yang semuanya menggunakan reagen Limulus Amebocyte Lysate (LAL). Ketiga metode tersebut adalah:"
+  },
+  {
+    "id": 65,
+    "stem": "Seorang Apoteker yang bekerja di departemen Quality Control suatu Industri farmasi melakukan pengujian terhadap mutu gelas ampul 5 mL. Wadah tersebut akan digunakan sebagai kemasan sediaan steril. Apakah tipe gelas yang tepat untuk sediaan tersebut?",
+    "options": {
+      "A": "Tipe 1 dan tipe 2",
+      "B": "Tipe 2 dan tipe 3",
+      "C": "Tipe 3 dan tipe 4",
+      "D": "Tipe 1 dan tipe 3",
+      "E": "Tipe 2 dan tipe 4"
+    },
+    "correct_key": "A",
+    "explanation": "Sediaan steril (parenteral) memerlukan wadah kaca yang sangat inert untuk mencegah interaksi antara wadah dan sediaan."
+  },
+  {
+    "id": 66,
+    "stem": "Seorang apoteker pada bagian produksi sebuah industri farmasi akan membuat tablet metilprednisolon dengan dosis 8 mg tiap tabletnya. Dosis metilprednisolon tersebut sangat kecil dibandingkan dengan komponen eksipien lainnya sehingga penting dilakukan beberapa pengujian pada produk tersebut. Berdasarkan hal tersebut, apakah nama uji yang menjadi titik kritis dan perlu dimonitor secara ketat pada pengujian sediaan metilprednisolon 8 mg tersebut?",
+    "options": {
+      "A": "Uji keseragaman bobot",
+      "B": "Uji keseragaman kandungan",
+      "C": "Uji disolusi",
+      "D": "Uji kekerasan",
+      "E": "Uji waktu hancur"
+    },
+    "correct_key": "B",
+    "explanation": "Ketika dosis zat aktif sangat kecil (misal < 25 mg atau < 25% dari bobot tablet), risiko distribusi zat aktif yang tidak merata dalam campuran serbuk menjadi sangat tinggi. Oleh karena itu, uji keseragaman kandungan menjadi titik kritis. Uji ini memastikan bahwa setiap tablet mengandung jumlah zat aktif yang mendekati klaim label dengan variasi yang sangat kecil. Uji keseragaman bobot saja tidak cukup untuk menjamin keseragaman dosis pada kasus ini."
+  },
+  {
+    "id": 67,
+    "stem": "Seorang apoteker di bagian QC suatu Industri Farmasi akan menguji waktu leleh sediaan suppositoria parasetamol sebagai persyaratan kualitas sediaan. Suppositoria tersebut dibuat dengan basis larut air PEG 6000: PEG 400 dengan perbandingan 3 : 2. Berapakah waktu leleh suppositoria yang baik untuk basis tersebut?",
+    "options": {
+      "A": "Kurang dari 15 menit",
+      "B": "Kurang dari 30 menit",
+      "C": "Kurang dari 45 menit",
+      "D": "Kurang dari 60 menit",
+      "E": "Kurang dari 120 menit"
+    },
+    "correct_key": "D",
+    "explanation": "Supositoria dengan basis larut air seperti Polietilenglikol (PEG) tidak meleleh pada suhu tubuh, melainkan melarut secara perlahan dalam cairan rektal untuk melepaskan zat aktifnya. Menurut persyaratan farmakope, waktu hancur atau melarut untuk supositoria jenis ini umumnya adalah tidak lebih dari 60 menit."
+  },
+  {
+    "id": 68,
+    "stem": "Seorang apoteker di bagian kontrol kualitas industri farmasi akan menyusun protokol pentapan kadar aminofilin dalam sediaan tablet dengan metode KCKT. agar memenuhi persyaratan ICH, apoteker tersebut harus menetapkan jumlah seri konsentrasi yang digunakan untuk pembuatan kurva baku sebagai salah satu tahap metode kuantifikasinya. Berapakah jumlah seri konsentrasi minimum yang harus ditetapkan dalam protokol tersebut?",
+    "options": {
+      "A": "7",
+      "B": "6",
+      "C": "5",
+      "D": "4",
+      "E": "3"
+    },
+    "correct_key": "C",
+    "explanation": "Menurut pedoman validasi metode analisis dari ICH (International Council for Harmonisation), untuk pengujian linearitas, jumlah konsentrasi minimum yang direkomendasikan untuk membuat kurva baku adalah 5 seri konsentrasi."
+  },
+  {
+    "id": 69,
+    "stem": "Seorang apoteker yang bertugas pada bagian QC suatu industri farmasi sedang mengukur akurasi alat KCKT dalam rangka validasi penetapan kadar CTM pada produk tablet obat influenza dengan indikator Simpangan Baku Relatif (%SBR). Berapakah kriteria penerimaan SBR yang ditetapkan pada taraf kepercayaan 99,0%?",
+    "options": {
+      "A": "< 0,5 %",
+      "B": "< 1,0 %",
+      "C": "< 2,0 %",
+      "D": "< 2,5 %",
+      "E": "< 5,0 %"
+    },
+    "correct_key": "C",
+    "explanation": "Untuk validasi metode penetapan kadar zat aktif dalam produk jadi, simpangan baku relatif (%SBR atau sering disebut %RSD) untuk presisi dan akurasi umumnya dipersyaratkan tidak lebih dari 2,0%. Taraf kepercayaan tidak secara langsung menentukan nilai SBR, melainkan standar penerimaan yang sudah umum dalam industri."
+  },
+  {
+    "id": 70,
+    "stem": "Seorang apoteker pada bagian QC di suatu Industri farmasi melakukan evaluasi sifat fisik tablet asetosal dengan menggunakan alat berikut :\n \nApakah sifat fisik yang diuji oleh apoteker tersebut?",
+    "options": {
+      "A": "Kekerasan",
+      "B": "Kandungan lembab",
+      "C": "Organoleptis",
+      "D": "Kerapuhan",
+      "E": "Bobot jenis"
+    },
+    "correct_key": "D",
+    "explanation": "Alat yang ditunjukkan pada gambar adalah Friabilator, yang digunakan untuk menguji kerapuhan (friability) tablet. Tablet dimasukkan ke dalam drum yang berputar, dan setelah sejumlah putaran, persentase kehilangan bobot tablet diukur. Uji ini mensimulasikan guncangan yang mungkin terjadi selama proses penyalutan, pengemasan, dan transportasi."
+  },
+  {
+    "id": 71,
+    "stem": "Seorang apoteker di industri farmasi sedang melakukan uji stabilitas terhadap suatu bentuk sediaan cair dengan bahan aktif kaolin. Uji yang dilakukan adalah pengukuran volume sedimentasi, derajat flokulasi, metode reologi dan perubahan ukuran partikel. Apa sediaan cair yang sedang diuji oleh apoteker tersebut?",
+    "options": {
+      "A": "Sirup",
+      "B": "Emulsi",
+      "C": "Suspensi",
+      "D": "Elixir",
+      "E": "Lotio"
+    },
+    "correct_key": "C",
+    "explanation": "Uji stabilitas yang meliputi pengukuran volume sedimentasi, derajat flokulasi, dan perubahan ukuran partikel adalah parameter khas untuk sediaan suspensi. Suspensi adalah sistem dua fase yang terdiri dari partikel padat (seperti kaolin) yang tidak larut dan terdispersi dalam medium cair."
+  },
+  {
+    "id": 72,
+    "stem": "Sebuah industri farmasi sedang merancang formula gentamicin tetes mata yang mengandung benzalkonium klorida 0,1 %. Formula tersebut dibuat sebanyak 500 mL. Berapakah jumlah benzalkonium klorida yang dibutuhkan untuk formula tersebut?",
+    "options": {
+      "A": "0,1 g",
+      "B": "0,2 g",
+      "C": "0,3 g",
+      "D": "0,4 g",
+      "E": "0,5 g"
+    },
+    "correct_key": "E",
+    "explanation": "Konsentrasi 0,1% berarti 0,1 gram dalam setiap 100 mL (persen b/v).\n\nJumlah yang dibutuhkan untuk 500 mL adalah:    jumlah:0,1gr/100ml x 500 ml = 0,5 gr                         Jadi, dibutuhkan 0,5 g benzalkonium klorida."
+  },
+  {
+    "id": 73,
+    "stem": "Seorang apoteker di industri farmasi sedang mengembangkan tablet karvedilol. Senyawa ini diketahui tidak stabil karena mudah terdegradasi oleh cahaya dan pH asam, serta memiliki rasa yang tidak enak. Apoteker mengembangkan sediaan tersebut dengan cara melapisi karvedilol dengan menggunakan bahan polimer. Apakah teknik yang digunakan oleh apoteker tersebut?",
+    "options": {
+      "A": "Solid Dispersi",
+      "B": "Kokristal",
+      "C": "Kompleks inklusi",
+      "D": "Enkapsulasi",
+      "E": "Emulsifikasi"
+    },
+    "correct_key": "D",
+    "explanation": "Teknik melapisi partikel zat aktif (padat, cair, atau gas) dengan bahan polimer untuk membentuk kapsul berukuran mikro atau nano disebut enkapsulasi (atau microencapsulation). Tujuannya bisa untuk melindungi zat aktif dari lingkungan (cahaya, pH asam), menutupi rasa pahit, atau mengontrol pelepasan obat."
+  },
+  {
+    "id": 74,
+    "stem": "Seorang Apoteker yang bekerja pada bagian R & D suatu industri farmasi sedang mengembangkan natrium diklofenak dalam sediaan mikroemulsi. Formula sediaan tersebut adalah natrium diklofenak, VCO, Tween 80, etanol, propilenglikol, air. Apakah fungsi surfaktan dan kosurfaktan dalam formula tersebut?",
+    "options": {
+      "A": "Memperkecil ukuran globul",
+      "B": "Menurunkan tegangan antar muka miyak-air",
+      "C": "Menaikkan kelarutan zat aktif",
+      "D": "Menaikkan vikositas sediaan",
+      "E": "Menaikkan berat jenis fase pendispersi"
+    },
+    "correct_key": "B",
+    "explanation": "Fungsi fundamental dari surfaktan dan kosurfaktan dalam sistem emulsi atau mikroemulsi adalah untuk menempatkan diri pada bidang batas antara fase minyak (VCO) dan fase air. Kehadiran mereka secara drastis menurunkan tegangan antarmuka, sehingga kedua fase yang sebelumnya tidak mau bercampur menjadi lebih mudah didispersikan dan membentuk globul-globul kecil yang stabil."
+  },
+  {
+    "id": 75,
+    "stem": "Apoteker yang bekerja di bagian R&D suatu industri farmasi akan merancang formula tablet lepas lambat captopril untuk pengobatan hipertensi. Apoteker tersebut menetapkan komposisi bahan tambahan yang akan digunakan yang dapat mengatur kinetika pelepasan captopril ke dalam cairan gastrointestinal. Bagaimanakah kinetika pelepasan obat yang tepat untuk formula tersebut?",
+    "options": {
+      "A": "Orde nol",
+      "B": "Orde satu",
+      "C": "Model Higuchi",
+      "D": "Model Hixson Crowell",
+      "E": "Model quadratic"
+    },
+    "correct_key": "A",
+    "explanation": "Tujuan utama dari sediaan lepas lambat adalah untuk melepaskan obat dengan laju yang konstan selama periode waktu yang lama, tidak tergantung pada sisa konsentrasi obat dalam tablet. Kinetika yang menggambarkan laju pelepasan yang konstan ini adalah kinetika orde nol. Ini menghasilkan kadar obat dalam darah yang stabil dan berada dalam rentang terapeutik"
+  },
+  {
+    "id": 76,
+    "stem": "Seorang apoteker di bagian R&D industri farmasi melakukan optimasi formula suspensi Sulfamethoxazole dan Trimethoprim dengan bahan-bahan sebagai berikut: Sulfamethoxazole, Trimethoprim, Sucrose, Lutrol F 127, Water Purified, Vanillin dan Flavor Chocolate. Apakah pertimbangan yang tepat digunakan oleh apoteker untuk membuat sediaan obat tersebut dalam bentuk suspensi?",
+    "options": {
+      "A": "Dosis kotrimoksazol lebih seragam",
+      "B": "Kotrimoksazol tidak larut air",
+      "C": "Efek kotrimoksazol lebih cepat",
+      "D": "Menghindari efek samping kotrimoksazol",
+      "E": "Kotrimoksazol suspensi lebih disukai"
+    },
+    "correct_key": "B",
+    "explanation": "Kombinasi Sulfametoksazol dan Trimetoprim (kotrimoksazol) memiliki kelarutan yang sangat buruk dalam air. Oleh karena itu, tidak memungkinkan untuk dibuat sediaan larutan (sirup sejati) pada dosis terapeutik. Bentuk sediaan cair yang paling tepat adalah suspensi, di mana partikel zat aktif yang tidak larut didispersikan dalam medium pembawa cair."
+  },
+  {
+    "id": 77,
+    "stem": "Seorang apoteker di bagian R & D suatu industri farmasi sedang melakukan uji disolusi sediaan patch transdermal fentanil. Produk tersebut akan diekspor ke negara yang menggunakan farmakope eropa. Apakah jenis alat uji disolusi yang tepat digunakan untuk pengujian tersebut?",
+    "options": {
+      "A": "Basket",
+      "B": "Paddle",
+      "C": "Reciprocating cylinder",
+      "D": "Flow-through cell",
+      "E": "Disk asembly"
+    },
+    "correct_key": "",
+    "explanation": "Untuk menguji pelepasan obat dari sediaan patch transdermal, Farmakope Eropa (dan juga USP) merekomendasikan penggunaan Paddle over Disk (USP Apparatus 5) atau Reciprocating Holder (USP Apparatus 7). Dalam metode Paddle over Disk, patch ditempelkan pada suatu disk holder atau disk assembly yang kemudian diletakkan di dasar labu disolusi, dan alat dayung (paddle) berputar di atasnya."
+  },
+  {
+    "id": 78,
+    "stem": "Seorang apoteker pada bagian R&D suatu industri farmasi sedang melakukan optimasi formula salep kalamin BP untuk kemasan 20 gr. Formula sediaan tersebut terdiri dari:\nKalamin BP 20%\nKresol 2,5%\nLanolin 25%\nZinc okside 12,5%\nBerapakah jumlah kresol yang tepat ditimbang oleh apoteker sesuai dengan formula tersebut?",
+    "options": {
+      "A": "100 mg",
+      "B": "250 mg",
+      "C": "500 mg",
+      "D": "1.000 mg",
+      "E": "1.500 mg"
+    },
+    "correct_key": "C",
+    "explanation": "Total salep yang dibuat = 20 gram\n\nKonsentrasi Kresol = 2,5%\n\nJumlah kresol yang dibutuhkan = 2,5% × 20 g = 0.025 × 20 g = 0.5 g\n\nKonversi ke miligram: 0.5 g × 1000 mg/g = 500 mg Jadi, dibutuhkan 500 mg kresol."
+  },
+  {
+    "id": 79,
+    "stem": "Seorang apoteker yang bekerja pada bagian R&D suatu industri farmasi akan mengembangkan sediaan kloramfenikol untuk pengobatan infeksi pneumonia. Obat ini diketahui bersifat sukar larut dalam air, kompresibilitas buruk dan rasanya yang sangat pahit. Sementara itu, tersedia bahan lain berupa kloramfenikol palmitat yang memiliki bau lemah dan hampir tidak berasa. Apakah bentuk sediaan obat yang tepat untuk dikembangkan oleh apoteker tersebut?",
+    "options": {
+      "A": "Kapsul kloramfenikol",
+      "B": "Kapsul kloramfenikol palmitat",
+      "C": "Tablet kloramfenikol palmitat",
+      "D": "Suspensi kloramfenikol",
+      "E": "Suspensi kloramfenikol palmitat"
+    },
+    "correct_key": "E",
+    "explanation": "Untuk mengatasi masalah rasa yang sangat pahit dan kelarutan yang buruk, terutama untuk sediaan cair pediatrik, digunakan bentuk prodrug yaitu Kloramfenikol palmitat. Bentuk ester ini praktis tidak berasa dan tidak larut dalam air, sehingga sangat cocok dibuat sediaan suspensi. Di dalam tubuh (usus), ester ini akan dihidrolisis kembali menjadi kloramfenikol yang aktif."
+  },
+  {
+    "id": 80,
+    "stem": "Seorang apoteker di bagian R&D sebuah industry farmasi sedang merancang protokol uji Bioekivalen in vivo untuk produk copy tablet furosemid 40 mg yang mempunyai t ½ eliminasi selama 3 jam. Salah satu yang harus ditentukan dalam protocol tersebut adalah sampling time. Berapakah waktu sampling minimal untuk uji tersebut?",
+    "options": {
+      "A": "3 jam",
+      "B": "6 jam",
+      "C": "9 jam",
+      "D": "12 jam",
+      "E": "15 jam"
+    },
+    "correct_key": "C",
+    "explanation": "Aturan umum untuk uji bioekivalen (BE) adalah waktu pengambilan sampel darah harus cukup panjang untuk mencakup fase absorpsi, distribusi, dan eliminasi secara memadai. Waktu sampling minimal yang direkomendasikan adalah 3-5 kali waktu paruh eliminasi (t ½).\n\nWaktu sampling minimal = 3 × t ½ = 3 × 3 jam = 9 jam. Idealnya, sampling dilakukan lebih lama (misal 5 x t ½ = 15 jam) untuk menangkap setidaknya 80% dari total AUC. Namun, 9 jam adalah batas minimal yang logis dari pilihan yang ada."
+  },
+  {
+    "id": 81,
+    "stem": "Seorang apoteker di bagian R&D suatu industri farmasi sedang melakukan pengembangan formula tablet asam mefenamat 500 mg menggunakan granulasi basah. Pada saat dilakukan uji keragaman sediaan versi Farmakope Indonesia Edisi V, tablet ternyata tidak memenuhi keseragaman bobot. Berdasarkan hal tersebut, apoteker perlu melakukan evaluasi terhadap proses pembuatan tablet tersebut. Apakah proses yang perlu dievaluasi untuk mengatasi permasalahan tersebut?",
+    "options": {
+      "A": "Pencampuran",
+      "B": "Pengayakan",
+      "C": "Pengempaan",
+      "D": "Pengeringan",
+      "E": "Penyalutan"
+    },
+    "correct_key": "C",
+    "explanation": "Keseragaman bobot tablet sangat bergantung pada konsistensi pengisian serbuk/granul ke dalam die (matriks) selama proses pengempaan (pencetakan). Jika tablet tidak memenuhi syarat keragaman bobot, berarti aliran granul ke dalam die tidak seragam. Hal ini bisa disebabkan oleh sifat alir granul yang buruk, atau pengaturan mesin cetak (misalnya kecepatan, feed frame) yang tidak optimal. Jadi, proses yang perlu dievaluasi adalah pengempaan."
+  },
+  {
+    "id": 82,
+    "stem": "Seorang apoteker di bagian R&D sebuah industri farmasi bertugas membuat formula antibiotik sefadroksil (golongan betalaktam) yang akan digunakan untuk mengatasi infeksi penyebab ISPA pada pasien anak. Apakah bentuk sediaan yang tepat dikembangkan oleh apoteker tersebut?",
+    "options": {
+      "A": "Tablet",
+      "B": "Suspensi",
+      "C": "Emulsi",
+      "D": "Kapsul",
+      "E": "Sirup Kering"
+    },
+    "correct_key": "E",
+    "explanation": "Antibiotik golongan beta-laktam seperti sefadroksil (dan juga amoksisilin) memiliki cincin beta-laktam yang tidak stabil dalam medium air dan akan cepat terdegradasi. Oleh karena itu, sediaan cair untuk anak tidak dibuat dalam bentuk suspensi siap pakai, melainkan dalam bentuk sirup kering (atau suspensi kering/rekonstitusi). Sediaan ini berupa serbuk kering yang baru akan ditambahkan air oleh apoteker sesaat sebelum diserahkan kepada pasien."
+  },
+  {
+    "id": 83,
+    "stem": "Seorang apoteker di suatu Industri farmasi akan memproduksi sediaan dry suspension amoksisilin dengan dosis 125 mg/5 mL. Sediaan tersebut ditujukan kepada pasien anak-anak. Umumnya sediaan sirup lebih mudah diterima oleh pasien anak daripada sediaan dry suspension. Apakah alasan dibuat sediaan tersebut?",
+    "options": {
+      "A": "Untuk menutupi rasa pahit obat",
+      "B": "Untuk mengontrol absorpsi obat",
+      "C": "Untuk menjaga stabilitas obat",
+      "D": "Untuk meningkatkan absorbsi obat",
+      "E": "Untuk menghindari metabolisme obat"
+    },
+    "correct_key": "",
+    "explanation": "Alasan utama obat seperti amoksisilin dibuat dalam bentuk sediaan suspensi kering adalah karena zat aktif tersebut tidak stabil dalam bentuk larutan/suspensi dengan pembawa air untuk jangka waktu lama. Dengan menyediakannya dalam bentuk serbuk kering, degradasi hidrolitik dapat dicegah selama penyimpanan. Stabilitas obat baru menjadi terbatas (misalnya 7-14 hari) setelah direkonstitusi dengan air."
+  },
+  {
+    "id": 84,
+    "stem": "Seorang apoteker di bagian R&D suatu industri farmasi sedang melakukan optimasi sintesis senyawa obat levocetirizine dari cetirizine. Bahan aktif tersebut terbukti lebih aman dan lebih poten dibandingkan cetirizine. Kedua bahan aktif tersebut memiliki target reseptor yang sama. Apakah titik kritis yang harus dilakukan pada sintesis bahan aktif tersebut?",
+    "options": {
+      "A": "Pemisahan metabolit aktif",
+      "B": "Pemisahan enantiomer aktif",
+      "C": "Peningkatan rigiditas",
+      "D": "Penambahan rantai penghubung dua cincin",
+      "E": "Penambahan gugus samping yang polar"
+    },
+    "correct_key": "",
+    "explanation": "Sifat alir di mana viskositas meningkat seiring dengan peningkatan kecepatan geser (shear rate) disebut dilatan (dilatant) atau shear-thickening. Sifat ini khas untuk suspensi dengan konsentrasi padatan yang sangat tinggi (>50%). Saat diaduk perlahan, partikel masih bisa bergerak, tetapi saat diaduk cepat, partikel saling mengunci, menyebabkan hambatan aliran yang besar (viskositas meningkat)."
+  },
+  {
+    "id": 85,
+    "stem": "Apoteker yang bekerja pada bagian R&D suatu industri farmasi sedang menguji sifat alir formula sediaan suspensi sulfur sebagai obat jerawat. Formula tersebut mengandung padatan lebih dari 60%. Hasil pengujian menunjukkan bahwa viskositas formula meningkat ketika kecepatan mikser ditingkatkan. Apakah sifat alir formula suspensi sulfur tersebut?",
+    "options": {
+      "A": "Dilatan",
+      "B": "Newton",
+      "C": "Plastis",
+      "D": "Pseoudoplastis",
+      "E": "Thistroskopik"
+    },
+    "correct_key": "A",
+    "explanation": "Sifat alir yang ditunjukkan oleh suspensi sulfur tersebut adalah dilatan (dilatant).\n\nDefinisi Sifat Alir Dilatan: Sifat alir dilatan, atau dikenal juga sebagai shear-thickening (pengentalan geser), adalah perilaku fluida non-Newtonian di mana viskositas (kekentalan) meningkat seiring dengan peningkatan laju geser (misalnya, saat kecepatan pengadukan atau pengocokan ditingkatkan).\n\nKoneksi dengan Soal: Soal tersebut dengan jelas menyatakan:\n\nFormula mengandung padatan lebih dari 60%, yang merupakan ciri khas suspensi yang cenderung bersifat dilatan.\n\nHasil pengujian menunjukkan viskositas meningkat ketika kecepatan mikser ditingkatkan. Ini adalah deskripsi langsung dari perilaku dilatan.\n\nMekanisme: Pada suspensi dengan konsentrasi padatan yang sangat tinggi, partikel-partikel tersusun rapat dengan jumlah cairan yang minim di antara celah-celahnya.\n\nSaat diam atau diaduk perlahan: Cairan cukup untuk melumasi partikel, sehingga suspensi dapat mengalir.\n\nSaat diaduk cepat (laju geser tinggi): Partikel-partikel dipaksa untuk bergerak cepat dan saling bergeser, menyebabkan susunannya menjadi tidak teratur dan menciptakan ruang kosong yang lebih besar. Cairan yang ada tidak cukup untuk mengisi ruang kosong ini, sehingga hambatan antar partikel meningkat drastis, yang kita amati sebagai peningkatan viskositas."
+  },
+  {
+    "id": 86,
+    "stem": "Seorang apoteker di industri farmasi sedang mengembangkan formulasi suspensi kotrimoksazol dengan menggunakan Avicel 102 sebanyak 3% (b/v) sebagai suspending agent. Apoteker tersebut mendesain formula suspensi kotrimoksazol dengan karakteristik memiliki konsentrasi yang tinggi dalam cairan pembawa, mudah dituang dan mudah terdispersi saat dikocok. Apakah sifat alir suspensi kotrimoksazol yang sedang dikembangkan oleh apoteker tersebut?",
+    "options": {
+      "A": "Plastic",
+      "B": "Psudoplastic",
+      "C": "Dilatan",
+      "D": "Tiksotropik",
+      "E": "Antitiksotropik"
+    },
+    "correct_key": "D",
+    "explanation": "Sifat alir yang ideal untuk suspensi seperti yang dideskripsikan adalah tiksotropik. Sifat ini merupakan kombinasi sempurna untuk stabilitas dan kemudahan penggunaan.\n\nTiksotropi adalah sifat fluida non-Newtonian di mana viskositas (kekentalan) menurun seiring waktu ketika diberikan gaya (dikocok atau dituang) dan perlahan kembali ke viskositas awal setelah gaya dihilangkan."
+  },
+  {
+    "id": 87,
+    "stem": "Seorang apoteker di bagian R&D sebuah industri farmasi bertugas membuat formula antibiotik sefadroksil (golongan betalaktam) yang akan digunakan untuk mengatasi infeksi penyebab ISPA pada pasien anak. Apakah bentuk sediaan yang tepat dikembangkan oleh apoteker tersebut?",
+    "options": {
+      "A": "Tablet",
+      "B": "Suspensi",
+      "C": "Emulsi",
+      "D": "Kapsul",
+      "E": "Sirup Kering"
+    },
+    "correct_key": "E",
+    "explanation": "antibiotik beta-laktam seperti sefadroksil tidak stabil dalam air. Untuk pasien anak, bentuk sediaan yang paling tepat adalah sirup kering (suspensi rekonstitusi)."
+  },
+  {
+    "id": 88,
+    "stem": "Seorang apoteker di bagian R & D suatu industri farmasi sedang membuat sediaan Klindamisin kapsul untuk pasien dewasa. Klindamisin adalah antibiotik yang sukar larut dalam air. Akan tetapi, bentuk garam dari antibiotik ini memiliki sifat kelarutan yang baik. Apakah bentuk garam Klindamisin yang tepat digunakan untuk mengoptimalkan formula kapsul klindamisin tersebut?",
+    "options": {
+      "A": "Klindamisin sulfat",
+      "B": "Kalium Klindamisin",
+      "C": "Natrium Klindamisin",
+      "D": "Ammonium Klindamisin",
+      "E": "Klindamisin hidroklorida"
+    },
+    "correct_key": "E",
+    "explanation": "Untuk meningkatkan kelarutan dan laju disolusi zat aktif yang bersifat basa lemah seperti Klindamisin, ia sering diformulasikan dalam bentuk garamnya. Bentuk garam yang paling umum dan tersedia secara komersial untuk sediaan oral (kapsul) adalah Klindamisin hidroklorida (HCl). Bentuk garam ini jauh lebih mudah larut dalam air dibandingkan bentuk basanya."
+  },
+  {
+    "id": 89,
+    "stem": "Seorang apoteker di bagian PPIC suatu Industri farmasi membuat rencana produksi tablet CTM 4 mg. Rencana produksi tersebut selanjutnya dituangkan dalam Master Planning Schedule (MPS) yang masih belum terlalu detail dan bersifat global. Dalam MPS tersebut, rencana produksi dibuat untuk jangka waktu tertentu. Berapa lamakah jangka waktu rencana produksi yang tepat dibuat dalam MPS tersebut?",
+    "options": {
+      "A": "1-2 minggu",
+      "B": "2-4 minggu",
+      "C": "1-2 bulan",
+      "D": "3-6 bulan",
+      "E": "6-12 bulan"
+    },
+    "correct_key": "D",
+    "explanation": "Master Planning Schedule (MPS) atau Jadwal Induk Produksi adalah rencana produksi jangka menengah. Rencana ini tidak terlalu detail tetapi memberikan gambaran produk apa yang akan dibuat, berapa banyak, dan kapan. Jangka waktu yang umum untuk MPS adalah antara 3 hingga 18 bulan, dengan detail yang lebih pasti untuk periode yang lebih dekat. Pilihan 3-6 bulan adalah rentang yang paling representatif untuk perencanaan taktis ini."
+  },
+  {
+    "id": 90,
+    "stem": "Seorang apoteker di bagian PPIC suatu Industri farmasi membuat rencana produksi tablet CTM 4 mg. Rencana produksi tersebut selanjutnya dituangkan dalam Master Planning Schedule (MPS). Data dalam MPS tersebut sangat dibutuhkan oleh beberapa bagian lain di industri untuk membuat rencana kerja. Apakah bagian-bagian di industri farmasi yang membutuhkan data tersebut?",
+    "options": {
+      "A": "Bagian Produksi dan R & D",
+      "B": "Bagian Produksi dan QA",
+      "C": "Bagian Produksi dan Purchasing",
+      "D": "Bagian Produksi dan QC",
+      "E": "Bagian Produksi dan pemasaran"
+    },
+    "correct_key": "C",
+    "explanation": "Data dari MPS sangat krusial bagi banyak departemen:\n\nBagian Produksi: Menggunakan MPS untuk merencanakan jadwal kerja, kapasitas mesin, dan kebutuhan personel secara lebih rinci.\n\nBagian Purchasing (Pembelian): Menggunakan MPS untuk merencanakan dan menjadwalkan pembelian bahan baku dan bahan kemas agar tersedia tepat waktu untuk produksi."
+  },
+  {
+    "id": 91,
+    "stem": "Seorang apoteker yang bertugas di Instalasi Pengolahan Air Limbah suatu industri farmasi menambahkan larutan Poli Alumunium Chloride (PAC) polimer ke dalam bak penampung limbah cair. Apakah fungsi penambahan larutan tersebut?",
+    "options": {
+      "A": "Menetralkan pH",
+      "B": "Mengangkat partikel tersuspensi",
+      "C": "Mengendapkan partikel",
+      "D": "Membunuh bakteri",
+      "E": "Menguraikan bakteri"
+    },
+    "correct_key": "C",
+    "explanation": "Poli Alumunium Chloride (PAC) adalah koagulan dan flokulan. Fungsinya adalah menetralkan muatan partikel-partikel koloid yang tersuspensi dalam air limbah (koagulasi), kemudian menggabungkannya menjadi flok-flok yang lebih besar dan berat (flokulasi). Flok yang sudah berat ini kemudian akan mudah mengendap sehingga dapat dipisahkan dari air."
+  },
+  {
+    "id": 92,
+    "stem": "Seorang apoteker yang bertugas dalam Tim Pengolahan limbah suatu rumah sakit sedang menganalisa air hasil buangan IPAL rumah sakit menggunakan indikator mikroorganisme. Apakah mikroba yang tepat digunakan untuk indicator tersebut?",
+    "options": {
+      "A": "Candida albicans",
+      "B": "Pseudomonas aeruginosa",
+      "C": "Escherichia coli",
+      "D": "Mycobacterium tuberkulosis",
+      "E": "Propionibacterium acnes"
+    },
+    "correct_key": "C",
+    "explanation": "Escherichia coli (E. coli) adalah bakteri yang hidup normal di usus manusia dan hewan berdarah panas. Kehadirannya di dalam air limbah digunakan sebagai indikator utama adanya kontaminasi tinja. Ini menjadi parameter penting untuk menilai efektivitas pengolahan limbah, terutama dari sumber seperti rumah sakit."
+  },
+  {
+    "id": 93,
+    "stem": "Seorang apoteker yang bekerja di badan POM menarik produk makanan kaleng di beberapa supermarket karena dicurigai terkontaminasi mikroba yang ditandai dengan kaleng menjadi gembung. Toksin yang dihasilkan kikroba tersebut dapat mengakibatkan keracunan bagi konsumen yang mengkonsumsinya. Apakah bakteri yang dicurigai mengkontamiasi produk makanan tersebut?",
+    "options": {
+      "A": "Candida albicans",
+      "B": "Pseudomonas aeruginosa",
+      "C": "Escherichia coli",
+      "D": "Mycobacterium tuberkulosis",
+      "E": "Clostridium botulinum"
+    },
+    "correct_key": "E",
+    "explanation": "Kaleng yang gembung (swelling) pada produk makanan adalah tanda klasik adanya pertumbuhan mikroba yang menghasilkan gas. Clostridium botulinum adalah bakteri anaerobik (tumbuh tanpa oksigen) yang dapat bertahan dari proses pemanasan yang tidak adekuat dalam bentuk spora. Saat kondisi memungkinkan, spora ini akan tumbuh, menghasilkan gas (menyebabkan kaleng gembung) dan neurotoksin botulinum yang sangat mematikan."
+  },
+  {
+    "id": 94,
+    "stem": "Sebuah industri obat tradisional akan memproduksi jamu dalam bentuk tablet dan kapsul untuk membantu pemeliharaan tekanan darah penderita hipertensi. Berapakah jumlah minimal apoteker yang harus dimiliki oleh industri tersebut agar sesuai PP 51 tahun 2009?",
+    "options": {
+      "A": "5 orang",
+      "B": "4 orang",
+      "C": "3 orang",
+      "D": "2 orang",
+      "E": "1 orang"
+    },
+    "correct_key": "C",
+    "explanation": "Sesuai Peraturan Pemerintah (PP) No. 51 Tahun 2009 tentang Pekerjaan Kefarmasian, sebuah Industri Obat Tradisional (IOT) wajib memiliki paling sedikit 3 (tiga) orang apoteker sebagai penanggung jawab, masing-masing pada bidang Pemastian Mutu, Produksi, dan Pengawasan Mutu."
+  },
+  {
+    "id": 95,
+    "stem": "Seorang apoteker di industri farmasi sedang menyiapkan dokumen untuk mendaftarkan produk tablet salut selaput clopidogrel 75 mg yang sedang dikembangkannya. Dokumen tersebut digunakan sebagai persyaratan registrasi yang berupa hasil pengujian ketersediaan hayati tablet clopidogrel yang dibandingkan dengan produk tablet komparator. Apakah dokumen pengujian yang dipersyaratkan tersebut?",
+    "options": {
+      "A": "Hasil uji keseragaman kandungan",
+      "B": "Hasil uji disolusi terbanding",
+      "C": "Hasil uji waktu hancur",
+      "D": "Hasil uji bioekivalensi",
+      "E": "Hasil uji klinik"
+    },
+    "correct_key": "D",
+    "explanation": "Untuk mendaftarkan produk obat copy (generik), produsen harus membuktikan bahwa produknya memiliki profil ketersediaan hayati (kecepatan dan jumlah obat yang masuk ke sirkulasi sistemik) yang setara dengan produk inovatornya. Uji yang membandingkan ketersediaan hayati ini disebut uji bioekivalensi (BE)."
+  },
+  {
+    "id": 96,
+    "stem": "Seorang apoteker di suatu industri farmasi menyerahkan satu bets produk kapsul piroxicam 10 mg (no. bets 012017) ke gudang produk jadi untuk proses distribusi, setelah sebelumnya melewati proses karantina. Apakah persyaratan yang harus dipenuhi untuk proses tersebut?",
+    "options": {
+      "A": "Lulus uji disolusi oleh bagian pengawasan mutu",
+      "B": "Lulus uji stabilitas oleh bagian pengawasan mutu",
+      "C": "Lulus uji kadar oleh bagian pengawasan mutu",
+      "D": "Lulus validasi proses oleh bagian pemastian mutu",
+      "E": "Lulus evaluasi oleh bagian pemastian mutu"
+    },
+    "correct_key": "E",
+    "explanation": "Meskipun produk sudah lulus semua pengujian oleh bagian Pengawasan Mutu (QC), bets tersebut belum bisa didistribusikan. Langkah terakhir dan yang paling krusial adalah pelulusan bets (batch release). Proses ini dilakukan oleh kepala bagian Pemastian Mutu (QA), yang akan meninjau semua dokumentasi bets (catatan produksi, hasil uji QC, penyimpangan, dll.) secara menyeluruh sebelum memberikan persetujuan akhir untuk merilis produk ke pasar."
+  },
+  {
+    "id": 97,
+    "stem": "Seorang apoteker menemui kerusakan pada tablet aspirin berupa permukaan tablet terlihat seperti rambut. Tablet aspirin tersebut ternyata disimpan dalam kemasan botol yang tidak dilengkapi dengan pengering silica gel. Apakah landasan ilmiah yang mampu menjelaskan kerusakan tablet aspirin tersebut?",
+    "options": {
+      "A": "Aspirin mengalami reaksi oksidasi",
+      "B": "Aspirin mengalami reaksi reduksi",
+      "C": "Aspirin mengalami reaksi hidrolisis",
+      "D": "Aspirin mengalami reaksi polimerisasi",
+      "E": "Aspirin mengalami reaksi kondensasi"
+    },
+    "correct_key": "C",
+    "explanation": "Aspirin (asam asetilsalisilat) memiliki gugus ester yang rentan terhadap hidrolisis jika terpapar kelembapan. Molekul air akan memecah aspirin kembali menjadi asam salisilat dan asam asetat. Kristal asam salisilat yang terbentuk di permukaan tablet inilah yang terlihat seperti rambut atau jarum halus."
+  },
+  {
+    "id": 98,
+    "stem": "Seorang apoteker di apotek menyarankan kepada seorang ibu untuk menggunakan suspensi oral ibuprofen sebagai analgetik untuk anaknya (usia 10 tahun) yang sedang mengalami ISPA. Bentuk sediaan tersebut mudah digunakan untuk pasien anak dan mengalami tahapan fase biofarmasetika yang lebih singkat. Apakah tahapan biofarmasetika yang pertama kali dialami oleh sediaan tersebut?",
+    "options": {
+      "A": "Liberasi",
+      "B": "Disolusi",
+      "C": "Absorpsi",
+      "D": "Distribusi",
+      "E": "Eksresi"
+    },
+    "correct_key": "B",
+    "explanation": "Biofarmasetika mempelajari bagaimana bentuk sediaan mempengaruhi nasib obat."
+  },
+  {
+    "id": 99,
+    "stem": "Seorang pasien osteoarthritis (OA), laki-laki, usia 58 tahun, mendapatkan supplement yang berisi glucosamine sulfat dan chondroitine sulfate. Kedua senyawa ini memiliki kesamaan mekanisme aksi dalam pengobatan OA. Manakah istilah di bawah ini yang menggambarkan persamaan kedua supplement tersebut?",
+    "options": {
+      "A": "Ekivalensi kimia",
+      "B": "Ekivalensi farmasetik",
+      "C": "Ekivalensi terapeutik",
+      "D": "Alternatif farmasetik",
+      "E": "Alternatif terapeutik"
+    },
+    "correct_key": "E",
+    "explanation": "Alternatif Terapeutik adalah produk obat yang mengandung zat aktif yang berbeda (misal, glukosamin dan kondroitin) tetapi berada dalam kelas farmakologi yang sama dan diharapkan memiliki efek terapi yang sama ketika diberikan kepada pasien."
+  },
+  {
+    "id": 100,
+    "stem": "Seorang Apoteker pada bagian QC suatu industri farmasi harus melakukan uji kualitatif untuk memastikan kebenaran bahan baku obat ibuprofen yang datang dari suplier dengan menggunakan instrumen spektrofluorometri. Apakah alasan yang mendasari bahwa obat tersebut bisa diukur kadarnya dengan instrument tersebut?",
+    "options": {
+      "A": "Mempunyai atom fosfor dan fluor",
+      "B": "Mempunyai gugus karbonil dan fosfor",
+      "C": "Mempunyai gugus kromofor dan coplanar",
+      "D": "Mempunyai gugus karbonil dan koplanar",
+      "E": "Mempunyai gugus kromofor dan halogen"
+    },
+    "correct_key": "C",
+    "explanation": "Suatu molekul dapat berfluoresensi (memancarkan cahaya setelah menyerap cahaya) jika memiliki struktur tertentu. Syarat utamanya adalah:                                                               1. Memiliki gugus kromofor dan sistem elektron pi (π) terkonjugasi (seperti cincin aromatik pada ibuprofen) yang dapat menyerap energi UV-Vis.  2. Memiliki struktur molekul yang kaku dan planar (koplanar). Struktur yang kaku meminimalisir kehilangan energi melalui getaran, sehingga lebih banyak energi yang bisa dilepaskan kembali sebagai fluoresensi."
+  }
+]
