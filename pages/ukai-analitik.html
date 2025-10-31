@@ -6,8 +6,8 @@
   <title>Analitik UKAI</title>
   <link rel="stylesheet" href="../assets/css/ukai.css">
   <style>
-    .true { color:#4ade80; }    /* hijau */
-    .false { color:#f87171; }   /* merah */
+    .true { color:#4ade80; }      /* hijau */
+    .false { color:#f87171; }     /* merah */
     .review-card {
       margin-bottom: 16px;
       border: 1px solid #2a3750;
@@ -15,6 +15,7 @@
       padding: 12px 16px;
       background: #121826;
     }
+    .muted { color:#9fb0c7; }
   </style>
 </head>
 <body>
@@ -22,7 +23,6 @@
   <header class="topbar">
     <a href="../index.html">← Portal</a>
     <a href="./ukai-home.html">UKAI Home</a>
-    <a href="./ukai-refleksi.html">Refleksi</a>
   </header>
 
   <!-- 🔹 Judul -->
@@ -43,6 +43,9 @@
         <p class="mt-1">Total Soal: <span id="uk-analitik-total">—</span></p>
         <p class="mt-1">Benar: <span id="uk-analitik-correct">—</span> soal</p>
         <button id="btn-review" class="btn primary" style="margin-top:12px">Lihat Pembahasan Semua Soal</button>
+        <p id="empty-note" class="muted" style="margin-top:8px; display:none">
+          Belum ada hasil simulasi. Silakan kerjakan simulasi dulu.
+        </p>
       </div>
     </section>
 
@@ -55,29 +58,42 @@
   </main>
 
   <footer class="site-footer">
-    <small>Hati yang hadir, praktik yang santun.</small>
+    <small>Calon Apoteker siap UKAI.</small>
   </footer>
 
   <!-- 🔹 Script -->
   <script>
   document.addEventListener('DOMContentLoaded', async () => {
     const last = JSON.parse(localStorage.getItem('ukai:lastRaw') || 'null');
-    if (!last) return;
 
-    // tampilkan skor di ringkasan
+    // jika belum ada hasil
+    if (!last) {
+      document.getElementById('btn-review').style.display = 'none';
+      document.getElementById('empty-note').style.display = 'block';
+      return;
+    }
+
+    // tampilkan skor ringkasan
     document.getElementById('uk-analitik-score').textContent = last.score ?? '—';
-    document.getElementById('uk-analitik-mode').textContent = last.mode ?? '—';
+    document.getElementById('uk-analitik-mode').textContent  = last.mode ?? '—';
     document.getElementById('uk-analitik-total').textContent = last.total ?? '—';
     document.getElementById('uk-analitik-correct').textContent = last.correct ?? '—';
 
+    // siapkan data untuk review
     const bank = last.bank || 'farmakologi';
     const ans  = JSON.parse(localStorage.getItem(`ukai:ans:${bank}`) || '{}');
-    const res  = await fetch(`../data/banks/${bank}.json`);
-    const data = await res.json();
-    const questions = Array.isArray(data) ? data : (data.items || data.questions || []);
+
+    let questions = [];
+    try {
+      const res  = await fetch(`../data/banks/${bank}.json`, { cache: 'no-store' });
+      const data = await res.json();
+      questions = Array.isArray(data) ? data : (data.items || data.questions || []);
+    } catch (e) {
+      console.warn('Gagal memuat bank soal:', e);
+    }
 
     // tombol tampilkan pembahasan
-    const btnReview = document.getElementById('btn-review');
+    const btnReview  = document.getElementById('btn-review');
     const reviewArea = document.getElementById('review-area');
     const reviewList = document.getElementById('review-list');
 
@@ -85,25 +101,33 @@
       btnReview.classList.add('hidden');
       reviewArea.classList.remove('hidden');
 
+      if (!questions.length) {
+        reviewList.innerHTML = '<div class="review-card">Bank soal tidak ditemukan.</div>';
+        return;
+      }
+
       reviewList.innerHTML = questions.map((q,i)=>{
-        const user = ans[q.id];
+        const qid = q.id || `q${i+1}`;
+        const user = ans[qid];
         const correct = q.answerIndex;
         const opts = (q.options || []).map((opt,j)=>{
           let cls = '';
-          if (j === correct) cls = 'class="true"';     // hijau untuk benar
-          if (j === user && j !== correct) cls = 'class="false"'; // merah untuk salah
+          if (j === correct) cls = 'class="true"';
+          if (j === user && j !== correct) cls = 'class="false"';
           const mark = j === user ? '✅' : '';
           return `<li ${cls}>${mark} ${String.fromCharCode(65+j)}. ${opt}</li>`;
         }).join('');
+        const rationale = q.rationale || q.explain || q.explanation || '';
+        const stem = q.stem || q.question || q.text || '-';
         return `
           <div class="review-card">
-            <strong>${i+1}. ${q.stem}</strong>
+            <strong>${i+1}. ${stem}</strong>
             <ul style="margin:8px 0 0 16px">${opts}</ul>
-            <p style="margin-top:6px"><em>${q.rationale || ''}</em></p>
+            ${rationale ? `<p style="margin-top:6px"><em>${rationale}</em></p>` : ''}
           </div>`;
       }).join('');
 
-      window.scrollTo({top:reviewArea.offsetTop - 20, behavior:'smooth'});
+      window.scrollTo({ top: reviewArea.offsetTop - 20, behavior: 'smooth' });
     });
   });
   </script>
