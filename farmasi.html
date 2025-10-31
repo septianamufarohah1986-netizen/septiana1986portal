@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Farmasi dengan Hati — Kuis Campuran</title>
+<title>Pintu 1 — Kuis Campuran S1 Farmasi</title>
 <style>
   :root{
     --bg1:#160e2a; --bg2:#0b1740; --text:#eef2ff; --muted:#b6c3ff;
@@ -47,8 +47,8 @@
 
     <div class="top">
       <div>
-        <h1>💊 Kuis Campuran — Farmasi dengan Hati</h1>
-        <div class="tag">10 soal unik berbasis nama (MCQ + Benar/Salah + 1 refleksi). Salah? Revisi sampai paham ✨</div>
+        <h1>💊 Kuis Campuran — Pintu 1 (S1 Farmasi)</h1>
+        <div class="tag">10 soal unik berbasis nama (MCQ + Benar/Salah + Hitung). Salah? Revisi sampai paham ✨</div>
       </div>
       <div>
         <input id="nama" type="text" placeholder="Tulis nama untuk mengacak soal" />
@@ -81,9 +81,8 @@ function mulberry32(a){return function(){let t=a+=0x6D2B79F5;t=Math.imul(t^t>>>1
 const pick=(arr,rng)=>arr[Math.floor(rng()*arr.length)];
 function shuffle(a,rng){for(let i=a.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 
-/* ==== bank soal (campuran & varian) ==== */
+/* ==== bank soal (campuran & varian) — TANPA REFLEKSI ==== */
 const bank = [
-  // MCQ varian
   {type:'mcq', group:'klin_fokus', variants:[
     {q:'Fokus utama farmasi klinis adalah…', c:['Produksi obat massal','Optimasi terapi obat pada pasien','Marketing produk farmasi','Registrasi paten'], a:1, ex:'Optimasi terapi: pemilihan, dosis, dan pemantauan pada pasien.'},
     {q:'Tujuan inti praktik farmasi klinis adalah…', c:['Studi hewan coba','Optimasi luaran terapi pasien','Pengemasan obat','Audit gudang'], a:1, ex:'Menaikkan luaran klinis melalui penggunaan obat yang tepat.'},
@@ -116,7 +115,6 @@ const bank = [
     {q:'Reaksi yang mengarah ke alergi:', c:['Anafilaksis','Mengantuk ringan','Mulut kering','Rasa pahit'], a:0, ex:'Anafilaksis adalah hipersensitivitas berat.'},
     {q:'Yang paling khas reaksi alergi adalah…', c:['Anafilaksis','Diare karena antibiotik','Xerostomia','Pusing ringan'], a:0, ex:'Anafilaksis khas alergi (imun).'},
   ]},
-  // dinamis angka (fitb)
   {type:'fitb', group:'konversi', dynamic:true},
   {type:'mcq', group:'infus', variants:[
     {q:'500 mL/4 jam, faktor 20 gtt/mL → gtt/menit?', c:['20','30','40','50'], a:2, ex:'(500×20)/(4×60)=10000/240≈41.7→~40 gtt/menit.'},
@@ -126,11 +124,9 @@ const bank = [
     {q:'Alasan botol gelap pada sediaan tertentu:', c:['Estetika','Mencegah fotodegradasi','Lebih murah','Agar lebih berat'], a:1, ex:'Melindungi dari cahaya.'},
     {q:'Fungsi utama kemasan gelap adalah…', c:['Cegah fotodegradasi zat aktif','Hemat biaya','Estetika','Standar pabrik'], a:0, ex:'Perlindungan terhadap cahaya.'},
   ]},
-  // 1 refleksi (tidak dinilai)
-  {type:'reflect', group:'refleksi', prompt:'Refleksi singkat: bagian mana paling menantang bagimu, dan apa strategi belajarmu berikutnya? (Tidak dinilai)'}
 ];
 
-/* ==== buat paket 10 soal unik per nama ==== */
+/* ==== buat paket 10 soal unik per nama (tanpa refleksi) ==== */
 function buildPackage(name){
   const seed = xmur3((name||'tanpanama').toLowerCase().trim())();
   const rng = mulberry32(seed);
@@ -138,11 +134,7 @@ function buildPackage(name){
   const q = [];
   for(const g of shuffled){
     if(q.length>=10) break;
-    if(g.type==='reflect'){ // pastikan refleksi ikut 1 nomor di akhir
-      continue;
-    }
     if(g.dynamic){
-      // generate konversi angka random
       const useGram = rng()>0.5;
       if(useGram){
         const grams = [0.5,1,2,5][Math.floor(rng()*4)];
@@ -157,12 +149,8 @@ function buildPackage(name){
       if(g.type==='tf')  q.push({type:'tf',  q:v.q, a:v.a, ex:v.ex});
     }
   }
-  // sisipkan refleksi sebagai nomor terakhir
-  const refl = bank.find(b=>b.type==='reflect');
-  q[q.length-1] = q.length>=10 ? q[q.length-1] : q[q.length-1];
-  if(q.length<10) q.push({type:'reflect', prompt:refl.prompt});
-  else q[9] = {type:'reflect', prompt:refl.prompt};
-  return q;
+  // pastikan tepat 10 jika bank cukup
+  return q.slice(0,10);
 }
 
 /* ==== render kuis ==== */
@@ -176,7 +164,7 @@ function render(){
   elQuiz.innerHTML=''; total=pkg.length; correct=0;
   pkg.forEach((q,idx)=>{
     const box=document.createElement('div'); box.className='q';
-    box.innerHTML=`<h3>${idx+1}. ${q.type==='reflect'?'[Refleksi] ':''}${q.q||''}${q.prompt||''}</h3>`;
+    box.innerHTML=`<h3>${idx+1}. ${q.q||''}</h3>`;
     const fb=document.createElement('div'); fb.className='feedback';
 
     if(q.type==='mcq'){
@@ -221,28 +209,19 @@ function render(){
       box.appendChild(input); const wrap=document.createElement('div'); wrap.appendChild(btn); box.appendChild(wrap);
     }
 
-    if(q.type==='reflect'){
-      const ta=document.createElement('textarea'); ta.placeholder='Tulis refleksimu di sini (tersimpan di perangkatmu)…';
-      const save=document.createElement('button'); save.className='btn ghost'; save.textContent='Simpan Refleksi (lokal)';
-      save.addEventListener('click',()=>{localStorage.setItem('fdh_reflection', ta.value); fb.textContent='Tersimpan di perangkat ini.';});
-      box.appendChild(ta); box.appendChild(document.createElement('div')).appendChild(save);
-      // tidak mempengaruhi skor, tapi kita hitung selesai saat disimpan
-      save.addEventListener('click',()=>{mark(idx,true);});
-    }
-
     box.appendChild(fb);
     elQuiz.appendChild(box);
   });
   updateScore();
 }
-function mark(i, noScore){
+function mark(i){
   if(solved[i]) return;
-  solved[i]=true; if(!noScore) correct++;
+  solved[i]=true; correct++;
   updateScore(); elProg.style.width = Math.round((Object.keys(solved).length/total)*100)+'%';
 }
 function updateScore(){
-  const pct = total? Math.round((correct/ (total-1))*100):0; // -1 karena refleksi tidak dinilai
-  elScore.textContent = `${pct}% — ${correct}/${total-1} benar`;
+  const pct = total? Math.round((correct/ total)*100):0;
+  elScore.textContent = `${pct}% — ${correct}/${total} benar`;
 }
 
 /* ==== kontrol ==== */
@@ -257,7 +236,7 @@ document.getElementById('regen').onclick=()=>{
 };
 document.getElementById('reset').onclick=()=>{localStorage.removeItem('fdh_seed'); location.reload();};
 document.getElementById('wrongOnly').onclick=()=>{
-  const wrongIdx=[]; for(let i=0;i<pkg.length;i++){ if(!solved[i] && pkg[i].type!=='reflect') wrongIdx.push(i); }
+  const wrongIdx=[]; for(let i=0;i<pkg.length;i++){ if(!solved[i]) wrongIdx.push(i); }
   if(wrongIdx.length===0){alert('Semua soal dinilai sudah benar ✔️'); return}
   pkg = wrongIdx.map(i=>pkg[i]); solved={}; render();
 };
