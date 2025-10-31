@@ -1,12 +1,17 @@
-/* ================== Konfigurasi ================== */
-const DURATION_MIN = 60;
+/* ================== Konfigurasi (CBT) ================== */
+// Durasi default 200 menit; akan di-override otomatis menjadi 1 menit/soal jika bank telah dimuat.
+let TOTAL_MIN = 200;
 const STORAGE_PREFIX = 'ukai';
 
 /* ================== Util ================== */
 const $  = (sel) => document.querySelector(sel);
 const qq = (...sels) => sels.map(s => document.querySelector(s)).find(Boolean);
 const getParam = (k) => new URLSearchParams(location.search).get(k);
-const fmtTime  = s => `${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;
+const fmtTime  = s => {
+  const h = Math.floor(s/3600), m = Math.floor((s%3600)/60), c = s%60;
+  const pad = n => String(n).padStart(2,'0');
+  return `${pad(h)}:${pad(m)}:${pad(c)}`;
+};
 
 function saveResult({ score, mode, correct, total, bank }) {
   const payload = { score, max: 100, mode, correct, total, bank, ts: Date.now() };
@@ -23,7 +28,7 @@ let questions = [];
 let idx = 0;
 let answers = {};                             // { qid: number }
 let flagged = new Set();                      // Set<qid>
-let remainSec = DURATION_MIN * 60;
+let remainSec = TOTAL_MIN * 60;
 let submitted = false;
 
 /* keys sesi per bank */
@@ -47,22 +52,63 @@ const btnExplain  = qq('#btnExplain','#btn-explain');
 const btnFlag     = qq('#btnFlag','#btn-flag');
 const btnSubmit   = qq('#btnSubmit','#btn-submit');
 const btnReset    = qq('#btnReset','#btn-reset');
+const btnReview   = qq('#btn-review','#btnReview');
+const btnBackExam = qq('#btn-back-exam','#btnBackExam');
+const btnFinalSub = qq('#btn-final-submit','#btnFinalSubmit');
 const bankNameEl  = $('#bank-name');
+
+const reviewWrap  = $('#review-screen');
+const reviewList  = $('#review-list');
+const fsWarn      = $('#fs-warn');
+
+/* ================== Full-screen helpers ================== */
+function inFullscreen(){
+  return !!(document.fullscreenElement || document.webkitFullscreenElement);
+}
+async function goFullscreen(){
+  const el = document.documentElement;
+  try{
+    if (el.requestFullscreen) await el.requestFullscreen();
+    else if (el.webkitRequestFullscreen) await el.webkitRequestFullscreen();
+  }catch(e){}
+}
+let askedFS = false;
+function requestFSOnce(){
+  if (askedFS) return;
+  askedFS = true;
+  goFullscreen();
+}
+function fsCheck(){
+  if (!fsWarn) return;
+  const show = !inFullscreen() && !submitted;
+  fsWarn.classList.toggle('hidden', !show);
+}
 
 /* ================== Boot ================== */
 document.addEventListener('DOMContentLoaded', async () => {
   if (bankNameEl) bankNameEl.textContent = bankId;
+
   await loadBank();          // baca dari manifest + fetch soal
+
+  // 1 menit per soal → TOTAL_MIN; fallback 200 kalau gagal baca bank
+  TOTAL_MIN = Math.max(1, (questions?.length || 200));
+  remainSec = TOTAL_MIN * 60;
+
   restoreSession();          // lanjutkan jawaban/timer/flag
   render();                  // tampilkan soal pertama
   startTimer();              // timer jalan
   bindEvents();              // tombol + grid
   guardExit();               // cegah close tanpa submit
+
+  // minta full-screen pada interaksi pertama
+  ['click','keydown'].forEach(ev => document.addEventListener(ev, requestFSOnce, { once:true }));
+  document.addEventListener('fullscreenchange', fsCheck);
+  document.addEventListener('visibilitychange', fsCheck);
+  fsCheck();
 });
 
 /* ================== Manifest loader ================== */
 async function fetchManifest() {
-  // Pakai manifest.json yang ada di repo
   const url = `../data/banks/manifest.json`;
   try {
     const res = await fetch(url, { cache: 'no-store' });
@@ -70,38 +116,21 @@ async function fetchManifest() {
     return await res.json();
   } catch (e) {
     console.warn('Manifest tidak bisa dibaca (akan lanjut fallback):', e);
-    return null; // biarkan null → kita akan fallback ke fetch langsung
+    return null;
   }
 }
 
 async function resolveBankUrl(base) {
-  // 1) kalau sudah file.json, pakai langsung
-  if (base.endsWith('.json')) {
-    return `../data/banks/${base}`;
-  }
-
-  // 2) coba direct file konvensional: <bank>.json
+  if (base.endsWith('.json')) return `../data/banks/${base}`;
   const direct = `../data/banks/${base}.json`;
-  try {
-    const r = await fetch(direct, { cache: 'no-store' });
-    if (r.ok) return direct;
-  } catch (_) {}
-
-  // 3) baca manifest.json (jika ada) — format { banks: ["nama1","nama2", ...] }
+  try { const r = await fetch(direct, { cache: 'no-store' }); if (r.ok) return direct; } catch (_) {}
   const mf = await fetchManifest();
   const list = (mf && (mf.banks || mf.list || mf.names)) || [];
   if (Array.isArray(list) && list.includes(base)) {
-    // coba lagi nama konvensional
-    try {
-      const r2 = await fetch(direct, { cache: 'no-store' });
-      if (r2.ok) return direct;
-    } catch (_) {}
+    try { const r2 = await fetch(direct, { cache:'no-store' }); if (r2.ok) return direct; } catch(_){}
   }
-
-  // 4) tidak ketemu
   throw new Error(`Tidak bisa menemukan file bank untuk "${base}".`);
 }
-
 
 /* ================== Load bank ================== */
 async function loadBank() {
@@ -142,14 +171,14 @@ function restoreSession() {
   flagged = new Set(Array.isArray(flg) ? flg : []);
   if (!meta || meta.submitted) {
     answers   = {};
-    remainSec = DURATION_MIN * 60;
+    remainSec = TOTAL_MIN * 60;
     submitted = false;
     idx = 0;
     persist();
     return;
   }
   answers   = saved || {};
-  remainSec = (typeof meta.remainSec==='number') ? meta.remainSec : DURATION_MIN*60;
+  remainSec = (typeof meta.remainSec==='number') ? meta.remainSec : TOTAL_MIN*60;
   submitted = !!meta.submitted;
   idx       = Math.min(meta.idx || 0, Math.max(questions.length-1,0));
 }
@@ -182,7 +211,7 @@ function render() {
     optsEl.addEventListener('change', onPick, { once:true });
   }
 
-  // pembahasan
+  // pembahasan hidden saat ujian
   if (explainWrap) {
     explainWrap.classList.add('hidden');
     if (explainBody) explainBody.innerHTML = q.rationale || 'Belum ada pembahasan.';
@@ -231,13 +260,21 @@ function bindEvents() {
     if (flagged.has(q.id)) flagged.delete(q.id); else flagged.add(q.id);
     persist(); render();
   });
-  btnSubmit  && btnSubmit.addEventListener('click', () => submit(false));
+
+  // Review screen
+  btnReview  && btnReview.addEventListener('click', showReview);
+  btnBackExam&& btnBackExam?.addEventListener('click', hideReview);
+  btnFinalSub&& btnFinalSub?.addEventListener('click', () => submit(false));
+
+  // Submit dari sidebar → buka review dulu
+  btnSubmit  && btnSubmit.addEventListener('click', showReview);
+
   btnReset   && btnReset.addEventListener('click', () => {
     if (!confirm('Mulai ulang simulasi? Jawaban, flag, dan timer akan direset.')) return;
     localStorage.removeItem(K_ANS);
     localStorage.removeItem(K_META);
     localStorage.removeItem(K_FLAG);
-    answers = {}; flagged = new Set(); idx=0; remainSec = DURATION_MIN*60; submitted=false;
+    answers = {}; flagged = new Set(); idx=0; remainSec = TOTAL_MIN*60; submitted=false;
     persist(); render(); if (timerEl) timerEl.textContent = fmtTime(remainSec);
     if (timeFill) timeFill.style.width = '0%';
   });
@@ -250,11 +287,46 @@ function bindEvents() {
     persist(); render();
   });
 
-  // navigasi keyboard (opsional)
+  // keyboard
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') btnNext?.click();
     if (e.key === 'ArrowLeft')  btnPrev?.click();
+    if (e.key.toLowerCase()==='f') btnFlag?.click();
+    if (e.key>='1' && e.key<='5'){
+      const v = (+e.key)-1;
+      const opt = document.querySelector(`input[name="opt"][value="${v}"]`);
+      if (opt){ opt.checked = true; onPick({target:opt}); }
+    }
   });
+}
+
+/* ================== Review Screen ================== */
+function showReview(){
+  if (!reviewWrap || !reviewList) return;
+  // list unanswered
+  const list = [];
+  for (let i=0;i<questions.length;i++){
+    const q = questions[i];
+    if (answers[q.id] == null) list.push(i);
+  }
+  reviewList.innerHTML = list.length
+    ? list.map(i=>`<button class="btn" data-go="${i}">${i+1}</button>`).join(' ')
+    : '<em>Semua soal sudah dijawab. Kamu bisa submit.</em>';
+
+  reviewList.onclick = (e)=>{
+    const btn = e.target.closest('button[data-go]');
+    if(!btn) return;
+    idx = +btn.dataset.go;
+    hideReview();
+    render();
+    window.scrollTo({top:0,behavior:'smooth'});
+  };
+
+  reviewWrap.classList.remove('hidden');
+  window.scrollTo({top:reviewWrap.offsetTop-24, behavior:'smooth'});
+}
+function hideReview(){
+  reviewWrap?.classList.add('hidden');
 }
 
 /* ================== Timer ================== */
@@ -277,10 +349,14 @@ function startTimer() {
 }
 function updateBar(){
   if (!timeFill) return;
-  const total = DURATION_MIN * 60;
+  const total = TOTAL_MIN * 60;
   const used = Math.min(total, Math.max(0, total - remainSec));
   const pct = Math.round((used / total) * 100);
   timeFill.style.width = `${pct}%`;
+  // warna peringatan
+  if (remainSec <= 5*60)      timeFill.style.background = '#ff6b6b';
+  else if (remainSec <= 20*60)timeFill.style.background = '#f3c969';
+  else                        timeFill.style.background = '#6aa9ff';
 }
 
 /* ================== Guard & Submit ================== */
@@ -296,8 +372,10 @@ function submit(auto) {
   submitted = true;
   const correct = questions.reduce((a,q)=> a + (answers[q.id]===q.answerIndex?1:0), 0);
   const score = Math.round((correct / (questions.length || 1)) * 100);
-  saveResult({ score, mode:'simulasi', correct, total: questions.length, bank: bankId });
+  saveResult({ score, mode:'simulasi-cbt', correct, total: questions.length, bank: bankId });
   persist();
   alert((auto ? 'Waktu habis.\n' : '') + `Skor: ${score}/100 (${correct}/${questions.length})`);
-  location.href = './ukai-analitik.html';
+  // keluar full-screen bila aktif
+  try{ document.exitFullscreen?.(); }catch(_){}
+  location.href = './ukai-analitik.html?last=1';
 }
