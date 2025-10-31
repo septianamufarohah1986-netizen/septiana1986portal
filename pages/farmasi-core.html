@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pintu 1 — Mahasiswa Farmasi siap sidang skripsi</title>
+
+  <!-- Font opsional -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg1:#0a0620;--bg2:#0e0b2f;--text:#f3f0ff;--muted:#c8c2f9;
+      --accent1:#9f83ff;--accent2:#5de0e6;--ring:rgba(159,131,255,.35);
+      --card:#18143a;--stroke:rgba(255,255,255,.14);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:Inter,system-ui,Segoe UI,Arial; color:var(--text);
+      background:
+        radial-gradient(900px 600px at 20% -10%, rgba(154,119,255,.28), transparent 60%),
+        linear-gradient(180deg,var(--bg1),var(--bg2));
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:1150px; margin:0 auto; padding:28px 16px 64px}
+
+    .toplinks{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border-radius:12px; font-weight:700; transition:.2s}
+    .btn.ghost{border:1px solid var(--stroke); background:rgba(255,255,255,.06)}
+    .btn.primary{border:0; color:#0b0720; background:linear-gradient(90deg,var(--accent1),var(--accent2)); box-shadow:0 0 18px rgba(159,131,255,.35)}
+    .btn.primary:hover{transform:translateY(-2px)}
+
+    .hero{
+      display:grid; grid-template-columns:1.2fr .8fr; gap:24px; align-items:center;
+      background:linear-gradient(145deg,rgba(72,33,150,.35),rgba(25,18,60,.55));
+      border:1px solid rgba(159,131,255,.25); border-radius:20px; padding:26px;
+      box-shadow:0 14px 46px rgba(0,0,0,.35)
+    }
+    @media(max-width:900px){.hero{grid-template-columns:1fr}}
+    h1{margin:0 0 6px; font-size:clamp(22px,3vw,38px)}
+    .lead{color:var(--muted); margin:0 0 10px}
+
+    .section{margin-top:36px}
+    .grid{display:grid; gap:16px; grid-template-columns:repeat(3,1fr)}
+    @media(max-width:960px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--card); border:1px solid var(--stroke); border-radius:16px; padding:18px}
+
+    .mermaid{background:#141133; border:1px solid var(--stroke); border-radius:16px; padding:10px; overflow:auto}
+    footer{text-align:center; margin-top:44px; color:#bdb6ff9c; font-size:13px}
+  </style>
+
+  <!-- Mermaid (untuk diagram mini, aman & sekali init) -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: "base",
+      themeVariables: {
+        primaryColor: "#8e75ff",
+        primaryTextColor: "#ffffff",
+        primaryBorderColor: "#bca9ff",
+        lineColor: "#6de0f7",
+        secondaryColor: "#2a1a6b",
+        tertiaryColor: "#291c5c",
+        clusterBkg: "#201848",
+        clusterBorder: "#9f83ff",
+        fontFamily: "Inter, sans-serif"
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <!-- link kembali ke portal utama -->
+    <nav class="toplinks">
+      <a class="btn ghost" href="../index.html">← Portal Utama</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1>🎓 Mahasiswa Farmasi siap sidang skripsi</h1>
+        <p class="lead">Semester 1–8: materi kuliah, latihan soal, pembahasan, dan panduan skripsi.</p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+          <a class="btn primary" href="../farmasi-home.html">Buka daftar semester</a>
+          <a class="btn ghost" href="./panduan-skripsi.html">Panduan skripsi</a>
+        </div>
+      </div>
+      <div>
+        <img src="https://cdn-icons-png.flaticon.com/512/2950/2950751.png" alt="ikon farmasi"
+             style="max-width:260px; width:100%; border-radius:20px; box-shadow:0 0 40px rgba(159,131,255,.25)">
+      </div>
+    </section>
+
+    <!-- FITUR INTI (khusus Pintu 1) -->
+    <section class="section">
+      <h2 style="margin:0 0 8px">🧭 Ruang Belajar Pintu 1</h2>
+      <p class="lead">Fokus ke kebutuhan mahasiswa S1. Tanpa fitur UKAI.</p>
+      <div class="grid">
+        <a class="card" href="../farmasi-home.html">
+          <h3>📚 Materi & Soal Semester 1–8</h3>
+          <p class="lead">Ringkasan materi, latihan, dan pembahasan per topik.</p>
+        </a>
+        <a class="card" href="./bank-soal-semester.html">
+          <h3>🧠 Bank Soal Kuliah</h3>
+          <p class="lead">Kumpulan soal kuliah + kunci jawaban untuk review cepat.</p>
+        </a>
+        <a class="card" href="./panduan-skripsi.html">
+          <h3>📝 Persiapan Sidang Skripsi</h3>
+          <p class="lead">Template slide, daftar tanya-jawab, & tips presentasi.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- DIAGRAM MINI (opsional) -->
+    <section class="section">
+      <h2 style="margin:0 0 8px">🧠 Alur Belajar Pintu 1</h2>
+      <div id="mini-diagram" class="mermaid">graph TD
+A[Mulai: Pilih Semester] --> B(Materi Ringkas)
+B --> C(Latihan Soal)
+C --> D(Review & Pembahasan)
+D --> E(Arsip Nilai & Catatan)
+E --> F(Persiapan Sidang Skripsi)
+      </div>
+    </section>
+
+    <footer>Mahasiswa Farmasi siap sidang skripsi.</footer>
+  </div>
+
+  <script>
+    // render diagram mini saat halaman siap
+    window.addEventListener('load', () => {
+      mermaid.run({ querySelector: '#mini-diagram' });
+    });
+  </script>
+</body>
+</html>
