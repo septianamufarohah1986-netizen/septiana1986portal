@@ -37,7 +37,7 @@
 
   <header class="hero">
     <h1>Simulasi UKAI — <span id="bank-name">CBT</span></h1>
-    <p class="lead">Mode ujian komputer (CBT): 200 soal, 240 menit, navigasi bebas, tandai soal, dan review sebelum submit.</p>
+    <p class="lead">Mode ujian komputer (CBT): 200 soal, 200 menit, navigasi bebas, tandai soal, dan review sebelum submit.</p>
   </header>
 
   <main class="container">
@@ -45,7 +45,8 @@
     <div class="card" style="display:flex;flex-direction:column;gap:.75rem">
       <div style="display:flex;justify-content:space-between;align-items:center">
         <div>Soal <span id="progress">0/0</span> • Ditandai <span id="flag-count">0</span></div>
-        <div>⏳ <span id="timer">04:00:00</span></div>
+      <!-- ganti tampilan awal timer -->
+       <div>⏳ <span id="timer">03:20:00</span></div>
       </div>
       <div class="timebar"><div id="timebar-fill" class="timebar-fill"></div></div>
     </div>
@@ -102,7 +103,7 @@
     <div class="dlg-head"><strong>Briefing Simulasi UKAI (CBT)</strong></div>
     <div class="dlg-body">
       <ol style="margin-top:0">
-        <li>Durasi ujian <strong>240 menit</strong>. Saat waktu habis → <em>auto-submit</em>.</li>
+       <li>Durasi ujian <strong>200 menit</strong>. Saat waktu habis → <em>auto-submit</em>.</li>
         <li>Gunakan <strong>mode layar penuh</strong>. Keluar dari full-screen akan memunculkan peringatan.</li>
         <li>Kamu bisa menandai soal (🚩) dan meninjau semua soal <em>belum dijawab</em> sebelum submit.</li>
         <li>Pembahasan tidak tampil saat ujian; hanya setelah submit di halaman Analitik.</li>
