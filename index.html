@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portal — Septiana1986</title>
-  <meta name="description" content="Dua pintu: Farmasi dengan Hati (S1) & Calon Apoteker Siap UKAI (Profesi)." />
+  <title>Portal — Aplikasi FarmasiKu Smart</title>
+  <meta name="description" content="Dua pintu pembelajaran: Mahasiswa Farmasi siap sidang skripsi & Calon Apoteker siap UKAI." />
   <style>
     :root{
       --bg:#0e1025; --bg2:#121739; --card:#171b3f;
@@ -26,7 +26,8 @@
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:22px}
     .card{
       position:relative; padding:20px; border-radius:18px;
-      border:1px solid var(--stroke); background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));
+      border:1px solid var(--stroke);
+      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));
       transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
     }
     .card:hover{transform:translateY(-3px); box-shadow:0 12px 26px rgba(96,165,250,.25); border-color:var(--hover)}
@@ -45,28 +46,28 @@
   <main class="wrap">
     <header>
       <h1>Portal Utama</h1>
-      <p>Pilih jalur belajar yang ingin kamu buka.</p>
+      <p>Pilih jalur pembelajaran FarmasiKu Smart yang ingin kamu buka.</p>
     </header>
 
     <section class="grid" aria-label="Daftar pintu">
-      <!-- Pintu 1: S1 -->
+      <!-- 🚪 Pintu 1: Mahasiswa Farmasi siap sidang skripsi -->
       <article class="card">
-        <span class="badge">🎓 Program S1</span>
-        <h2 class="title">Farmasi dengan Hati</h2>
-        <p class="muted">Semester 1–8: teori, lab, riset, sampai skripsi.</p>
-        <a class="btn" href="farmasi-home.html" aria-label="Buka Farmasi dengan Hati">Buka portal S1 →</a>
+        <span class="badge">🎓 Mahasiswa S1</span>
+        <h2 class="title">Mahasiswa Farmasi siap sidang skripsi</h2>
+        <p class="muted">Semester 1 – 8 : materi kuliah, latihan soal, pembahasan, dan panduan skripsi.</p>
+        <a class="btn" href="./pages/farmasi-core.html" aria-label="Masuk ke portal Mahasiswa Farmasi siap sidang skripsi">Masuk pintu 1 →</a>
       </article>
 
-      <!-- Pintu 2: Profesi Apoteker / UKAI -->
+      <!-- 🚪 Pintu 2: Calon Apoteker siap UKAI -->
       <article class="card">
-        <span class="badge">🧪 Profesi</span>
-        <h2 class="title">Calon Apoteker Siap UKAI</h2>
-        <p class="muted">Latihan topik, simulasi UKAI, & refleksi profesional.</p>
-        <a class="btn" href="./pages/ukai-home.html" aria-label="Buka Calon Apoteker Siap UKAI">Masuk pintu UKAI →</a>
+        <span class="badge">💊 Profesi Apoteker</span>
+        <h2 class="title">Calon Apoteker siap UKAI</h2>
+        <p class="muted">Dasar materi, simulasi CBT UKAI, analitik hasil, dan refleksi profesional.</p>
+        <a class="btn" href="./pages/ukai-home.html" aria-label="Masuk ke portal Calon Apoteker siap UKAI">Masuk pintu 2 →</a>
       </article>
     </section>
 
-    <footer>© 2025 Septiana — Ilmu yang tajam, praktik yang santun, hati yang hadir.</footer>
+    <footer>© 2025 FarmasiKu Smart — Mahasiswa Farmasi siap sidang skripsi dan siap UKAI.</footer>
   </main>
 </body>
 </html>
