@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FarmasiKu Smart — Dua Dunia</title>
+  <link rel="stylesheet" href="assets/css/farmasi.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #14264a 0%, #203a70 40%, #2e4f91 100%);
+      color: #eaf6fa;
+      text-align: center;
+      padding: 60px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+      color: #b7e7ff;
+    }
+
+    p.subtitle {
+      color: #cfe9f7;
+      font-size: 1.1rem;
+      margin-bottom: 50px;
+    }
+
+    .doors {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .door {
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.1), rgba(255,255,255,0.05));
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      width: 300px;
+      padding: 30px 25px;
+      text-decoration: none;
+      color: #f7fcfd;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
+    }
+
+    .door:hover {
+      transform: translateY(-6px);
+      background: linear-gradient(160deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    }
+
+    .door h2 {
+      font-size: 1.3rem;
+      color: #aee8ff;
+      margin-bottom: 10px;
+    }
+
+    .door p {
+      color: #d8f3ff;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 80px;
+      font-size: 0.9rem;
+      color: #c1dbec;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      color: #b2eaff;
+      font-weight: 600;
+      border-radius: 999px;
+      padding: 6px 12px;
+      margin-bottom: 8px;
+    }
+
+    .emoji {
+      font-size: 1.8rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 768px) {
+      body { padding: 40px 10px; }
+      h1 { font-size: 1.8rem; }
+      .door { width: 90%; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>FarmasiKu Smart</h1>
+  <p class="subtitle">Portal dua dunia: belajar dengan hati, tumbuh dengan niat. 💊✨</p>
+
+  <div class="doors">
+    <a class="door" href="pages/farmasi-core.html">
+      <span class="badge">Pintu 1</span>
+      <span class="emoji">🎓</span>
+      <h2>Mahasiswa Farmasi</h2>
+      <p>Panduan skripsi, checklist, dan latihan semua mata kuliah S1 Farmasi.</p>
+    </a>
+
+    <a class="door" href="pages/ukai-home.html">
+      <span class="badge">Pintu 2</span>
+      <span class="emoji">🧠</span>
+      <h2>Calon Apoteker</h2>
+      <p>Materi UKAI, simulasi CBT, dan analitik progres untuk persiapan ujian.</p>
+    </a>
+  </div>
+
+  <footer>
+   © 2025 FarmasiKu Smart — allwaysstudio.com 🌙
+  </footer>
+
+</body>
+</html>

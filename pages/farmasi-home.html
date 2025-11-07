@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Farmasi — Mata Kuliah & Modul</title>
+  <style>
+    :root{
+      --bg:#0d0c1f; --card:#171634; --text:#f5f7ff; --muted:#b8c0ff;
+      --stroke:#2b2a52; --accent:#6ea8fe; --pill:#7b68ee; --pill2:#37d0c6;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font:16px/1.5 system-ui,Segoe UI,Roboto,Inter,Arial;background:var(--bg);color:var(--text)}
+    .wrap{max-width:1100px;margin:auto;padding:32px 16px}
+    h1{margin:0 0 8px;font-size:30px}
+    p.muted{color:var(--muted);margin:0 0 24px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .card{background:var(--card);border:1px solid var(--stroke);border-radius:16px;padding:18px;position:relative}
+    .badge{position:absolute;top:10px;left:12px;background:var(--pill);color:#fff;font-weight:700;padding:4px 8px;border-radius:8px;font-size:12px;opacity:.9}
+    .title{font-size:18px;margin:8px 0 6px}
+    .sub{color:var(--muted);margin:0}
+    a.ghost, button.ghost{
+      display:inline-flex;align-items:center;gap:10px;margin-top:10px;padding:10px 14px;
+      border:1px solid var(--stroke);border-radius:12px;color:var(--text);background:transparent;cursor:pointer;text-decoration:none
+    }
+    a.ghost:hover, button.ghost:hover{border-color:var(--accent)}
+    header .back{display:inline-flex;padding:8px 12px;border:1px solid var(--stroke);border-radius:10px;text-decoration:none;color:var(--text);margin-bottom:18px}
+    .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .chip{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;background:#1c1a40;border:1px solid var(--stroke);font-size:13px;color:var(--muted)}
+    .pill2{background:var(--pill2);color:#032828;font-weight:700}
+    .divider{height:1px;background:var(--stroke);margin:20px 0}
+    .hidden{display:none}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="./index.html">← kembali ke portal utama</a>
+    <h1>Program Sarjana Farmasi — Mata Kuliah & Modul</h1>
+    <p class="muted">Pilih mata kuliah untuk melihat modul. Tiap modul punya **Materi** & **Kuis**.</p>
+
+    <!-- VIEW: LIST MATA KULIAH -->
+    <section id="mkView">
+      <div class="grid" id="mkGrid"></div>
+    </section>
+
+    <!-- VIEW: LIST MODUL UNTUK 1 MATA KULIAH -->
+    <section id="modView" class="hidden">
+      <button class="ghost" id="btnBack">← kembali ke daftar mata kuliah</button>
+      <div class="card" style="margin-top:12px">
+        <span class="badge pill2" id="mkBadge">Mata kuliah</span>
+        <h2 class="title" id="mkTitle">Nama Mata Kuliah</h2>
+        <p class="sub" id="mkSub">Pilih modul untuk membuka Materi atau Kuis.</p>
+        <div class="divider"></div>
+        <div class="grid" id="modGrid"></div>
+      </div>
+    </section>
+  </div>
+
+<script>
+/* 
+  Data mata kuliah:
+  - name: nama tampilan
+  - slug: dipakai di nama file (materi-<slug>-modulX.html dan kuis-<slug>-modulX.html)
+  - modules: jumlah modul yang tersedia (silakan sesuaikan dengan file yang kamu punya)
+  
+  Contoh penamaan file yang diharapkan:
+  ./materi/materi-biokimia-modul1.html
+  ./kuis/kuis-biokimia-modul1.html
+*/
+const courses = [
+  { name:'Analisis Farmasi Instrumental', slug:'analisis-farmasi-instrumental', modules:5 },
+  { name:'Anatomi Fisiologi',            slug:'anatomi-fisiologi',             modules:4 },
+  { name:'Biofarmasetika',               slug:'biofarmasetika',                modules:3 },
+  { name:'Biokimia',                     slug:'biokimia',                      modules:5 },
+  { name:'Biologi Sel',                  slug:'biologi-sel',                   modules:4 },
+  { name:'Farmasetika',                  slug:'farmasetika',                   modules:3 },
+  // tambahkan/ubah sesuai koleksi file-mu:
+  // { name:'Farmakologi', slug:'farmakologi', modules:5 },
+];
+
+/* ---------- RENDER LIST MATA KULIAH ---------- */
+function renderCourseList(){
+  const grid = document.getElementById('mkGrid');
+  grid.innerHTML = '';
+  courses.forEach(c => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <span class="badge">S1</span>
+      <h2 class="title">${c.name}</h2>
+      <p class="sub">Modul tersedia: ${c.modules}</p>
+      <div class="row">
+        <button class="ghost" data-slug="${c.slug}" data-name="${c.name}">
+          Lihat modul →
+        </button>
+      </div>
+    `;
+    card.querySelector('button').addEventListener('click', () => openCourse(c));
+    grid.appendChild(card);
+  });
+}
+
+/* ---------- BUKA 1 MATA KULIAH (LIST MODUL) ---------- */
+function openCourse(course){
+  // header mk
+  document.getElementById('mkBadge').textContent = course.slug;
+  document.getElementById('mkTitle').textContent = course.name;
+  document.getElementById('mkSub').textContent = 'Pilih modul untuk membuka Materi atau Kuis.';
+
+  // modules
+  const modGrid = document.getElementById('modGrid');
+  modGrid.innerHTML = '';
+  for(let i=1;i<=course.modules;i++){
+    const materiHref = `./materi/materi-${course.slug}-modul${i}.html`;
+    const kuisHref   = `./kuis/kuis-${course.slug}-modul${i}.html`;
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <span class="badge">Modul ${i}</span>
+      <h3 class="title">${course.name} — Modul ${i}</h3>
+      <p class="sub">Buka materi ringkas atau latihan kuis.</p>
+      <div class="row">
+        <a class="ghost" href="${materiHref}">📘 Materi</a>
+        <a class="ghost" href="${kuisHref}">🧠 Kuis</a>
+      </div>
+    `;
+    modGrid.appendChild(card);
+  }
+
+  // toggle view
+  document.getElementById('mkView').classList.add('hidden');
+  document.getElementById('modView').classList.remove('hidden');
+
+  // hash (opsional, supaya bisa back via URL)
+  location.hash = `#mk=${course.slug}`;
+}
+
+/* ---------- BACK KE LIST MK ---------- */
+document.getElementById('btnBack').addEventListener('click', () => {
+  location.hash = '';
+  document.getElementById('modView').classList.add('hidden');
+  document.getElementById('mkView').classList.remove('hidden');
+});
+
+/* ---------- INIT ---------- */
+renderCourseList();
+
+// jika ada hash #mk=slug, buka langsung
+window.addEventListener('load', () => {
+  const m = location.hash.match(/#mk=([^&]+)/);
+  if(m){
+    const slug = decodeURIComponent(m[1]);
+    const course = courses.find(c => c.slug === slug);
+    if(course) openCourse(course);
+  }
+});
+</script>
+</body>
+</html>
