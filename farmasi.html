@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pintu 1 — Kuis Campuran S1 Farmasi</title>
+<style>
+  :root{
+    --bg1:#160e2a; --bg2:#0b1740; --text:#eef2ff; --muted:#b6c3ff;
+    --stroke:rgba(255,255,255,.14); --card:rgba(255,255,255,.06);
+    --accent:#a78bfa; --accent2:#60a5fa; --ok:#34d399; --bad:#ef4444;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Arial,sans-serif;color:var(--text);
+    background:radial-gradient(1200px 600px at 20% -10%, rgba(167,139,250,.25), transparent 60%),
+               radial-gradient(1000px 600px at 120% 120%, rgba(96,165,250,.25), transparent 60%),
+               linear-gradient(145deg,var(--bg1),var(--bg2));
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:28px 16px}
+  .top{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:10px}
+  h1{margin:0;font-size:26px}
+  .tag{color:var(--muted);font-size:14px}
+  input[type=text]{padding:10px 12px;border-radius:12px;border:1px solid var(--stroke);background:rgba(255,255,255,.06);color:var(--text)}
+  .btn{border:1px solid rgba(255,255,255,.2);background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;font-weight:700;border-radius:12px;padding:10px 14px;cursor:pointer}
+  .btn.ghost{background:transparent;color:var(--text)}
+  .back{margin-bottom:10px}
+  .card{background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));border:1px solid var(--stroke);
+    border-radius:18px;padding:16px;margin-top:12px;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+  .q{padding:14px;border:1px solid var(--stroke);border-radius:14px;margin-top:12px;background:rgba(255,255,255,.04)}
+  .q h3{margin:0 0 8px 0;font-size:16px}
+  .choices{display:flex;flex-direction:column;gap:8px}
+  .choice{padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.2);cursor:pointer;background:rgba(255,255,255,.03)}
+  .choice.correct{border-color:rgba(52,211,153,.7);outline:2px solid rgba(52,211,153,.35)}
+  .choice.wrong{border-color:rgba(239,68,68,.7);outline:2px solid rgba(239,68,68,.35)}
+  .exp{margin-top:8px;font-size:14px;color:#e9d5ff;background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.3);padding:10px;border-radius:10px}
+  .feedback{margin-top:6px;font-size:14px}
+  .note{color:var(--muted);font-size:13px}
+  .bar{height:8px;background:rgba(255,255,255,.08);border-radius:10px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--ok));width:0%}
+  .footer{display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:10px;flex-wrap:wrap}
+  textarea{width:100%;min-height:80px;border-radius:10px;border:1px solid var(--stroke);background:rgba(255,255,255,.05);color:var(--text);padding:10px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="back"><a class="btn ghost" href="farmasi-home.html">← Kembali ke Farmasi Home</a></div>
+
+    <div class="top">
+      <div>
+        <h1>💊 Kuis Campuran — Pintu 1 (S1 Farmasi)</h1>
+        <div class="tag">10 soal unik berbasis nama (MCQ + Benar/Salah + Hitung). Salah? Revisi sampai paham ✨</div>
+      </div>
+      <div>
+        <input id="nama" type="text" placeholder="Tulis nama untuk mengacak soal" />
+        <button id="start" class="btn">Mulai / Acak</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+        <div class="note"><strong>Paket aktif:</strong> <span id="pkgName">-</span></div>
+        <div style="flex:1" class="bar"><span id="prog"></span></div>
+        <div class="note"><strong>Skor:</strong> <span id="scoreText">0% — 0/0</span></div>
+      </div>
+      <div id="quiz"></div>
+      <div class="footer">
+        <div>
+          <button id="wrongOnly" class="btn ghost">Ulangi yang salah saja</button>
+          <button id="regen" class="btn ghost">Acak ulang paket</button>
+          <button id="reset" class="btn ghost">Reset progres</button>
+        </div>
+        <div class="note">Tip: ganti nama → soal beda (anti “bocoran” antara teman 😎)</div>
+      </div>
+    </div>
+  </div>
+
+<script>
+/* ==== util: seeded RNG + helper ==== */
+function xmur3(str){let h=1779033703^str.length;for(let i=0;i<str.length;i++){h=Math.imul(h^str.charCodeAt(i),3432918353);h=h<<13|h>>>19;}return function(){h=Math.imul(h^h>>>16,2246822507);h=Math.imul(h^h>>>13,3266489909);return (h^h>>>16)>>>0;}}
+function mulberry32(a){return function(){let t=a+=0x6D2B79F5;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return ((t^t>>>14)>>>0)/4294967296;}}
+const pick=(arr,rng)=>arr[Math.floor(rng()*arr.length)];
+function shuffle(a,rng){for(let i=a.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+
+/* ==== bank soal (campuran & varian) — TANPA REFLEKSI ==== */
+const bank = [
+  {type:'mcq', group:'klin_fokus', variants:[
+    {q:'Fokus utama farmasi klinis adalah…', c:['Produksi obat massal','Optimasi terapi obat pada pasien','Marketing produk farmasi','Registrasi paten'], a:1, ex:'Optimasi terapi: pemilihan, dosis, dan pemantauan pada pasien.'},
+    {q:'Tujuan inti praktik farmasi klinis adalah…', c:['Studi hewan coba','Optimasi luaran terapi pasien','Pengemasan obat','Audit gudang'], a:1, ex:'Menaikkan luaran klinis melalui penggunaan obat yang tepat.'},
+  ]},
+  {type:'tf', group:'edukasi', variants:[
+    {q:'Memberi edukasi pasien termasuk peran farmasis klinis.', a:true, ex:'Edukasi meningkatkan kepatuhan & keselamatan.'},
+    {q:'Edukasi pasien bukan bagian dari farmasi klinis.', a:false, ex:'Justru itu peran penting farmasis klinis.'},
+  ]},
+  {type:'mcq', group:'kelas_para', variants:[
+    {q:'Parasetamol termasuk…', c:['Antibiotik','Analgesik/antipiretik','Antihipertensi','Antijamur'], a:1, ex:'Digunakan untuk nyeri & demam.'},
+    {q:'Kategori tepat untuk parasetamol adalah…', c:['Antiparasit','Analgesik/antipiretik','Sedatif','Antijamur'], a:1, ex:'Analgesik-antipiretik.'},
+  ]},
+  {type:'mcq', group:'5t_pasien', variants:[
+    {q:'Contoh “Tepat pasien” adalah…', c:['Verifikasi identitas & alergi','Memberikan obat tanpa cek identitas','Mengabaikan alergi','Mengganti obat tanpa konfirmasi'], a:0, ex:'Verifikasi identitas/alergi wajib sebelum menyerahkan obat.'},
+    {q:'Yang sesuai prinsip Tepat Pasien adalah…', c:['Cek nama & tanggal lahir','Abaikan riwayat alergi','Asal menyerahkan obat','Tebus tanpa resep'], a:0, ex:'Verifikasi identitas pasien.'},
+  ]},
+  {type:'tf', group:'interaksi', variants:[
+    {q:'Semua interaksi obat pasti berbahaya.', a:false, ex:'Sebagian justru dimanfaatkan; tetap perlu pemantauan.'},
+    {q:'Beberapa interaksi obat dimanfaatkan secara klinis.', a:true, ex:'Betul, contoh: peningkatan efek obat tertentu.'},
+  ]},
+  {type:'mcq', group:'high_alert', variants:[
+    {q:'Pilih obat high-alert:', c:['Parasetamol','Insulin','Antasida','Vitamin C'], a:1, ex:'Insulin berisiko tinggi bila salah dosis.'},
+    {q:'Contoh obat risiko tinggi jika salah dosis…', c:['Insulin','Suplemen kalsium','Probiotik','Antasida'], a:0, ex:'Insulin = high-alert.'},
+  ]},
+  {type:'tf', group:'lasa', variants:[
+    {q:'LASA berarti obat dengan efek samping tinggi.', a:false, ex:'LASA: Look-Alike Sound-Alike (nama/kemasan mirip).'},
+    {q:'LASA terkait nama/kemasan mirip sehingga rawan tertukar.', a:true, ex:'Mitigasi: pemisahan stok/label tinggi.'},
+  ]},
+  {type:'mcq', group:'alergi', variants:[
+    {q:'Reaksi yang mengarah ke alergi:', c:['Anafilaksis','Mengantuk ringan','Mulut kering','Rasa pahit'], a:0, ex:'Anafilaksis adalah hipersensitivitas berat.'},
+    {q:'Yang paling khas reaksi alergi adalah…', c:['Anafilaksis','Diare karena antibiotik','Xerostomia','Pusing ringan'], a:0, ex:'Anafilaksis khas alergi (imun).'},
+  ]},
+  {type:'fitb', group:'konversi', dynamic:true},
+  {type:'mcq', group:'infus', variants:[
+    {q:'500 mL/4 jam, faktor 20 gtt/mL → gtt/menit?', c:['20','30','40','50'], a:2, ex:'(500×20)/(4×60)=10000/240≈41.7→~40 gtt/menit.'},
+    {q:'300 mL/3 jam, faktor 20 gtt/mL → gtt/menit?', c:['20','30','33','40'], a:2, ex:'(300×20)/180=6000/180=33.3→~33 gtt/menit.'},
+  ]},
+  {type:'mcq', group:'stabilitas', variants:[
+    {q:'Alasan botol gelap pada sediaan tertentu:', c:['Estetika','Mencegah fotodegradasi','Lebih murah','Agar lebih berat'], a:1, ex:'Melindungi dari cahaya.'},
+    {q:'Fungsi utama kemasan gelap adalah…', c:['Cegah fotodegradasi zat aktif','Hemat biaya','Estetika','Standar pabrik'], a:0, ex:'Perlindungan terhadap cahaya.'},
+  ]},
+];
+
+/* ==== buat paket 10 soal unik per nama (tanpa refleksi) ==== */
+function buildPackage(name){
+  const seed = xmur3((name||'tanpanama').toLowerCase().trim())();
+  const rng = mulberry32(seed);
+  const shuffled = shuffle([...bank], rng);
+  const q = [];
+  for(const g of shuffled){
+    if(q.length>=10) break;
+    if(g.dynamic){
+      const useGram = rng()>0.5;
+      if(useGram){
+        const grams = [0.5,1,2,5][Math.floor(rng()*4)];
+        q.push({type:'fitb', q:`${grams} gram = ____ mg`, ans:[String(grams*1000),(grams*1000).toLocaleString('id-ID')], ex:`1 g = 1000 mg → ${grams} g = ${grams*1000} mg`});
+      }else{
+        const mg = [250,500,2000,10000][Math.floor(rng()*4)];
+        q.push({type:'fitb', q:`${mg} mg = ____ µg`, ans:[String(mg*1000),(mg*1000).toLocaleString('id-ID')], ex:`1 mg = 1000 µg → ${mg} mg = ${mg*1000} µg`});
+      }
+    }else{
+      const v = pick(g.variants, rng);
+      if(g.type==='mcq') q.push({type:'mcq', q:v.q, c:v.c, a:v.a, ex:v.ex});
+      if(g.type==='tf')  q.push({type:'tf',  q:v.q, a:v.a, ex:v.ex});
+    }
+  }
+  // pastikan tepat 10 jika bank cukup
+  return q.slice(0,10);
+}
+
+/* ==== render kuis ==== */
+const elQuiz = document.getElementById('quiz');
+const elScore = document.getElementById('scoreText');
+const elProg = document.getElementById('prog');
+const elPkg = document.getElementById('pkgName');
+let pkg=[], solved={}, total=0, correct=0;
+
+function render(){
+  elQuiz.innerHTML=''; total=pkg.length; correct=0;
+  pkg.forEach((q,idx)=>{
+    const box=document.createElement('div'); box.className='q';
+    box.innerHTML=`<h3>${idx+1}. ${q.q||''}</h3>`;
+    const fb=document.createElement('div'); fb.className='feedback';
+
+    if(q.type==='mcq'){
+      const ch=document.createElement('div'); ch.className='choices';
+      const rng = mulberry32(xmur3(q.q)());
+      shuffle(q.c.map((t,i)=>({t,i})), rng).forEach(opt=>{
+        const div=document.createElement('div'); div.className='choice'; div.textContent=opt.t;
+        div.addEventListener('click',()=>{
+          const ok=opt.i===q.a;
+          if(ok){div.classList.add('correct'); mark(idx); showExplain(box,q.ex);}
+          else{div.classList.add('wrong'); fb.innerHTML='Kurang tepat — <button class="btn ghost" style="padding:6px 10px">Revisi</button>'; fb.querySelector('button').onclick=()=>{div.classList.remove('wrong'); fb.textContent='Coba lagi…';};}
+        });
+        ch.appendChild(div);
+      });
+      box.appendChild(ch);
+    }
+
+    if(q.type==='tf'){
+      const ch=document.createElement('div'); ch.className='choices';
+      ['Benar','Salah'].forEach((label,i)=>{
+        const div=document.createElement('div'); div.className='choice'; div.textContent=label;
+        div.addEventListener('click',()=>{
+          const ok = (q.a===true? i===0 : i===1);
+          if(ok){div.classList.add('correct'); mark(idx); showExplain(box,q.ex);}
+          else{div.classList.add('wrong'); fb.textContent='Belum tepat, revisi ya…';}
+        });
+        ch.appendChild(div);
+      });
+      box.appendChild(ch);
+    }
+
+    if(q.type==='fitb'){
+      const input=document.createElement('input'); input.type='text'; input.placeholder='ketik jawaban…';
+      input.style.cssText='width:100%;padding:10px;border-radius:10px;border:1px solid var(--stroke);background:rgba(255,255,255,.05);color:var(--text)';
+      const btn=document.createElement('button'); btn.className='btn ghost'; btn.textContent='Cek';
+      btn.addEventListener('click',()=>{
+        const v=(input.value||'').trim().toLowerCase();
+        const ok=q.ans.map(x=>String(x).toLowerCase()).includes(v);
+        if(ok){input.style.borderColor='rgba(52,211,153,.7)'; mark(idx); showExplain(box,q.ex);}
+        else{input.style.borderColor='rgba(239,68,68,.7)'; fb.textContent='Coba lagi ya, cek satuannya.';}
+      });
+      box.appendChild(input); const wrap=document.createElement('div'); wrap.appendChild(btn); box.appendChild(wrap);
+    }
+
+    box.appendChild(fb);
+    elQuiz.appendChild(box);
+  });
+  updateScore();
+}
+function mark(i){
+  if(solved[i]) return;
+  solved[i]=true; correct++;
+  updateScore(); elProg.style.width = Math.round((Object.keys(solved).length/total)*100)+'%';
+}
+function updateScore(){
+  const pct = total? Math.round((correct/ total)*100):0;
+  elScore.textContent = `${pct}% — ${correct}/${total} benar`;
+}
+
+/* ==== kontrol ==== */
+document.getElementById('start').onclick=()=>{
+  const name=(document.getElementById('nama').value||'tanpanama').trim();
+  pkg = buildPackage(name); solved={}; render();
+  elPkg.textContent = name; localStorage.setItem('fdh_seed', name);
+};
+document.getElementById('regen').onclick=()=>{
+  const base=(document.getElementById('nama').value||'tanpanama')+'-'+Math.floor(Math.random()*1e6);
+  document.getElementById('nama').value=base; pkg=buildPackage(base); solved={}; render(); elPkg.textContent=base;
+};
+document.getElementById('reset').onclick=()=>{localStorage.removeItem('fdh_seed'); location.reload();};
+document.getElementById('wrongOnly').onclick=()=>{
+  const wrongIdx=[]; for(let i=0;i<pkg.length;i++){ if(!solved[i]) wrongIdx.push(i); }
+  if(wrongIdx.length===0){alert('Semua soal dinilai sudah benar ✔️'); return}
+  pkg = wrongIdx.map(i=>pkg[i]); solved={}; render();
+};
+
+/* ==== auto load jika ada seed ==== */
+(function init(){
+  const s=localStorage.getItem('fdh_seed')||''; if(s){document.getElementById('nama').value=s; pkg=buildPackage(s); elPkg.textContent=s; render();}
+})();
+function showExplain(container, text){ if(!text) return; const ex=document.createElement('div'); ex.className='exp'; ex.innerHTML='<strong>Pembahasan:</strong> '+text; container.appendChild(ex); }
+</script>
+</body>
+</html>

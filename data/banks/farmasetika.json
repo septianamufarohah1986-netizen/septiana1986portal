@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "topic": "farmasetika",
+    "count": 2
+  },
+  "items": [
+    {
+      "id": "fst-001",
+      "stem": "Tujuan utama uji disolusi sediaan tablet adalah...",
+      "options": [
+        "Menilai kekerasan tablet",
+        "Memastikan pelepasan zat aktif",
+        "Menentukan identitas zat aktif",
+        "Menilai sterilitas"
+      ],
+      "answerIndex": 1,
+      "rationale": "Disolusi menilai pelepasan zat aktif dari sediaan padat.",
+      "difficulty": "easy",
+      "tags": [
+        "QC"
+      ],
+      "ref": "Farmakope"
+    },
+    {
+      "id": "fst-002",
+      "stem": "Ukuran partikel berpengaruh pada...",
+      "options": [
+        "Rasa pahit",
+        "Kecepatan sedimentasi",
+        "pH larutan",
+        "Titik nyala"
+      ],
+      "answerIndex": 1,
+      "rationale": "Hukum Stokes: ukuran partikel mempengaruhi sedimentasi.",
+      "difficulty": "easy",
+      "tags": [
+        "suspensi"
+      ],
+      "ref": "Ansel"
+    }
+  ]
+}
