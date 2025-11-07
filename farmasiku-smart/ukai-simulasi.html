@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simulasi UKAI — CBT</title>
+  <link rel="stylesheet" href="../assets/css/ukai.css" />
+  <style>
+    .timebar{height:8px;background:#1b2331;border-radius:999px;overflow:hidden}
+    .timebar-fill{height:100%;width:0%;background:#6aa9ff;transition:width .4s ease}
+    .exam-shell{display:grid;grid-template-columns:1fr 260px;gap:16px}
+    .grid-nums{display:grid;grid-template-columns:repeat(auto-fill,minmax(36px,1fr));gap:.5rem}
+    .grid-nums button{
+      min-width:36px;height:36px;border-radius:10px;border:1px solid #2a3750;
+      background:#121826;color:#cbd5e1;cursor:pointer
+    }
+    .grid-nums button.current{outline:2px solid #8ab4f8}
+    .grid-nums button.answered{background:#19303f;border-color:#275b77}
+    .grid-nums button.flagged{background:#3b2630;border-color:#8a3148}
+    .hidden{display:none}
+    .warn{position:fixed;left:50%;transform:translateX(-50%);top:10px;background:#3b2630;
+      border:1px solid #8a3148;color:#ffd7df;padding:8px 12px;border-radius:10px;z-index:50}
+    dialog{border:none;border-radius:16px;padding:0;max-width:720px;width:90%}
+    .dlg-body{padding:20px}
+    .dlg-head{padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.06)}
+  </style>
+</head>
+<body>
+  <!-- peringatan keluar full-screen -->
+  <div id="fs-warn" class="warn hidden">Kamu keluar dari mode layar penuh. Kembali ke full-screen agar simulasi terasa seperti ujian asli.</div>
+
+  <header class="topbar">
+    <a href="../index.html">← Portal</a>
+    <a href="./ukai-home.html">UKAI Home</a>
+    <a href="./ukai-analitik.html">Analitik</a>
+  </header>
+
+  <header class="hero">
+    <h1>Simulasi UKAI — <span id="bank-name">CBT</span></h1>
+    <p class="lead">Mode ujian komputer (CBT): 200 soal, 200 menit, navigasi bebas, tandai soal, dan review sebelum submit.</p>
+  </header>
+
+  <main class="container">
+    <!-- status + timer + progress bar -->
+    <div class="card" style="display:flex;flex-direction:column;gap:.75rem">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>Soal <span id="progress">0/0</span> • Ditandai <span id="flag-count">0</span></div>
+      <!-- ganti tampilan awal timer -->
+       <div>⏳ <span id="timer">03:20:00</span></div>
+      </div>
+      <div class="timebar"><div id="timebar-fill" class="timebar-fill"></div></div>
+    </div>
+
+    <!-- area ujian + sidebar grid -->
+    <section class="exam-shell">
+      <!-- kartu soal -->
+      <section class="card" id="q-card">
+        <div id="q-stem" class="mb-4">Memuat soal…</div>
+        <div id="q-options" class="choices"></div>
+        <div class="actions" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+          <button id="btn-prev"    class="btn">← Sebelumnya</button>
+          <button id="btn-flag"    class="btn">🚩 Tandai</button>
+          <button id="btn-clear"   class="btn">❌ Hapus Jawaban</button>
+          <button id="btn-next"    class="btn">Berikutnya →</button>
+        </div>
+      </section>
+
+      <!-- sidebar grid nomor + aksi -->
+      <aside>
+        <div class="card">
+          <h3 style="margin-top:0">Nomor Soal</h3>
+          <nav id="number-grid" class="grid-nums" aria-label="Navigasi Nomor Soal"></nav>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+            <button id="btn-review" class="btn">Review Soal</button>
+            <button id="btn-submit" class="btn primary">Kumpulkan Jawaban</button>
+          </div>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <small>
+            <strong>Keterangan:</strong><br/>
+            <span style="display:inline-block;width:12px;height:12px;background:#121826;border:1px solid #2a3750;border-radius:3px"></span> belum dikunjungi<br/>
+            <span style="display:inline-block;width:12px;height:12px;background:#19303f;border:1px solid #275b77;border-radius:3px"></span> terjawab<br/>
+            <span style="display:inline-block;width:12px;height:12px;background:#3b2630;border:1px solid #8a3148;border-radius:3px"></span> ditandai
+          </small>
+        </div>
+      </aside>
+    </section>
+
+    <!-- layar review -->
+    <section id="review-screen" class="card hidden" style="margin-top:16px">
+      <h3 style="margin-top:0">Review Sebelum Submit</h3>
+      <p>Pilih nomor di bawah ini untuk kembali ke soal terkait. Daftar <em>Belum Dijawab</em> akan muncul di sini.</p>
+      <div id="review-list" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+      <div style="display:flex;gap:8px;margin-top:12px">
+        <button id="btn-back-exam" class="btn">← Kembali ke Ujian</button>
+        <button id="btn-final-submit" class="btn primary">Submit Akhir</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- dialog briefing / start -->
+  <dialog id="dlg-brief">
+    <div class="dlg-head"><strong>Briefing Simulasi UKAI (CBT)</strong></div>
+    <div class="dlg-body">
+      <ol style="margin-top:0">
+       <li>Durasi ujian <strong>200 menit</strong>. Saat waktu habis → <em>auto-submit</em>.</li>
+        <li>Gunakan <strong>mode layar penuh</strong>. Keluar dari full-screen akan memunculkan peringatan.</li>
+        <li>Kamu bisa menandai soal (🚩) dan meninjau semua soal <em>belum dijawab</em> sebelum submit.</li>
+        <li>Pembahasan tidak tampil saat ujian; hanya setelah submit di halaman Analitik.</li>
+      </ol>
+      <button id="btn-start" class="btn primary" style="width:100%">Mulai & Masuk Full-screen</button>
+    </div>
+  </dialog>
+
+  <footer class="site-footer"><small>Hati yang hadir, praktik yang santun.</small></footer>
+
+  <script src="../assets/js/cbt.js" defer></script>
+</body>
+</html>
