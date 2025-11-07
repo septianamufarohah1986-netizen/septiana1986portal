@@ -30,8 +30,6 @@
     .toplinks{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px}
     .btn{display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border-radius:12px; font-weight:700; transition:.2s}
     .btn.ghost{border:1px solid var(--stroke); background:rgba(255,255,255,.06)}
-    .btn.primary{border:0; color:#0b0720; background:linear-gradient(90deg,var(--accent1),var(--accent2)); box-shadow:0 0 18px rgba(159,131,255,.35)}
-    .btn.primary:hover{transform:translateY(-2px)}
 
     .hero{
       display:grid; grid-template-columns:1.2fr .8fr; gap:24px; align-items:center;
@@ -40,7 +38,7 @@
       box-shadow:0 14px 46px rgba(0,0,0,.35)
     }
     @media(max-width:900px){.hero{grid-template-columns:1fr}}
-    h1{margin:0 0 6px; font-size:clamp(22px,3vw,38px)}
+    h1{margin:0; font-size:clamp(22px,3vw,38px)}
     .lead{color:var(--muted); margin:0 0 10px}
 
     .section{margin-top:36px}
@@ -49,30 +47,8 @@
     .card{background:var(--card); border:1px solid var(--stroke); border-radius:16px; padding:18px}
 
     footer{text-align:center; margin-top:44px; color:#bdb6ff9c; font-size:13px}
-
-    /* 🚫 Sembunyikan Alur Belajar Pintu 1 */
     .hide-alur { display: none !important; }
   </style>
-
-  <!-- Mermaid (biarkan aman tapi tidak jalan kalau disembunyikan) -->
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-  <script>
-    mermaid.initialize({
-      startOnLoad: false,
-      theme: "base",
-      themeVariables: {
-        primaryColor: "#8e75ff",
-        primaryTextColor: "#ffffff",
-        primaryBorderColor: "#bca9ff",
-        lineColor: "#6de0f7",
-        secondaryColor: "#2a1a6b",
-        tertiaryColor: "#291c5c",
-        clusterBkg: "#201848",
-        clusterBorder: "#9f83ff",
-        fontFamily: "Inter, sans-serif"
-      }
-    });
-  </script>
 </head>
 <body>
   <div class="wrap">
@@ -85,11 +61,6 @@
     <section class="hero">
       <div>
         <h1>🎓 Mahasiswa Farmasi siap sidang skripsi</h1>
-        <p class="lead">Semester 1–8: materi kuliah, latihan soal, pembahasan, dan panduan skripsi.</p>
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
-          <a class="btn primary" href="../farmasi-home.html">Buka daftar semester</a>
-          <a class="btn ghost" href="./panduan-skripsi.html">Panduan skripsi</a>
-        </div>
       </div>
       <div>
         <img src="https://cdn-icons-png.flaticon.com/512/2950/2950751.png" alt="ikon farmasi"
@@ -119,7 +90,7 @@
 
     <!-- ❌ Alur Belajar (disembunyikan) -->
     <section class="section hide-alur">
-      <h2 style="margin:0 0 8px">🧠 Alur Belajar Pintu 1</h2>
+      <h2>🧠 Alur Belajar Pintu 1</h2>
       <div id="mini-diagram" class="mermaid">graph TD
 A[Mulai: Pilih Semester] --> B(Materi Ringkas)
 B --> C(Latihan Soal)
@@ -131,15 +102,5 @@ E --> F(Persiapan Sidang Skripsi)
 
     <footer>© 2025 FarmasiKu Smart — allwaysstudio.com 🌙</footer>
   </div>
-
-  <script>
-    // ✅ Render hanya jika elemen terlihat
-    window.addEventListener('load', () => {
-      const el = document.querySelector('#mini-diagram');
-      if (el && !el.closest('.hide-alur')) {
-        mermaid.run({ querySelector: '#mini-diagram' });
-      }
-    });
-  </script>
 </body>
 </html>
