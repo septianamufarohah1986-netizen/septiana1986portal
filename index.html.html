@@ -3,107 +3,49 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FarmasiKu Smart — Belajar cerdas, jadi apoteker dengan hati</title>
-  <meta name="description" content="FarmasiKu Smart membantu mahasiswa & calon apoteker menyiapkan diri sejak semester awal hingga UKAI. Materi, soal, simulasi CBT, dan panduan skripsi dalam satu aplikasi.">
-
-  <!-- Favicon & PWA icons (pakai apa yang ada di repo-mu sekarang) -->
-  <link rel="icon" href="assets/css/favicon.ico.png" />
-  <link rel="apple-touch-icon" href="assets/css/icon-192.png.png" />
-  <meta name="theme-color" content="#0a0620" />
-
-  <!-- Jika nanti pakai stylesheet terpisah -->
-  <!-- <link rel="stylesheet" href="assets/css/farmasi.css"> -->
-
+  <title>FarmasiKu Smart — Dua Pintu</title>
+  <link rel="stylesheet" href="assets/css/farmasi.css" />
   <style>
-    :root { --accent:#5bc0be; --bg:#0b132b; --card:#0f1a33; --text:#e6f6f5 }
-    * { box-sizing:border-box }
-    body{
-      margin:0;
-      background:linear-gradient(180deg,var(--bg),#081028);
-      color:var(--text);
-      font-family:system-ui, Segoe UI, Roboto, Arial, sans-serif;
-      -webkit-font-smoothing:antialiased;
-    }
-    .wrap{max-width:980px;margin:36px auto;padding:20px}
+    .doors{display:grid;gap:16px;margin:22px 0 28px;grid-template-columns:1fr}
+    @media(min-width:760px){.doors{grid-template-columns:repeat(2,1fr)}}
+    .door{display:block;background:linear-gradient(180deg,var(--card),#071123);padding:22px 20px;border-radius:16px;box-shadow:0 10px 28px rgba(0,0,0,.35);text-decoration:none;color:var(--text);border:1px solid rgba(255,255,255,.05);transition:transform .16s ease,box-shadow .16s ease}
+    .door:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,.45)}
+    .door h2{margin:6px 0 8px;line-height:1.25}
+    .door p{color:#bcdce0;margin:0 0 12px}
+    .badge{display:inline-block;font-weight:700;background:rgba(91,192,190,.2);color:#9fe4e0;border:1px solid rgba(91,192,190,.35);padding:6px 10px;border-radius:999px;margin-bottom:10px}
+    .badge.ukai{background:rgba(30,160,255,.18);border-color:rgba(30,160,255,.35);color:#bfe2ff}
+    .cta{display:inline-block;font-weight:700;background:var(--accent);color:#042026;padding:8px 12px;border-radius:999px}
     header{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:56px;height:56px;background:var(--accent);border-radius:12px;display:inline-block}
-    h1{margin:0;font-size:1.6rem}
-    p.lead{color:#bcdce0;margin:.25rem 0 0}
-    .grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:18px}
-    @media(min-width:760px){.grid{grid-template-columns:repeat(2,1fr)}}
-    .card{background:linear-gradient(180deg,var(--card),#071123);padding:16px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.4)}
-    .card h3{margin:.25rem 0 6px;font-size:1.1rem}
-    .card p{margin:0;color:#bcdce0}
-    .cta{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;background:var(--accent);color:#042026;font-weight:700;text-decoration:none}
-    .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-    footer{margin-top:28px;color:#97c5c7;font-size:.95rem;text-align:center}
-    ul.features{padding-left:18px;margin:10px 0;color:#cfe8e6}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
       <div class="brand">
-        <span class="logo" aria-hidden="true"></span>
+        <img src="assets/img/logo.png" alt="" class="logo" style="width:56px;height:56px;border-radius:12px">
         <div>
           <h1>FarmasiKu Smart</h1>
-          <p class="lead">Belajar cerdas, jadi apoteker dengan hati.</p>
+          <div style="color:#9fd9d4;font-size:.95rem">Belajar cerdas, jadi apoteker dengan hati</div>
         </div>
       </div>
-      <a class="cta" href="farmasi.html">Mulai belajar</a>
+      <a class="cta" href="pages/ukai-home.html">Mulai cepat</a>
     </header>
 
-    <section class="grid">
-      <article class="card">
-        <h3>Materi & Bank Soal</h3>
-        <p>Ringkasan materi, latihan terarah, dan kumpulan soal untuk tiap topik.</p>
-        <div class="links">
-          <a class="cta" href="farmasi.html">Halaman Materi</a>
-          <a class="cta" href="pages/">Semua Halaman</a>
-        </div>
-      </article>
+    <section class="doors">
+      <a class="door" href="pages/farmasi-core.html">
+        <span class="badge">Pintu 1</span>
+        <h2>Mahasiswa Farmasi — <small>Siap Sidang Skripsi</small></h2>
+        <p>Panduan, checklist, seluruh mata kuliah, dan latihan soal S1 Farmasi.</p>
+        <span class="cta">Masuk ke Pintu 1 →</span>
+      </a>
 
-      <article class="card">
-        <h3>UKAI Corner</h3>
-        <p>Simulasi CBT UKAI & analitik progres kamu.</p>
-        <div class="links">
-          <a class="cta" href="ukai-home.html">UKAI Home</a>
-          <a class="cta" href="ukai-simulasi.html">Simulasi</a>
-          <a class="cta" href="ukai-analitik.html">Analitik</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <h3>Panduan Skripsi</h3>
-        <p>Template, checklist, dan tahapan penyusunan skripsi.</p>
-        <div class="links">
-          <a class="cta" href="panduan-skripsi.html">Buka Panduan</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <h3>Core / Landing Alternatif</h3>
-        <p>Halaman core yang kamu siapkan sebelumnya.</p>
-        <div class="links">
-          <a class="cta" href="farmasi-core.html">Farmasi Core</a>
-        </div>
-      </article>
+      <a class="door" href="pages/ukai-home.html">
+        <span class="badge ukai">Pintu 2</span>
+        <h2>Calon Apoteker — <small>Siap UKAI</small></h2>
+        <p>Materi inti UKAI, simulasi CBT 200 soal, dan analitik progres.</p>
+        <span class="cta">Masuk ke Pintu 2 →</span>
+      </a>
     </section>
-
-    <section class="card" style="margin-top:16px">
-      <h3>Apa yang kamu dapat?</h3>
-      <ul class="features">
-        <li>Metrik progres belajar & simulasi CBT.</li>
-        <li>Konten ringkas + visual ramah-UKAI.</li>
-        <li>Semua di satu tempat—tanpa ribet.</li>
-      </ul>
-    </section>
-
-    <footer>© 2025 FarmasiKu Smart — septiana1986portal</footer>
   </div>
-
-  <!-- Jika nanti butuh JS -->
-  <!-- <script src="assets/js/ukai-core.js"></script> -->
 </body>
 </html>
