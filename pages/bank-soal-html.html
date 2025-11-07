@@ -21,13 +21,36 @@
     <h1>🧠 Bank Soal Kuliah</h1>
     <p class="lead">Kumpulan soal per mata kuliah + kunci jawaban untuk review cepat.</p>
 
-    <div class="grid" style="margin-top:18px">
-      <a class="card" href="../kuis/kuis-kimdas-modul1.html">Kimia Dasar — Paket Modul 1</a>
-      <a class="card" href="../kuis/kuis-fisika-modul1.html">Fisika Dasar — Paket Modul 1</a>
-      <a class="card" href="../kuis/kuis-farmasetika-modul1.html">Farmasetika — Paket Modul 1</a>
-      <a class="card" href="../kuis/kuis-biokimia-modul1.html">Biokimia — Paket Modul 1</a>
-      <!-- Tambah baris lain sesuai ketersediaan file -->
-    </div>
+   <div id="bankGrid" class="grid" style="margin-top:18px"></div>
+
+<script>
+  async function loadBanks(){
+    const grid = document.getElementById('bankGrid');
+    try {
+      // Halaman ini berada di /pages/, jadi naik 1 folder ke root repo
+      const res = await fetch('../data/banks/manifest.json'); 
+      const data = await res.json();
+
+      grid.innerHTML = '';
+      (data.banks || []).forEach(item => {
+        const a = document.createElement('a');
+        a.className = 'card';
+        a.href = item.path;              // contoh: ../kuis/kuis-kimdas-modul1.html
+        a.textContent = item.title;      // contoh: Kimia Dasar — Paket Modul 1
+        a.setAttribute('aria-label', item.title);
+        grid.appendChild(a);
+      });
+    } catch (e){
+      grid.innerHTML = `
+        <div class="card">
+          Gagal memuat daftar bank soal. Cek <code>data/banks/manifest.json</code>.
+        </div>`;
+      console.error(e);
+    }
+   }
+  loadBanks();
+</script>
+
 
     <footer style="text-align:center;margin-top:40px;color:#bdb6ff9c;font-size:13px">
       © 2025 FarmasiKu Smart — allwaysstudio.com
