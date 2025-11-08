@@ -1,0 +1,7 @@
+{
+  "name": "farmasiku-smart",
+  "private": true,
+  "scripts": {
+    "gen:manifest": "node scripts/generateManifest.js"
+  }
+}

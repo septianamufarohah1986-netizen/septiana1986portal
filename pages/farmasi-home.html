@@ -55,103 +55,92 @@
       </div>
     </section>
   </div>
+<script type="module">
+const mkGrid  = document.getElementById('mkGrid');
+const modView = document.getElementById('modView');
+const mkView  = document.getElementById('mkView');
+const btnBack = document.getElementById('btnBack');
 
-<script>
-/* 
-  Data mata kuliah:
-  - name: nama tampilan
-  - slug: dipakai di nama file (materi-<slug>-modulX.html dan kuis-<slug>-modulX.html)
-  - modules: jumlah modul yang tersedia (silakan sesuaikan dengan file yang kamu punya)
-  
-  Contoh penamaan file yang diharapkan:
-  ./materi/materi-biokimia-modul1.html
-  ./kuis/kuis-biokimia-modul1.html
-*/
-const courses = [
-  { name:'Analisis Farmasi Instrumental', slug:'analisis-farmasi-instrumental', modules:5 },
-  { name:'Anatomi Fisiologi',            slug:'anatomi-fisiologi',             modules:4 },
-  { name:'Biofarmasetika',               slug:'biofarmasetika',                modules:3 },
-  { name:'Biokimia',                     slug:'biokimia',                      modules:5 },
-  { name:'Biologi Sel',                  slug:'biologi-sel',                   modules:4 },
-  { name:'Farmasetika',                  slug:'farmasetika',                   modules:3 },
-  // tambahkan/ubah sesuai koleksi file-mu:
-  // { name:'Farmakologi', slug:'farmakologi', modules:5 },
-];
+let manifest = { mata_kuliah: [] };
 
-/* ---------- RENDER LIST MATA KULIAH ---------- */
-function renderCourseList(){
-  const grid = document.getElementById('mkGrid');
-  grid.innerHTML = '';
-  courses.forEach(c => {
+async function loadManifest() {
+  try {
+    const res = await fetch('../data/akademik/manifest.json');
+    manifest = await res.json();
+  } catch (e) {
+    console.error('Gagal load manifest:', e);
+    manifest = { mata_kuliah: [] };
+  }
+}
+
+function renderCourseList() {
+  mkGrid.innerHTML = '';
+  (manifest.mata_kuliah || []).forEach(c => {
     const card = document.createElement('div');
     card.className = 'card';
+    const total = c.modul?.length || 0;
     card.innerHTML = `
       <span class="badge">S1</span>
-      <h2 class="title">${c.name}</h2>
-      <p class="sub">Modul tersedia: ${c.modules}</p>
+      <h2 class="title">${c.nama}</h2>
+      <p class="sub">Modul tersedia: ${total}</p>
       <div class="row">
-        <button class="ghost" data-slug="${c.slug}" data-name="${c.name}">
-          Lihat modul →
-        </button>
+        <button class="ghost" data-id="${c.id}">Lihat modul →</button>
       </div>
     `;
-    card.querySelector('button').addEventListener('click', () => openCourse(c));
-    grid.appendChild(card);
+    card.querySelector('button').addEventListener('click', () => openCourse(c.id));
+    mkGrid.appendChild(card);
   });
 }
 
-/* ---------- BUKA 1 MATA KULIAH (LIST MODUL) ---------- */
-function openCourse(course){
-  // header mk
-  document.getElementById('mkBadge').textContent = course.slug;
-  document.getElementById('mkTitle').textContent = course.name;
-  document.getElementById('mkSub').textContent = 'Pilih modul untuk membuka Materi atau Kuis.';
+function openCourse(courseId) {
+  const c = (manifest.mata_kuliah || []).find(x => x.id === courseId);
+  if (!c) return;
 
-  // modules
+  document.getElementById('mkBadge').textContent = c.id;
+  document.getElementById('mkTitle').textContent = c.nama;
+  document.getElementById('mkSub').textContent   = 'Pilih modul untuk membuka Materi atau Kuis.';
+
   const modGrid = document.getElementById('modGrid');
   modGrid.innerHTML = '';
-  for(let i=1;i<=course.modules;i++){
-    const materiHref = `./materi/materi-${course.slug}-modul${i}.html`;
-    const kuisHref   = `./kuis/kuis-${course.slug}-modul${i}.html`;
+  (c.modul || []).forEach(m => {
+    const materiHref = m.materi || '#';
+    const kuisHref   = m.kuis   || '#';
+    const disabledMateri = m.materi ? '' : 'style="opacity:.5;pointer-events:none"';
+    const disabledKuis   = m.kuis   ? '' : 'style="opacity:.5;pointer-events:none"';
+
     const card = document.createElement('div');
     card.className = 'card';
     card.innerHTML = `
-      <span class="badge">Modul ${i}</span>
-      <h3 class="title">${course.name} — Modul ${i}</h3>
-      <p class="sub">Buka materi ringkas atau latihan kuis.</p>
+      <span class="badge">Modul ${m.no}</span>
+      <h3 class="title">${c.nama} — Modul ${m.no}</h3>
+      <p class="sub">${m.judul || ''}</p>
       <div class="row">
-        <a class="ghost" href="${materiHref}">📘 Materi</a>
-        <a class="ghost" href="${kuisHref}">🧠 Kuis</a>
+        <a class="ghost" ${disabledMateri} href="${materiHref}">📘 Materi</a>
+        <a class="ghost" ${disabledKuis}   href="${kuisHref}">🧠 Kuis</a>
       </div>
     `;
     modGrid.appendChild(card);
-  }
+  });
 
-  // toggle view
-  document.getElementById('mkView').classList.add('hidden');
-  document.getElementById('modView').classList.remove('hidden');
-
-  // hash (opsional, supaya bisa back via URL)
-  location.hash = `#mk=${course.slug}`;
+  mkView.classList.add('hidden');
+  modView.classList.remove('hidden');
+  location.hash = `#mk=${encodeURIComponent(c.id)}`;
 }
 
-/* ---------- BACK KE LIST MK ---------- */
-document.getElementById('btnBack').addEventListener('click', () => {
+btnBack.addEventListener('click', () => {
   location.hash = '';
-  document.getElementById('modView').classList.add('hidden');
-  document.getElementById('mkView').classList.remove('hidden');
+  modView.classList.add('hidden');
+  mkView.classList.remove('hidden');
 });
 
-/* ---------- INIT ---------- */
-renderCourseList();
+window.addEventListener('load', async () => {
+  await loadManifest();
+  renderCourseList();
 
-// jika ada hash #mk=slug, buka langsung
-window.addEventListener('load', () => {
   const m = location.hash.match(/#mk=([^&]+)/);
-  if(m){
-    const slug = decodeURIComponent(m[1]);
-    const course = courses.find(c => c.slug === slug);
-    if(course) openCourse(course);
+  if (m) {
+    const id = decodeURIComponent(m[1]);
+    openCourse(id);
   }
 });
 </script>
