@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Modul Mata Kuliah</title>
+  <link rel="stylesheet" href="../assets/css/farmasi.css"/>
+  <style>
+    .wrap{max-width:1100px;margin:auto;padding:28px 16px 64px}
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .card{background:var(--card);border:1px solid var(--stroke);border-radius:16px;padding:18px}
+    .btnrow{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+    .pill{display:inline-flex;align-items:center;padding:8px 12px;border-radius:10px;border:1px solid var(--stroke)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="toplinks">
+      <a class="btn ghost" href="./farmasi-home.html">← Kembali ke daftar mata kuliah</a>
+    </nav>
+
+    <h1 id="mkTitle">Modul</h1>
+    <p class="lead" id="mkInfo"></p>
+
+    <div id="modGrid" class="grid"></div>
+  </div>
+
+<script type="module">
+function q(name){
+  return new URLSearchParams(location.search).get(name);
+}
+async function main(){
+  const id = q('mk');
+  const titleEl = document.getElementById('mkTitle');
+  const infoEl  = document.getElementById('mkInfo');
+  const grid    = document.getElementById('modGrid');
+
+  if(!id){
+    titleEl.textContent = 'Modul';
+    infoEl.textContent  = 'Parameter ?mk= tidak ditemukan.';
+    return;
+  }
+
+  try{
+    const res = await fetch('../data/akademik/manifest.json');
+    const data = await res.json();
+    const mk = (data.mata_kuliah || []).find(x => x.id === id);
+
+    if(!mk){
+      titleEl.textContent = 'Modul';
+      infoEl.textContent  = 'Mata kuliah tidak ditemukan di manifest.';
+      return;
+    }
+
+    titleEl.textContent = mk.nama;
+    infoEl.innerHTML = `<span class="pill">Total modul: ${mk.modul?.length || 0}</span>`;
+
+    grid.innerHTML = '';
+    (mk.modul || []).forEach(m => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <h3>Modul ${m.no}: ${m.judul}</h3>
+        <div class="btnrow">
+          <a class="btn ghost" href="${m.materi}">📘 Buka Materi</a>
+          <a class="btn primary" href="${m.kuis}">🧠 Mulai Kuis</a>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+  }catch(e){
+    grid.innerHTML = `<div class="card"><strong>Gagal memuat data.</strong></div>`;
+    console.error(e);
+  }
+}
+main();
+</script>
+</body>
+</html>

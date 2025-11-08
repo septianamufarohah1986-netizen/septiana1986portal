@@ -1,0 +1,53 @@
+{
+  "mata_kuliah": [
+    {
+      "id": "analisis-farmasi-instrumental",
+      "nama": "Analisis Farmasi Instrumental",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Spektrofotometri UV-Vis (Ringkas)",
+          "materi": "../materi/materi-analisis-farmasi-instrumental-modul1.html",
+          "kuis": "../kuis/kuis-analisis-farmasi-instrumental-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Kromatografi Dasar",
+          "materi": "../materi/materi-analisis-farmasi-instrumental-modul2.html",
+          "kuis": "../kuis/kuis-analisis-farmasi-instrumental-modul2.html"
+        }
+      ]
+    },
+    {
+      "id": "anatomi-fisiologi",
+      "nama": "Anatomi Fisiologi",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Sistem Saraf",
+          "materi": "../materi/materi-anatomi-fisiologi-modul1.html",
+          "kuis": "../kuis/kuis-anatomi-fisiologi-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Sistem Pencernaan",
+          "materi": "../materi/materi-anatomi-fisiologi-modul2.html",
+          "kuis": "../kuis/kuis-anatomi-fisiologi-modul2.html"
+        }
+      ]
+    },
+    {
+      "id": "biokimia",
+      "nama": "Biokimia",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Struktur Biomolekul",
+          "materi": "../materi/materi-biokimia-modul1.html",
+          "kuis": "../kuis/kuis-biokimia-modul1.html"
+        }
+      ]
+    }
+  ]
+}
+v
