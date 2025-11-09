@@ -6,15 +6,33 @@
       "modul": [
         {
           "no": 1,
-          "judul": "Spektrofotometri UV-Vis (Ringkas)",
+          "judul": "Modul 1",
           "materi": "../materi/materi-analisis-farmasi-instrumental-modul1.html",
           "kuis": "../kuis/kuis-analisis-farmasi-instrumental-modul1.html"
         },
         {
           "no": 2,
-          "judul": "Kromatografi Dasar",
+          "judul": "Modul 2",
           "materi": "../materi/materi-analisis-farmasi-instrumental-modul2.html",
           "kuis": "../kuis/kuis-analisis-farmasi-instrumental-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-analisis-farmasi-instrumental-modul3.html",
+          "kuis": "../kuis/kuis-analisis-farmasi-instrumental-modul3.html"
+        },
+        {
+          "no": 4,
+          "judul": "Modul 4",
+          "materi": "../materi/materi-analisis-farmasi-instrumental-modul4.html",
+          "kuis": "../kuis/kuis-analisis-farmasi-instrumental-modul4.html"
+        },
+        {
+          "no": 5,
+          "judul": "Modul 5",
+          "materi": "../materi/materi-analisis-farmasi-instrumental-modul5.html",
+          "kuis": "../kuis/kuis-analisis-farmasi-instrumental-modul5.html"
         }
       ]
     },
@@ -24,15 +42,51 @@
       "modul": [
         {
           "no": 1,
-          "judul": "Sistem Saraf",
+          "judul": "Modul 1",
           "materi": "../materi/materi-anatomi-fisiologi-modul1.html",
           "kuis": "../kuis/kuis-anatomi-fisiologi-modul1.html"
         },
         {
           "no": 2,
-          "judul": "Sistem Pencernaan",
+          "judul": "Modul 2",
           "materi": "../materi/materi-anatomi-fisiologi-modul2.html",
           "kuis": "../kuis/kuis-anatomi-fisiologi-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-anatomi-fisiologi-modul3.html",
+          "kuis": "../kuis/kuis-anatomi-fisiologi-modul3.html"
+        },
+        {
+          "no": 4,
+          "judul": "Modul 4",
+          "materi": "../materi/materi-anatomi-fisiologi-modul4.html",
+          "kuis": "../kuis/kuis-anatomi-fisiologi-modul4.html"
+        }
+      ]
+    },
+    {
+      "id": "biofarmasetika",
+      "nama": "Biofarmasetika",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-biofarmasetika-modul1.html",
+          "kuis": "../kuis/kuis-biofarmasetika-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-biofarmasetika-modul2.html",
+          "kuis": "../kuis/kuis-biofarmasetika-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-biofarmasetika-modul3.html",
+          "kuis": "../kuis/kuis-biofarmasetika-modul3.html"
         }
       ]
     },
@@ -42,12 +96,918 @@
       "modul": [
         {
           "no": 1,
-          "judul": "Struktur Biomolekul",
+          "judul": "Modul 1",
           "materi": "../materi/materi-biokimia-modul1.html",
           "kuis": "../kuis/kuis-biokimia-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-biokimia-modul2.html",
+          "kuis": "../kuis/kuis-biokimia-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-biokimia-modul3.html",
+          "kuis": "../kuis/kuis-biokimia-modul3.html"
+        }
+      ]
+    },
+    {
+      "id": "biologi-sel",
+      "nama": "Biologi Sel",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-biologi-sel-modul1.html",
+          "kuis": "../kuis/kuis-biologi-sel-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-biologi-sel-modul2.html",
+          "kuis": "../kuis/kuis-biologi-sel-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-biologi-sel-modul3.html",
+          "kuis": "../kuis/kuis-biologi-sel-modul3.html"
+        },
+        {
+          "no": 4,
+          "judul": "Modul 4",
+          "materi": "../materi/materi-biologi-sel-modul4.html",
+          "kuis": "../kuis/kuis-biologi-sel-modul4.html"
+        }
+      ]
+    },
+    {
+      "id": "bioteknologi-farmasi",
+      "nama": "Bioteknologi Farmasi",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-bioteknologi-farmasi-modul1.html",
+          "kuis": "../kuis/kuis-bioteknologi-farmasi-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-bioteknologi-farmasi-modul2.html",
+          "kuis": "../kuis/kuis-bioteknologi-farmasi-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-bioteknologi-farmasi-modul3.html",
+          "kuis": "../kuis/kuis-bioteknologi-farmasi-modul3.html"
+        }
+      ]
+    },
+    {
+      "id": "botani-farmasi",
+      "nama": "Botani Farmasi",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-botani-farmasi-modul1.html",
+          "kuis": "../kuis/kuis-botani-farmasi-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-botani-farmasi-modul2.html",
+          "kuis": "../kuis/kuis-botani-farmasi-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-botani-farmasi-modul3.html",
+          "kuis": "../kuis/kuis-botani-farmasi-modul3.html"
+        }
+      ]
+    },
+    {
+      "id": "farmakognosi-fitokimia-2",
+      "nama": "Farmakognosi Fitokimia 2",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-farmakognosi-fitokimia-2-modul1.html",
+          "kuis": "../kuis/kuis-farmakognosi-fitokimia-2-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-farmakognosi-fitokimia-2-modul2.html",
+          "kuis": "../kuis/kuis-farmakognosi-fitokimia-2-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-farmakognosi-fitokimia-2-modul3.html",
+          "kuis": "../kuis/kuis-farmakognosi-fitokimia-2-modul3.html"
+        },
+        {
+          "no": 4,
+          "judul": "Modul 4",
+          "materi": "../materi/materi-farmakognosi-fitokimia-2-modul4.html",
+          "kuis": "../kuis/kuis-farmakognosi-fitokimia-2-modul4.html"
+        }
+      ]
+    },
+    {
+      "id": "farmakokinetika",
+      "nama": "Farmakokinetika",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-farmakokinetika-modul1.html",
+          "kuis": "../kuis/kuis-farmakokinetika-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-farmakokinetika-modul2.html",
+          "kuis": "../kuis/kuis-farmakokinetika-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-farmakokinetika-modul3.html",
+          "kuis": "../kuis/kuis-farmakokinetika-modul3.html"
+        },
+        {
+          "no": 4,
+          "judul": "Modul 4",
+          "materi": "../materi/materi-farmakokinetika-modul4.html",
+          "kuis": "../kuis/kuis-farmakokinetika-modul4.html"
+        }
+      ]
+    },
+    {
+      "id": "farmakologi-dasar",
+      "nama": "Farmakologi Dasar",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-farmakologi-dasar-modul1.html",
+          "kuis": "../kuis/kuis-farmakologi-dasar-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-farmakologi-dasar-modul2.html",
+          "kuis": "../kuis/kuis-farmakologi-dasar-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-farmakologi-dasar-modul3.html",
+          "kuis": "../kuis/kuis-farmakologi-dasar-modul3.html"
+        },
+        {
+          "no": 4,
+          "judul": "Modul 4",
+          "materi": "../materi/materi-farmakologi-dasar-modul4.html",
+          "kuis": "../kuis/kuis-farmakologi-dasar-modul4.html"
+        },
+        {
+          "no": 5,
+          "judul": "Modul 5",
+          "materi": "../materi/materi-farmakologi-dasar-modul5.html",
+          "kuis": "../kuis/kuis-farmakologi-dasar-modul5.html"
+        }
+      ]
+    },
+    {
+      "id": "farmakologi-lanjutan",
+      "nama": "Farmakologi Lanjutan",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-farmakologi-lanjutan-modul1.html",
+          "kuis": "../kuis/kuis-farmakologi-lanjutan-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-farmakologi-lanjutan-modul2.html",
+          "kuis": "../kuis/kuis-farmakologi-lanjutan-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-farmakologi-lanjutan-modul3.html",
+          "kuis": "../kuis/kuis-farmakologi-lanjutan-modul3.html"
+        },
+        {
+          "no": 4,
+          "judul": "Modul 4",
+          "materi": "../materi/materi-farmakologi-lanjutan-modul4.html",
+          "kuis": "../kuis/kuis-farmakologi-lanjutan-modul4.html"
+        }
+      ]
+    },
+    {
+      "id": "farmakoterapi-1",
+      "nama": "Farmakoterapi 1",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-farmakoterapi-1-modul1.html",
+          "kuis": "../kuis/kuis-farmakoterapi-1-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-farmakoterapi-1-modul2.html",
+          "kuis": "../kuis/kuis-farmakoterapi-1-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-farmakoterapi-1-modul3.html",
+          "kuis": "../kuis/kuis-farmakoterapi-1-modul3.html"
+        },
+        {
+          "no": 4,
+          "judul": "Modul 4",
+          "materi": "../materi/materi-farmakoterapi-1-modul4.html",
+          "kuis": "../kuis/kuis-farmakoterapi-1-modul4.html"
+        }
+      ]
+    },
+    {
+      "id": "farmakoterapi2",
+      "nama": "Farmakoterapi2",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-farmakoterapi2-modul1.html",
+          "kuis": "../kuis/kuis-farmakoterapi2-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-farmakoterapi2-modul2.html",
+          "kuis": "../kuis/kuis-farmakoterapi2-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-farmakoterapi2-modul3.html",
+          "kuis": "../kuis/kuis-farmakoterapi2-modul3.html"
+        }
+      ]
+    },
+    {
+      "id": "farmasetika-dasar",
+      "nama": "Farmasetika Dasar",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "kuis": "../kuis/kuis-farmasetika-dasar-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "kuis": "../kuis/kuis-farmasetika-dasar-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "kuis": "../kuis/kuis-farmasetika-dasar-modul3.html"
+        }
+      ]
+    },
+    {
+      "id": "farmasi-fisika",
+      "nama": "Farmasi Fisika",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-farmasi-fisika-modul1.html",
+          "kuis": "../kuis/kuis-farmasi-fisika-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-farmasi-fisika-modul2.html",
+          "kuis": "../kuis/kuis-farmasi-fisika-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-farmasi-fisika-modul3.html",
+          "kuis": "../kuis/kuis-farmasi-fisika-modul3.html"
+        }
+      ]
+    },
+    {
+      "id": "farmasi-fisika-2",
+      "nama": "Farmasi Fisika 2",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "kuis": "../kuis/kuis-farmasi-fisika-2-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "kuis": "../kuis/kuis-farmasi-fisika-2-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "kuis": "../kuis/kuis-farmasi-fisika-2-modul3.html"
+        }
+      ]
+    },
+    {
+      "id": "farmasiindustri",
+      "nama": "Farmasiindustri",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-farmasiindustri-modul1.html",
+          "kuis": "../kuis/kuis-farmasiindustri-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-farmasiindustri-modul2.html",
+          "kuis": "../kuis/kuis-farmasiindustri-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-farmasiindustri-modul3.html",
+          "kuis": "../kuis/kuis-farmasiindustri-modul3.html"
+        }
+      ]
+    },
+    {
+      "id": "fisdas",
+      "nama": "Fisdas",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-fisdas-modul1.html",
+          "kuis": "../kuis/kuis-fisdas-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-fisdas-modul2.html",
+          "kuis": "../kuis/kuis-fisdas-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-fisdas-modul3.html",
+          "kuis": "../kuis/kuis-fisdas-modul3.html"
+        },
+        {
+          "no": 4,
+          "judul": "Modul 4",
+          "materi": "../materi/materi-fisdas-modul4.html",
+          "kuis": "../kuis/kuis-fisdas-modul4.html"
+        },
+        {
+          "no": 5,
+          "judul": "Modul 5",
+          "materi": "../materi/materi-fisdas-modul5.html",
+          "kuis": "../kuis/kuis-fisdas-modul5.html"
+        }
+      ]
+    },
+    {
+      "id": "fitokimia",
+      "nama": "Fitokimia",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "kuis": "../kuis/kuis-fitokimia-modul1.html"
+        }
+      ]
+    },
+    {
+      "id": "imunologi-virologi",
+      "nama": "Imunologi Virologi",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-imunologi-virologi-modul1.html",
+          "kuis": "../kuis/kuis-imunologi-virologi-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-imunologi-virologi-modul2.html",
+          "kuis": "../kuis/kuis-imunologi-virologi-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-imunologi-virologi-modul3.html",
+          "kuis": "../kuis/kuis-imunologi-virologi-modul3.html"
+        }
+      ]
+    },
+    {
+      "id": "kimdas",
+      "nama": "Kimdas",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-kimdas-modul1.html",
+          "kuis": "../kuis/kuis-kimdas-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-kimdas-modul2.html",
+          "kuis": "../kuis/kuis-kimdas-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-kimdas-modul3.html",
+          "kuis": "../kuis/kuis-kimdas-modul3.html"
+        },
+        {
+          "no": 4,
+          "judul": "Modul 4",
+          "materi": "../materi/materi-kimdas-modul4.html",
+          "kuis": "../kuis/kuis-kimdas-modul4.html"
+        },
+        {
+          "no": 5,
+          "judul": "Modul 5",
+          "materi": "../materi/materi-kimdas-modul5.html",
+          "kuis": "../kuis/kuis-kimdas-modul5.html"
+        },
+        {
+          "no": 6,
+          "judul": "Modul 6",
+          "materi": "../materi/materi-kimdas-modul6.html",
+          "kuis": "../kuis/kuis-kimdas-modul6.html"
+        }
+      ]
+    },
+    {
+      "id": "kimia-analitik",
+      "nama": "Kimia Analitik",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-kimia-analitik-modul1.html",
+          "kuis": "../kuis/kuis-kimia-analitik-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-kimia-analitik-modul2.html",
+          "kuis": "../kuis/kuis-kimia-analitik-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-kimia-analitik-modul3.html",
+          "kuis": "../kuis/kuis-kimia-analitik-modul3.html"
+        }
+      ]
+    },
+    {
+      "id": "kimia-medisinal",
+      "nama": "Kimia Medisinal",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-kimia-medisinal-modul1.html",
+          "kuis": "../kuis/kuis-kimia-medisinal-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-kimia-medisinal-modul2.html",
+          "kuis": "../kuis/kuis-kimia-medisinal-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-kimia-medisinal-modul3.html",
+          "kuis": "../kuis/kuis-kimia-medisinal-modul3.html"
+        },
+        {
+          "no": 4,
+          "judul": "Modul 4",
+          "materi": "../materi/materi-kimia-medisinal-modul4.html",
+          "kuis": "../kuis/kuis-kimia-medisinal-modul4.html"
+        }
+      ]
+    },
+    {
+      "id": "kimia-medisinal-2",
+      "nama": "Kimia Medisinal 2",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-kimia-medisinal-2-modul1.html",
+          "kuis": "../kuis/kuis-kimia-medisinal-2-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-kimia-medisinal-2-modul2.html",
+          "kuis": "../kuis/kuis-kimia-medisinal-2-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-kimia-medisinal-2-modul3.html",
+          "kuis": "../kuis/kuis-kimia-medisinal-2-modul3.html"
+        }
+      ]
+    },
+    {
+      "id": "kimia-organik",
+      "nama": "Kimia Organik",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-kimia-organik-modul1.html",
+          "kuis": "../kuis/kuis-kimia-organik-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-kimia-organik-modul2.html",
+          "kuis": "../kuis/kuis-kimia-organik-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-kimia-organik-modul3.html",
+          "kuis": "../kuis/kuis-kimia-organik-modul3.html"
+        },
+        {
+          "no": 4,
+          "judul": "Modul 4",
+          "materi": "../materi/materi-kimia-organik-modul4.html",
+          "kuis": "../kuis/kuis-kimia-organik-modul4.html"
+        }
+      ]
+    },
+    {
+      "id": "manajemen-farmasi",
+      "nama": "Manajemen Farmasi",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-manajemen-farmasi-modul1.html",
+          "kuis": "../kuis/kuis-manajemen-farmasi-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-manajemen-farmasi-modul2.html",
+          "kuis": "../kuis/kuis-manajemen-farmasi-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-manajemen-farmasi-modul3.html",
+          "kuis": "../kuis/kuis-manajemen-farmasi-modul3.html"
+        }
+      ]
+    },
+    {
+      "id": "metodologi-penelitian",
+      "nama": "Metodologi Penelitian",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-metodologi-penelitian-modul1.html",
+          "kuis": "../kuis/kuis-metodologi-penelitian-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-metodologi-penelitian-modul2.html",
+          "kuis": "../kuis/kuis-metodologi-penelitian-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-metodologi-penelitian-modul3.html",
+          "kuis": "../kuis/kuis-metodologi-penelitian-modul3.html"
+        }
+      ]
+    },
+    {
+      "id": "metodologipenelitian2",
+      "nama": "Metodologipenelitian2",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-metodologipenelitian2-modul1.html",
+          "kuis": "../kuis/kuis-metodologipenelitian2-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-metodologipenelitian2-modul2.html",
+          "kuis": "../kuis/kuis-metodologipenelitian2-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-metodologipenelitian2-modul3.html",
+          "kuis": "../kuis/kuis-metodologipenelitian2-modul3.html"
+        }
+      ]
+    },
+    {
+      "id": "mikrobiologi-farmasi",
+      "nama": "Mikrobiologi Farmasi",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-mikrobiologi-farmasi-modul1.html",
+          "kuis": "../kuis/kuis-mikrobiologi-farmasi-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-mikrobiologi-farmasi-modul2.html",
+          "kuis": "../kuis/kuis-mikrobiologi-farmasi-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-mikrobiologi-farmasi-modul3.html",
+          "kuis": "../kuis/kuis-mikrobiologi-farmasi-modul3.html"
+        },
+        {
+          "no": 4,
+          "judul": "Modul 4",
+          "materi": "../materi/materi-mikrobiologi-farmasi-modul4.html",
+          "kuis": "../kuis/kuis-mikrobiologi-farmasi-modul4.html"
+        },
+        {
+          "no": 5,
+          "judul": "Modul 5",
+          "materi": "../materi/materi-mikrobiologi-farmasi-modul5.html",
+          "kuis": "../kuis/kuis-mikrobiologi-farmasi-modul5.html"
+        }
+      ]
+    },
+    {
+      "id": "regulasifarmasi",
+      "nama": "Regulasifarmasi",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-regulasifarmasi-modul1.html",
+          "kuis": "../kuis/kuis-regulasifarmasi-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-regulasifarmasi-modul2.html",
+          "kuis": "../kuis/kuis-regulasifarmasi-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-regulasifarmasi-modul3.html",
+          "kuis": "../kuis/kuis-regulasifarmasi-modul3.html"
+        }
+      ]
+    },
+    {
+      "id": "seminar-skripsi",
+      "nama": "Seminar Skripsi",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-seminar-skripsi-modul1.html",
+          "kuis": "../kuis/kuis-seminar-skripsi-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-seminar-skripsi-modul2.html",
+          "kuis": "../kuis/kuis-seminar-skripsi-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-seminar-skripsi-modul3.html",
+          "kuis": "../kuis/kuis-seminar-skripsi-modul3.html"
+        }
+      ]
+    },
+    {
+      "id": "skripsi",
+      "nama": "Skripsi",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-skripsi-modul1.html",
+          "kuis": "../kuis/kuis-skripsi-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-skripsi-modul2.html",
+          "kuis": "../kuis/kuis-skripsi-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-skripsi-modul3.html",
+          "kuis": "../kuis/kuis-skripsi-modul3.html"
+        },
+        {
+          "no": 4,
+          "judul": "Modul 4",
+          "materi": "../materi/materi-skripsi-modul4.html",
+          "kuis": "../kuis/kuis-skripsi-modul4.html"
+        }
+      ]
+    },
+    {
+      "id": "statistika-farmasi",
+      "nama": "Statistika Farmasi",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-statistika-farmasi-modul1.html",
+          "kuis": "../kuis/kuis-statistika-farmasi-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-statistika-farmasi-modul2.html",
+          "kuis": "../kuis/kuis-statistika-farmasi-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-statistika-farmasi-modul3.html",
+          "kuis": "../kuis/kuis-statistika-farmasi-modul3.html"
+        }
+      ]
+    },
+    {
+      "id": "teknologi-sediaan-likuida-semisolida",
+      "nama": "Teknologi Sediaan Likuida Semisolida",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "kuis": "../kuis/kuis-teknologi-sediaan-likuida-semisolida-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "kuis": "../kuis/kuis-teknologi-sediaan-likuida-semisolida-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "kuis": "../kuis/kuis-teknologi-sediaan-likuida-semisolida-modul3.html"
+        },
+        {
+          "no": 4,
+          "judul": "Modul 4",
+          "kuis": "../kuis/kuis-teknologi-sediaan-likuida-semisolida-modul4.html"
+        }
+      ]
+    },
+    {
+      "id": "teknologi-sediaan-solida",
+      "nama": "Teknologi Sediaan Solida",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-teknologi-sediaan-solida-modul1.html",
+          "kuis": "../kuis/kuis-teknologi-sediaan-solida-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-teknologi-sediaan-solida-modul2.html",
+          "kuis": "../kuis/kuis-teknologi-sediaan-solida-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-teknologi-sediaan-solida-modul3.html",
+          "kuis": "../kuis/kuis-teknologi-sediaan-solida-modul3.html"
+        },
+        {
+          "no": 4,
+          "judul": "Modul 4",
+          "materi": "../materi/materi-teknologi-sediaan-solida-modul4.html",
+          "kuis": "../kuis/kuis-teknologi-sediaan-solida-modul4.html"
+        },
+        {
+          "no": 5,
+          "judul": "Modul 5",
+          "materi": "../materi/materi-teknologi-sediaan-solida-modul5.html",
+          "kuis": "../kuis/kuis-teknologi-sediaan-solida-modul5.html"
+        }
+      ]
+    },
+    {
+      "id": "teknologi-sediaan-steril",
+      "nama": "Teknologi Sediaan Steril",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-teknologi-sediaan-steril-modul1.html",
+          "kuis": "../kuis/kuis-teknologi-sediaan-steril-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-teknologi-sediaan-steril-modul2.html",
+          "kuis": "../kuis/kuis-teknologi-sediaan-steril-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-teknologi-sediaan-steril-modul3.html",
+          "kuis": "../kuis/kuis-teknologi-sediaan-steril-modul3.html"
+        },
+        {
+          "no": 4,
+          "judul": "Modul 4",
+          "materi": "../materi/materi-teknologi-sediaan-steril-modul4.html",
+          "kuis": "../kuis/kuis-teknologi-sediaan-steril-modul4.html"
+        }
+      ]
+    },
+    {
+      "id": "toksikologiklinik",
+      "nama": "Toksikologiklinik",
+      "modul": [
+        {
+          "no": 1,
+          "judul": "Modul 1",
+          "materi": "../materi/materi-toksikologiklinik-modul1.html",
+          "kuis": "../kuis/kuis-toksikologiklinik-modul1.html"
+        },
+        {
+          "no": 2,
+          "judul": "Modul 2",
+          "materi": "../materi/materi-toksikologiklinik-modul2.html",
+          "kuis": "../kuis/kuis-toksikologiklinik-modul2.html"
+        },
+        {
+          "no": 3,
+          "judul": "Modul 3",
+          "materi": "../materi/materi-toksikologiklinik-modul3.html",
+          "kuis": "../kuis/kuis-toksikologiklinik-modul3.html"
         }
       ]
     }
   ]
 }
-v
